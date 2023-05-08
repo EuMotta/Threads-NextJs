@@ -1,0 +1,7 @@
+.button-back {
+  @apply bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-300 active:bg-red-400;
+}
+
+.button-go {
+  @apply bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-300 active:bg-green-400;
+}
