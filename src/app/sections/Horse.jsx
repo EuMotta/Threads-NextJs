@@ -9,6 +9,7 @@ export default function Horse() {
   const [position2, setPosition2] = useState(0);
   const [history, setHistory] = useState([]);
   const [displayText, setDisplayText] = useState('Empate');
+  const [gameOver, setGameOver] = useState(false);
 
   const handleUndo = () => {
     if (history.length > 1) {
@@ -18,7 +19,11 @@ export default function Horse() {
       setPosition2(prevPosition2);
       setHistory(history);
       if (prevPosition1 === 0 && prevPosition2 === 0) {
-        setDisplayText('Inicio');
+        setDisplayText('false');
+        setGameOver(true);
+      }
+      if(position1 < 100 && position2 < 100){
+        setGameOver(false);
       }
     }
   };
@@ -26,26 +31,48 @@ export default function Horse() {
     setPosition1(0);
     setPosition2(0);
     setHistory([]);
-    setDisplayText('Empate');
+    setDisplayText('Inicio');
+    setGameOver(false);
   };
 
-  const handleHorse1 = () => {
-    const newPosition1 = Math.floor(position1 + Math.random() * (40 - 10) + 10);
-    const newPosition2 = Math.floor(position2 + Math.random() * (40 - 10) + 10);
-    setPosition1(newPosition1);
-    setPosition2(newPosition2);
-    setHistory([...history, position1, position2]);
-    if (newPosition1 > newPosition2) {
-      setDisplayText('Cavalo 1 está na frente!');
-    } else if (newPosition2 > newPosition1) {
-      setDisplayText('Cavalo 2 está na frente!');
-    } else if (newPosition2 == newPosition1) {
-      setDisplayText('Empate');
-    }
-  };
+ 
+
+const handleHorse1 = () => {
+  if (gameOver) return;
+
+  const maxPosition = 100;
+  const newPosition1 = Math.min(
+    maxPosition,
+    Math.floor(position1 + Math.random() * (40 - 10) + 30)
+  );
+  const newPosition2 = Math.min(
+    maxPosition,
+    Math.floor(position2 + Math.random() * (40 - 10) + 30)
+  );
+  setPosition1(newPosition1);
+  setPosition2(newPosition2);
+  setHistory([...history, position1, position2]);
+
+  if (newPosition1 >= maxPosition && newPosition2 >= maxPosition) {
+    setDisplayText("Empate!");
+    setGameOver(true);
+  } else if (newPosition1 >= maxPosition) {
+    setDisplayText("Cavalo 1 venceu!");
+    setGameOver(true);
+  } else if (newPosition2 >= maxPosition) {
+    setDisplayText("Cavalo 2 venceu!");
+    setGameOver(true);
+  } else if (newPosition1 > newPosition2) {
+    setDisplayText("Cavalo 1 está na frente!");
+  } else if (newPosition2 > newPosition1) {
+    setDisplayText("Cavalo 2 está na frente!");
+  } else if (newPosition2 == newPosition1) {
+    setDisplayText("Empate");
+  }
+};
 
   return (
-    <main className='p-5'>
+    <main className="p-5">
       <div className="">
         <div className="">
           {horses.map(item => (
