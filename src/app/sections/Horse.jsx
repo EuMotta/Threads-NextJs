@@ -69,17 +69,17 @@ export default function Horse() {
       setDisplayText('Empate!');
       setGameOver(true);
     } else if (newPosition1 >= maxPosition) {
-      setDisplayText('Ucrânia venceu!');
+      setDisplayText('Cavalo 1 venceu!');
       setShowStar(true);
       setGameOver(true);
     } else if (newPosition2 >= maxPosition) {
-      setDisplayText('Russia venceu!');
+      setDisplayText('Cavalo 2 venceu!');
       setShowStar(true);
       setGameOver(true);
     } else if (newPosition1 > newPosition2) {
-      setDisplayText('Ucrânia está na frente!');
+      setDisplayText('Cavalo 1 está na frente!');
     } else if (newPosition2 > newPosition1) {
-      setDisplayText('Russia está na frente!');
+      setDisplayText('Cavalo 2 está na frente!');
     } else if (newPosition2 == newPosition1) {
       setDisplayText('Empate');
     }
