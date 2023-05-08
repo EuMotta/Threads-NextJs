@@ -16,6 +16,7 @@ export default function Horse() {
   const [showBorder, setShowBorder] = useState(false);
   const [showDistance, setShowDistance] = useState(false);
   const [showStar, setShowStar] = useState(false);
+  const [speed, setSpeed] = useState(30);
 
   const handleShowBorder = () => {
     setShowBorder(prevShowBorder => !prevShowBorder);
@@ -55,11 +56,11 @@ export default function Horse() {
     const maxPosition = 1200;
     const newPosition1 = Math.min(
       maxPosition,
-      Math.floor(position1 + Math.random() * (40 - 10) + 30),
+      Math.floor(position1 + Math.random() * (speed - 10) + speed),
     );
     const newPosition2 = Math.min(
       maxPosition,
-      Math.floor(position2 + Math.random() * (40 - 10) + 30),
+      Math.floor(position2 + Math.random() * (speed - 10) + speed),
     );
     setPosition1(newPosition1);
     setPosition2(newPosition2);
@@ -109,13 +110,15 @@ export default function Horse() {
                 item.position === 'position1' &&
                 displayText === 'Cavalo 1 venceu!' ? (
                   <div className="absolute left-14 ">
-                  <GiStarsStack className='text-yellow-300 text-xl'/></div>
+                    <GiStarsStack className="text-yellow-300 text-xl" />
+                  </div>
                 ) : null}
                 {showStar &&
                 item.position === 'position2' &&
                 displayText === 'Cavalo 2 venceu!' ? (
                   <div className="absolute left-14 ">
-                  <GiStarsStack className='text-yellow-300 text-xl'/></div>
+                    <GiStarsStack className="text-yellow-300 text-xl" />
+                  </div>
                 ) : null}
                 <Image
                   className="scale-x-[-1]"
@@ -162,6 +165,19 @@ export default function Horse() {
             >
               Resetar
             </button>
+          </div>
+        </div>
+        <div className="p-5 mt-5 bg-gray-100 w-1/4 rounded-lg shadow-md">
+          <div className="flex">
+            <input
+              type="number"
+              value={speed}
+              onChange={e => setSpeed(e.target.value)}
+              className="shadow-sm shadow-slate-500 rounded-md p-2 w-1/4"
+            />
+            <div className="text-lg flex justify-center items-center ml-2">
+              Velocidade
+            </div>
           </div>
         </div>
       </div>
