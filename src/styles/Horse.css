@@ -5,3 +5,11 @@
 .button-go {
   @apply bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-300 active:bg-green-400;
 }
+
+.bg-road {
+  @apply m-2 p-1 rounded-lg;
+  background-image: url(../images/background-scenery.jpg);
+  background-size: 100% 20%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}

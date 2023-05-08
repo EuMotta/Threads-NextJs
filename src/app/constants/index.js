@@ -3,12 +3,12 @@ import horse2 from '../../images/horse2.svg';
 
 export const horses = [
   {
-    name: 'name',
+    name: 'Mario',
     image: horse1,
     position: 'position1',
   },
   {
-    name: 'name',
+    name: 'Josivaldo',
     image: horse2,
     position: 'position2',
   }
