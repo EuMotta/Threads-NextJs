@@ -40,7 +40,7 @@ export default function Horse() {
 const handleHorse1 = () => {
   if (gameOver) return;
 
-  const maxPosition = 100;
+  const maxPosition = 1200;
   const newPosition1 = Math.min(
     maxPosition,
     Math.floor(position1 + Math.random() * (40 - 10) + 30)
