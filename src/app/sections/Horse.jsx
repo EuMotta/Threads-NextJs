@@ -5,6 +5,7 @@ import horse1 from '../../images/horse1.svg';
 import { horses } from '../constants';
 import { AiOutlineBorderRight } from 'react-icons/ai';
 import { MdSocialDistance } from 'react-icons/md';
+import { GiStarsStack } from 'react-icons/gi';
 
 export default function Horse() {
   const [position1, setPosition1] = useState(0);
@@ -14,6 +15,7 @@ export default function Horse() {
   const [gameOver, setGameOver] = useState(false);
   const [showBorder, setShowBorder] = useState(false);
   const [showDistance, setShowDistance] = useState(false);
+  const [showStar, setShowStar] = useState(false);
 
   const handleShowBorder = () => {
     setShowBorder(prevShowBorder => !prevShowBorder);
@@ -23,6 +25,7 @@ export default function Horse() {
   };
 
   const handleUndo = () => {
+    if (gameOver) return;
     if (history.length > 1) {
       const prevPosition2 = history.pop();
       const prevPosition1 = history.pop();
@@ -67,9 +70,11 @@ export default function Horse() {
       setGameOver(true);
     } else if (newPosition1 >= maxPosition) {
       setDisplayText('Ucrânia venceu!');
+      setShowStar(true);
       setGameOver(true);
     } else if (newPosition2 >= maxPosition) {
       setDisplayText('Russia venceu!');
+      setShowStar(true);
       setGameOver(true);
     } else if (newPosition1 > newPosition2) {
       setDisplayText('Ucrânia está na frente!');
@@ -95,11 +100,23 @@ export default function Horse() {
               >
                 <div className="text-center absolute">
                   {showDistance && (
-                    <div className='absolute -left-7 top-2'>
+                    <div className="absolute -left-8 top-2">
                       {item.position === 'position1' ? position1 : position2}
                     </div>
                   )}
                 </div>
+                {showStar &&
+                item.position === 'position1' &&
+                displayText === 'Ucrânia venceu!' ? (
+                  <div className="absolute left-14 ">
+                  <GiStarsStack className='text-yellow-300 text-xl'/></div>
+                ) : null}
+                {showStar &&
+                item.position === 'position2' &&
+                displayText === 'Russia venceu!' ? (
+                  <div className="absolute left-14 ">
+                  <GiStarsStack className='text-yellow-300 text-xl'/></div>
+                ) : null}
                 <Image
                   className="scale-x-[-1]"
                   src={item.image}
