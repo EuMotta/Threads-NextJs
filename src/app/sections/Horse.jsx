@@ -45,9 +45,9 @@ export default function Horse() {
   };
 
   return (
-    <main>
+    <main className='p-5'>
       <div className="">
-        <div className="p-5">
+        <div className="">
           {horses.map(item => (
             <div className="bg-road">
               <div
@@ -66,7 +66,7 @@ export default function Horse() {
             </div>
           ))}
         </div>
-        <div className="p-5 bg-gray-100 w-1/4 rounded-lg shadow-md">
+        <div className="p-5 mt-5 bg-gray-100 w-1/4 rounded-lg shadow-md">
           <div className="text-lg font-semibold mb-2">{displayText}</div>
           <div className="border p-2 rounded-lg mb-2">{position1}</div>
           <div className="border p-2 rounded-lg mb-4">{position2}</div>
