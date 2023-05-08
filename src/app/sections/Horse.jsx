@@ -107,13 +107,13 @@ export default function Horse() {
                 </div>
                 {showStar &&
                 item.position === 'position1' &&
-                displayText === 'Ucrânia venceu!' ? (
+                displayText === 'Cavalo 1 venceu!' ? (
                   <div className="absolute left-14 ">
                   <GiStarsStack className='text-yellow-300 text-xl'/></div>
                 ) : null}
                 {showStar &&
                 item.position === 'position2' &&
-                displayText === 'Russia venceu!' ? (
+                displayText === 'Cavalo 2 venceu!' ? (
                   <div className="absolute left-14 ">
                   <GiStarsStack className='text-yellow-300 text-xl'/></div>
                 ) : null}
