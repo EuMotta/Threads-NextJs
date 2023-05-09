@@ -8,12 +8,16 @@ import { MdSocialDistance } from 'react-icons/md';
 import { GiStarsStack } from 'react-icons/gi';
 import { FaFlagCheckered } from 'react-icons/fa';
 import { GrPowerReset } from 'react-icons/gr';
-import  Graphics3  from '../components/Charts';
+
 import Explication from './Explication';
+import Graph1 from '../components/Charts';
 
 export default function Horse() {
   const [position1, setPosition1] = useState(0);
   const [position2, setPosition2] = useState(0);
+  const [victoryHorse1, setVictoryHorse1] = useState(0);
+  const [victoryHorse2, setVictoryHorse2] = useState(0);
+  const [draw, setDraw] = useState(0);
   const [leftPosition1, setLeftPosition1] = useState(0);
   const [leftPosition2, setLeftPosition2] = useState(0);
   const [raceResults, setRaceResults] = useState([]);
@@ -100,11 +104,13 @@ export default function Horse() {
     } else if (newPosition1 >= maxPosition) {
       setDisplayText('Cavalo 1 venceu!');
       setRaceResults([...raceResults, 'Cavalo 1']);
+      setVictoryHorse1(victoryHorse1 + 1);
       setShowStar(true);
       setGameOver(true);
     } else if (newPosition2 >= maxPosition) {
       setDisplayText('Cavalo 2 venceu!');
       setRaceResults([...raceResults, 'Cavalo 2']);
+      setVictoryHorse2(victoryHorse2 + 1);
       setShowStar(true);
       setGameOver(true);
     } else if (newPosition1 > newPosition2) {
@@ -112,6 +118,8 @@ export default function Horse() {
     } else if (newPosition2 > newPosition1) {
       setDisplayText('Cavalo 2 está na frente!');
     } else if (newPosition2 == newPosition1) {
+      setRaceResults([...raceResults, 'Empate']);
+      setDraw(draw + 1);
       setDisplayText('Empate');
     }
   };
@@ -269,12 +277,17 @@ export default function Horse() {
               </div>
             </div>
             <div className="">
-              <button className='bg-red-500 w-full hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded' onClick={() => setRaceResults([])}>resetar</button>
+              <button
+                className="bg-red-500 w-full hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded"
+                onClick={() => {setRaceResults([]); setVictoryHorse1(0); setVictoryHorse2(0); setDraw(0);}}
+              >
+                resetar
+              </button>
               <table className="table-auto w-full mb-4 text-center bg-gray-100 rounded-md shadow-sm shadow-slate-300">
                 <thead>
-                  <tr className='text-center'>
-                    <th className='px-4 py-2'>Corrida</th>
-                    <th className='px-4 py-2'>Resultado</th>
+                  <tr className="text-center">
+                    <th className="px-4 py-2">Corrida</th>
+                    <th className="px-4 py-2">Resultado</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -288,10 +301,23 @@ export default function Horse() {
               </table>
             </div>
           </div>
-          <Explication />
+          <div className="col-span-3 my-5">
+            <div className="bg-gray-100 flex flex-col items-center justify-center py-10">
+              <h1 className="text-xl font-bold mb-5">
+                Quantidade de vitórias e empates
+              </h1>
+              <div className="bg-white p-5 rounded-lg shadow-md">
+                <Graph1
+                  victoryHorse1={victoryHorse1}
+                  victoryHorse2={victoryHorse2}
+                  draw={draw}
+                />
+              </div>
+            </div>
+            <Explication />
+          </div>
         </div>
       </div>
-      <Graphics3 />
     </main>
   );
 }

@@ -1,49 +1,43 @@
-import {
+import { PieChart, Pie, ResponsiveContainer, Tooltip, Cell } from 'recharts';
 
-  Tooltip,
-  ResponsiveContainer,
-
-  PieChart,
-  Pie,
-
-} from 'recharts';
-
-const Graph1 = ({raceResults}) => {
+const Graph1 = ({ victoryHorse1, victoryHorse2, draw }) => {
   const data = [
     {
       name: 'Cavalo 1',
-      value: raceResults.filter((result) => result === 'Cavalo 1 venceu').length,
+      value: victoryHorse1,
     },
     {
       name: 'Cavalo 2',
-      value: raceResults.filter((result) => result === 'Cavalo 2 venceu').length,
+      value: victoryHorse2,
     },
     {
       name: 'Empate',
-      value: raceResults.filter((result) => result === 'Empate').length,
+      value: draw,
     },
   ];
+  const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
 
   return (
-    <Graphics3 data={data} />
+    <ResponsiveContainer width={300} height={300}>
+      <PieChart width={400} height={400}>
+        <Pie
+          data={data}
+          cx="50%"
+          cy="50%"
+          labelLine={false}
+          label
+          outerRadius={80}
+          fill="#8884d8"
+          dataKey="value"
+        >
+          {data.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Pie>
+        <Tooltip content={name} />
+      </PieChart>
+    </ResponsiveContainer>
   );
-}
+};
 
-const Graphics3 = ({ data }) => (
-  <ResponsiveContainer width={300} height={300} className="text-[#4144e0]">
-    <PieChart width={400} height={400}>
-      <Pie
-        dataKey="value"
-        isAnimationActive={false}
-        data={data}
-        cx="50%"
-        cy="50%"
-        outerRadius={80}
-        label
-      />
-      <Tooltip />
-    </PieChart>
-  </ResponsiveContainer>
-);
-
-export default Graphics3;
+export default Graph1;
