@@ -50,6 +50,8 @@ export default function Horse() {
   const resetPosition = () => {
     setPosition1(0);
     setPosition2(0);
+    setLeftPosition1(1200);
+    setLeftPosition2(1200);
     setHistory([]);
     setDisplayText('Inicio');
     setGameOver(false);
