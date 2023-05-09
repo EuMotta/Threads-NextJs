@@ -6,6 +6,7 @@ import { horses } from '../constants';
 import { AiOutlineBorderRight } from 'react-icons/ai';
 import { MdSocialDistance } from 'react-icons/md';
 import { GiStarsStack } from 'react-icons/gi';
+import { FaFlagCheckered } from 'react-icons/fa';
 
 export default function Horse() {
   const [position1, setPosition1] = useState(0);
@@ -17,7 +18,7 @@ export default function Horse() {
   const [showDistance, setShowDistance] = useState(false);
   const [showStar, setShowStar] = useState(false);
   const [speed, setSpeed] = useState(30);
-
+  const maxPosition = 1200;
   const handleShowBorder = () => {
     setShowBorder(prevShowBorder => !prevShowBorder);
   };
@@ -50,21 +51,35 @@ export default function Horse() {
     setGameOver(false);
   };
 
+  const startRace = () => {
+    const intervalId = setInterval(() => {
+      handleHorse1();
+      if (currentPosition1 >= maxPosition || currentPosition2 >= maxPosition) {
+        clearInterval(intervalId);
+      }
+    }, 60);
+  };
+
+  let currentPosition1 = position1;
+  let currentPosition2 = position2;
+
   const handleHorse1 = () => {
     if (gameOver) return;
 
     const maxPosition = 1200;
     const newPosition1 = Math.min(
       maxPosition,
-      Math.floor(position1 + Math.random() * (speed - 10) + speed),
+      Math.floor(currentPosition1 + Math.random() * (speed - 10) + speed),
     );
     const newPosition2 = Math.min(
       maxPosition,
-      Math.floor(position2 + Math.random() * (speed - 10) + speed),
+      Math.floor(currentPosition2 + Math.random() * (speed - 10) + speed),
     );
     setPosition1(newPosition1);
     setPosition2(newPosition2);
-    setHistory([...history, position1, position2]);
+    currentPosition1 = newPosition1;
+    currentPosition2 = newPosition2;
+    setHistory([...history, currentPosition1, currentPosition2]);
 
     if (newPosition1 >= maxPosition && newPosition2 >= maxPosition) {
       setDisplayText('Empate!');
@@ -87,11 +102,16 @@ export default function Horse() {
   };
 
   return (
-    <main className="p-5">
+    <main className="container mx-auto">
       <div className="">
         <div className="">
           {horses.map(item => (
             <div className="bg-road">
+              <div className="relative">
+                <div className="absolute right-0 top-3 text-3xl flex items-end">
+                  <FaFlagCheckered />
+                </div>
+              </div>
               <div
                 className="relative w-14"
                 style={{
@@ -113,6 +133,7 @@ export default function Horse() {
                     <GiStarsStack className="text-yellow-300 text-xl" />
                   </div>
                 ) : null}
+
                 {showStar &&
                 item.position === 'position2' &&
                 displayText === 'Cavalo 2 venceu!' ? (
@@ -130,41 +151,49 @@ export default function Horse() {
             </div>
           ))}
         </div>
-        <div className="p-5 mt-5 bg-gray-100 w-1/4 rounded-lg shadow-md">
-          <div className="flex">
-            <div className=" w-5/6">
-              <div className="text-lg font-semibold mb-2">{displayText}</div>
-              <div className="border p-2 rounded-lg mb-2">{position1}</div>
-              <div className="border p-2 rounded-lg mb-4">{position2}</div>
+        <div className="grid grid-cols-4">
+          <div className="p-5 mt-5 bg-gray-100  rounded-lg shadow-md">
+            <div className="flex">
+              <div className=" w-5/6">
+                <div className="text-lg font-semibold mb-2">{displayText}</div>
+                <div className="border p-2 rounded-lg mb-2">{position1}</div>
+                <div className="border p-2 rounded-lg mb-4">{position2}</div>
+              </div>
+              <div className="w-1/6 p-2 flex flex-col justify-center items-center">
+                <button onClick={handleShowBorder}>
+                  <AiOutlineBorderRight className="text-2xl" />
+                </button>
+                <button onClick={handleShowDistance}>
+                  <MdSocialDistance className="text-2xl" />
+                </button>
+              </div>
             </div>
-            <div className="w-1/6 p-2 flex flex-col justify-center items-center">
-              <button onClick={handleShowBorder}>
-                <AiOutlineBorderRight className="text-2xl" />
+            <div className="flex gap-4 flex-wrap">
+              <button
+                className=" bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded"
+                onClick={handleUndo}
+              >
+                Voltar
               </button>
-              <button onClick={handleShowDistance}>
-                <MdSocialDistance className="text-2xl" />
+              <button
+                className=" bg-green-500 hover:bg-green-700 text-white text-sm font-bold py-2 px-4 rounded"
+                onClick={handleHorse1}
+              >
+                Avançar
+              </button>
+              <button
+                className=" bg-red-500 hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded"
+                onClick={resetPosition}
+              >
+                Resetar
+              </button>
+              <button
+                className=" bg-violet-500 hover:bg-violet-700 text-white text-sm font-bold py-2 px-4 rounded"
+                onClick={startRace}
+              >
+                auto
               </button>
             </div>
-          </div>
-          <div className="flex gap-4">
-            <button
-              className=" bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded"
-              onClick={handleUndo}
-            >
-              Voltar
-            </button>
-            <button
-              className=" bg-green-500 hover:bg-green-700 text-white text-sm font-bold py-2 px-4 rounded"
-              onClick={handleHorse1}
-            >
-              Avançar
-            </button>
-            <button
-              className=" bg-red-500 hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded"
-              onClick={resetPosition}
-            >
-              Resetar
-            </button>
           </div>
         </div>
         <div className="p-5 mt-5 bg-gray-100 w-1/4 rounded-lg shadow-md">
