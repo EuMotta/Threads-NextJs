@@ -12,6 +12,8 @@ import { GrPowerReset } from 'react-icons/gr';
 export default function Horse() {
   const [position1, setPosition1] = useState(0);
   const [position2, setPosition2] = useState(0);
+  const [leftPosition1, setLeftPosition1] = useState(0);
+  const [leftPosition2, setLeftPosition2] = useState(0);
   const [history, setHistory] = useState([]);
   const [displayText, setDisplayText] = useState('Empate');
   const [gameOver, setGameOver] = useState(false);
@@ -77,6 +79,10 @@ export default function Horse() {
       maxPosition,
       Math.floor(currentPosition2 + Math.random() * (speed - 10) + speed),
     );
+    const leftPosition1 = maxPosition - newPosition1;
+    const leftPosition2 = maxPosition - newPosition2;
+    setLeftPosition1(leftPosition1);
+    setLeftPosition2(leftPosition2);
     setPosition1(newPosition1);
     setPosition2(newPosition2);
     currentPosition1 = newPosition1;
@@ -106,12 +112,17 @@ export default function Horse() {
   return (
     <main className="container mx-auto">
       <div className="">
-        <div className="">
+        <div className="bg-gray-100 p-5 rounded-lg shadow-md shadow-slate-500">
           {horses.map(item => (
             <div className="bg-road">
               <div className="relative">
                 <div className="absolute right-0 top-3 text-3xl flex items-end">
                   <FaFlagCheckered />
+                </div>
+                <div className="absolute right-10 top-3">
+                  {item.position === 'position1'
+                    ? leftPosition1
+                    : leftPosition2}
                 </div>
               </div>
               <div
@@ -300,14 +311,11 @@ export default function Horse() {
                   <tbody>
                     {explication.textExample.map(item => (
                       <tr>
-                      <td>{item.value}</td>
-                      <td>
-                        {item.formula}
-                      </td>
-                      <td >{item.description}</td>
-                    </tr>
+                        <td>{item.value}</td>
+                        <td>{item.formula}</td>
+                        <td>{item.description}</td>
+                      </tr>
                     ))}
-                    
                   </tbody>
                 </table>
               </div>
