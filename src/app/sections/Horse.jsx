@@ -7,6 +7,7 @@ import { AiOutlineBorderRight } from 'react-icons/ai';
 import { MdSocialDistance } from 'react-icons/md';
 import { GiStarsStack } from 'react-icons/gi';
 import { FaFlagCheckered } from 'react-icons/fa';
+import { GrPowerReset } from 'react-icons/gr';
 
 export default function Horse() {
   const [position1, setPosition1] = useState(0);
@@ -114,7 +115,7 @@ export default function Horse() {
                 </div>
               </div>
               <div
-                className="relative w-14"
+                className="relative duration-700 w-14"
                 style={{
                   left: item.position === 'position1' ? position1 : position2,
                   borderRight: showBorder ? '1px solid blue' : 'none',
@@ -197,35 +198,42 @@ export default function Horse() {
             </div>
           </div>
         </div>
-        <div className="p-5 mt-5 bg-gray-100 gap-5 flex flex-col w-1/4 rounded-lg shadow-md">
-          <div className="flex">
-            <input
-              type="number"
-              value={speed}
-              min={13}
-              max={600}
-              onChange={e => {
-                const value = e.target.value;
-                if (value >= 13 && value <= 600) {
-                  setSpeed(value);
-                }
-              }}
-              className="shadow-sm shadow-slate-500 rounded-md p-2 w-1/4"
-            />
-            <div className="text-lg font-bold flex  justify-center items-center ml-2">
-              Velocidade
+        <div className="p-5 mt-5 bg-gray-100 flex w-1/4 rounded-lg shadow-md">
+          <div className="flex gap-5 flex-col">
+            <div className="flex">
+              <input
+                type="number"
+                value={speed}
+                min={13}
+                max={600}
+                onChange={e => {
+                  const value = e.target.value;
+                  if (value >= 13 && value <= 600) {
+                    setSpeed(value);
+                  }
+                }}
+                className="shadow-sm shadow-slate-500 rounded-md p-2 w-1/4"
+              />
+              <div className="text-lg font-bold flex  justify-center items-center ml-2">
+                Velocidade
+              </div>
+            </div>
+            <div className="flex">
+              <input
+                type="number"
+                value={speedInterval}
+                onChange={e => setSpeedInterval(e.target.value)}
+                className="shadow-sm shadow-slate-500 rounded-md p-2 w-1/4"
+              />
+              <div className="text-lg font-bold flex justify-center items-center ml-2">
+                Intervalo
+              </div>
             </div>
           </div>
-          <div className="flex">
-            <input
-              type="number"
-              value={speedInterval}
-              onChange={e => setSpeedInterval(e.target.value)}
-              className="shadow-sm shadow-slate-500 rounded-md p-2 w-1/4"
-            />
-            <div className="text-lg font-bold flex justify-center items-center ml-2">
-              Intervalo
-            </div>
+          <div className="p-2 flex flex-col justify-center items-center">
+            <button className="hover:scale-110 transition-all text-2xl" onClick={() => { setSpeed(30); setSpeedInterval(400); }}>
+              <GrPowerReset />
+            </button>
           </div>
         </div>
       </div>
