@@ -230,7 +230,7 @@ export default function Horse() {
               </div>
             </div>
           </div>
-          <div className="p-2 flex flex-col justify-center items-center">
+          <div className="p-2  flex flex-col justify-center items-center">
             <button className="hover:scale-110 transition-all text-2xl" onClick={() => { setSpeed(30); setSpeedInterval(400); }}>
               <GrPowerReset />
             </button>
