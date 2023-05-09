@@ -100,6 +100,8 @@ export default function Horse() {
 
     if (newPosition1 >= maxPosition && newPosition2 >= maxPosition) {
       setDisplayText('Empate!');
+      setRaceResults([...raceResults, 'Empate']);
+      setDraw(draw + 1);
       setGameOver(true);
     } else if (newPosition1 >= maxPosition) {
       setDisplayText('Cavalo 1 venceu!');
@@ -117,9 +119,7 @@ export default function Horse() {
       setDisplayText('Cavalo 1 está na frente!');
     } else if (newPosition2 > newPosition1) {
       setDisplayText('Cavalo 2 está na frente!');
-    } else if (newPosition2 == newPosition1) {
-      setRaceResults([...raceResults, 'Empate']);
-      setDraw(draw + 1);
+    } else if (newPosition2 === newPosition1) {
       setDisplayText('Empate');
     }
   };
