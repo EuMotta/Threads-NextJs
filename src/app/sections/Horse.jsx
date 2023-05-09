@@ -2,18 +2,21 @@ import Image from 'next/image';
 import { useState } from 'react';
 import '../../styles/Horse.css';
 import horse1 from '../../images/horse1.svg';
-import { explication, horses } from '../constants';
+import { horses } from '../constants';
 import { AiOutlineBorderRight } from 'react-icons/ai';
 import { MdSocialDistance } from 'react-icons/md';
 import { GiStarsStack } from 'react-icons/gi';
 import { FaFlagCheckered } from 'react-icons/fa';
 import { GrPowerReset } from 'react-icons/gr';
+import  Graphics3  from '../components/Charts';
+import Explication from './Explication';
 
 export default function Horse() {
   const [position1, setPosition1] = useState(0);
   const [position2, setPosition2] = useState(0);
   const [leftPosition1, setLeftPosition1] = useState(0);
   const [leftPosition2, setLeftPosition2] = useState(0);
+  const [raceResults, setRaceResults] = useState([]);
   const [history, setHistory] = useState([]);
   const [displayText, setDisplayText] = useState('Empate');
   const [gameOver, setGameOver] = useState(false);
@@ -96,10 +99,12 @@ export default function Horse() {
       setGameOver(true);
     } else if (newPosition1 >= maxPosition) {
       setDisplayText('Cavalo 1 venceu!');
+      setRaceResults([...raceResults, 'Cavalo 1']);
       setShowStar(true);
       setGameOver(true);
     } else if (newPosition2 >= maxPosition) {
       setDisplayText('Cavalo 2 venceu!');
+      setRaceResults([...raceResults, 'Cavalo 2']);
       setShowStar(true);
       setGameOver(true);
     } else if (newPosition1 > newPosition2) {
@@ -167,7 +172,7 @@ export default function Horse() {
           ))}
         </div>
         <div className="grid grid-cols-4 gap-5">
-          <div className="col-span-1">
+          <div className="col-span-1 flex flex-col gap-5">
             <div className="">
               <div className="p-5 mt-5 bg-gray-100  rounded-lg shadow-md">
                 <div className="flex">
@@ -219,7 +224,7 @@ export default function Horse() {
                 </div>
               </div>
             </div>
-            <div className="p-5 mt-5 bg-gray-100 flex  rounded-lg shadow-md">
+            <div className="p-5 mt-5 bg-gray-100 flex gap-5  rounded-lg shadow-md">
               <div className="flex gap-5 flex-col">
                 <div className="flex">
                   <input
@@ -233,7 +238,7 @@ export default function Horse() {
                         setSpeed(value);
                       }
                     }}
-                    className="shadow-sm shadow-slate-500 rounded-md p-2 w-1/4"
+                    className="shadow-sm shadow-slate-500 rounded-md p-2 w-2/5"
                   />
                   <div className="text-lg font-bold flex  justify-center items-center ml-2">
                     Velocidade
@@ -244,7 +249,7 @@ export default function Horse() {
                     type="number"
                     value={speedInterval}
                     onChange={e => setSpeedInterval(e.target.value)}
-                    className="shadow-sm shadow-slate-500 rounded-md p-2 w-1/4"
+                    className="shadow-sm shadow-slate-500 rounded-md p-2 w-2/5"
                   />
                   <div className="text-lg font-bold flex justify-center items-center ml-2">
                     Intervalo
@@ -263,68 +268,30 @@ export default function Horse() {
                 </button>
               </div>
             </div>
-          </div>
-          <div className="col-span-3">
-            <div className="p-5 mt-5 bg-gray-100 rounded-lg shadow-md">
-              <h1 className="text-2xl font-bold mb-4">
-                Threads em uma corrida de cavalos
-              </h1>
-              <div>
-                <h2 className="text-xl font-semibold mb-2">
-                  O que são threads?
-                </h2>
-                <p className="mb-4">
-                  Threads são uma maneira de dividir um programa em duas ou mais
-                  tarefas simultâneas que podem ser executadas
-                  independentemente. Isso significa que cada thread pode
-                  executar uma parte diferente do código ao mesmo tempo que
-                  outras threads. Isso pode ser útil quando você tem várias
-                  tarefas que precisam ser executadas ao mesmo tempo, mas não
-                  dependem uma da outra para serem concluídas.
-                </p>
-              </div>
-              <div>
-                <h2 className="text-xl font-semibold mb-2">
-                  Como usar threads em uma corrida de cavalos?
-                </h2>
-                <p className="mb-4">
-                  Em uma simulação de corrida de cavalos com dois cavalos, você
-                  pode usar threads para controlar o movimento de cada cavalo de
-                  forma independente. Cada thread pode ser responsável por
-                  atualizar a posição do cavalo na pista e verificar se ele
-                  cruzou a linha de chegada.
-                  <br /> Os cavalos precisam de uma margem de variação em sua
-                  velocidade, se a velocidade máxima for 50, varia entre 40 a
-                  50.
-                </p>
-              </div>
-              <div className="p-5 mt-5 bg-gray-100 rounded-lg shadow-md shadow-slate-500">
-                <h1 className="text-2xl font-bold mb-4">
-                  Exemplos de variação do cálculo
-                </h1>
-                <table className="table-auto w-full mb-4 text-center">
-                  <thead>
-                    <tr className="text-center">
-                      <th className="px-4 py-2 ">Speed</th>
-                      <th className="px-4 py-2 ">Calculo</th>
-                      <th className="px-4 py-2 ">Resultado</th>
+            <div className="">
+              <button className='bg-red-500 w-full hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded' onClick={() => setRaceResults([])}>resetar</button>
+              <table className="table-auto w-full mb-4 text-center bg-gray-100 rounded-md shadow-sm shadow-slate-300">
+                <thead>
+                  <tr className='text-center'>
+                    <th className='px-4 py-2'>Corrida</th>
+                    <th className='px-4 py-2'>Resultado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {raceResults.map((result, index) => (
+                    <tr key={index}>
+                      <td>{index + 1}</td>
+                      <td>{result}</td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    {explication.textExample.map(item => (
-                      <tr>
-                        <td>{item.value}</td>
-                        <td>{item.formula}</td>
-                        <td>{item.description}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
+          <Explication />
         </div>
       </div>
+      <Graphics3 />
     </main>
   );
 }
