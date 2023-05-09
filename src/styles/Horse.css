@@ -13,3 +13,6 @@
   background-position: bottom;
   background-repeat: no-repeat;
 }
+td{
+  @apply border border-slate-700 shadow-sm shadow-slate-300 px-4 py-2;
+}
