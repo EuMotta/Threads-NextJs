@@ -18,6 +18,7 @@ export default function Horse() {
   const [showDistance, setShowDistance] = useState(false);
   const [showStar, setShowStar] = useState(false);
   const [speed, setSpeed] = useState(30);
+  const [speedInterval, setSpeedInterval] = useState(400);
   const maxPosition = 1200;
   const handleShowBorder = () => {
     setShowBorder(prevShowBorder => !prevShowBorder);
@@ -57,7 +58,7 @@ export default function Horse() {
       if (currentPosition1 >= maxPosition || currentPosition2 >= maxPosition) {
         clearInterval(intervalId);
       }
-    }, 60);
+    }, speedInterval);
   };
 
   let currentPosition1 = position1;
@@ -196,16 +197,34 @@ export default function Horse() {
             </div>
           </div>
         </div>
-        <div className="p-5 mt-5 bg-gray-100 w-1/4 rounded-lg shadow-md">
+        <div className="p-5 mt-5 bg-gray-100 gap-5 flex flex-col w-1/4 rounded-lg shadow-md">
           <div className="flex">
             <input
               type="number"
               value={speed}
-              onChange={e => setSpeed(e.target.value)}
+              min={13}
+              max={600}
+              onChange={e => {
+                const value = e.target.value;
+                if (value >= 13 && value <= 600) {
+                  setSpeed(value);
+                }
+              }}
               className="shadow-sm shadow-slate-500 rounded-md p-2 w-1/4"
             />
-            <div className="text-lg flex justify-center items-center ml-2">
+            <div className="text-lg font-bold flex  justify-center items-center ml-2">
               Velocidade
+            </div>
+          </div>
+          <div className="flex">
+            <input
+              type="number"
+              value={speedInterval}
+              onChange={e => setSpeedInterval(e.target.value)}
+              className="shadow-sm shadow-slate-500 rounded-md p-2 w-1/4"
+            />
+            <div className="text-lg font-bold flex justify-center items-center ml-2">
+              Intervalo
             </div>
           </div>
         </div>
