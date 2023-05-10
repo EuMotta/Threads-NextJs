@@ -5,7 +5,7 @@ import { Horse } from '../sections';
 
 export default function page() {
   return (
-    <main>
+    <main className='bg-slate-50'>
       <Horse />
     </main>
   );
