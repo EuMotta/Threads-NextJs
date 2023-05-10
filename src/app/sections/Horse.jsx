@@ -280,6 +280,27 @@ export default function Horse() {
                 </button>
               </div>
             </div>
+            <table className="bg-gray-100 font-semibold rounded-md shadow-sm shadow-slate-300 p-5 text-xl">
+              <tbody className='text-center'>
+                <tr>
+                  <td>Atrasos do cavalo 1:</td>
+                  <td>{positionMedia1}</td>
+                </tr>
+                <tr>
+                  <td>Atrasos do cavalo 2:</td>
+                  <td>{positionMedia2}</td>
+                </tr>
+                <tr>
+                  <td>Média do cavalo 1:</td>
+                  <td>{Math.floor(positionMedia1 / raceResults.length)}</td>
+                </tr>
+                <tr>
+                  <td>Média do cavalo 2:</td>
+                  <td>{Math.floor(positionMedia2 / raceResults.length)}</td>
+                </tr>
+              </tbody>
+            </table>
+
             <div className="">
               <button
                 className="bg-red-500 w-full hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded"
@@ -312,13 +333,7 @@ export default function Horse() {
               </table>
             </div>
           </div>
-          <div className="col-span-3 grid grid-cols-4 bg-gray-100 my-5">
-            <div className="flex flex-col p-5 text-xl gap-5">
-            <div className="">Atrasos do cavalo 1: {positionMedia1 }</div>
-              <div className="">Atrasos do cavalo 2: {positionMedia2 }</div>
-              <div className="">Média do cavalo 1: {Math.floor(positionMedia1 / raceResults.length)}</div>
-              <div className="">Média do cavalo 2: {Math.floor(positionMedia2 / raceResults.length)}</div>
-            </div>
+          <div className="col-span-3 bg-gray-100 my-5">
             <div className=" flex col-span-3 flex-col items-center justify-center py-10">
               <h1 className="text-xl font-bold mb-5">
                 Quantidade de vitórias e empates
