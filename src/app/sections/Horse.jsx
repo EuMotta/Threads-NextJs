@@ -15,6 +15,8 @@ import Graph1 from '../components/Charts';
 export default function Horse() {
   const [position1, setPosition1] = useState(0);
   const [position2, setPosition2] = useState(0);
+  const [positionMedia1, setPositionMedia1] = useState(0);
+  const [positionMedia2, setPositionMedia2] = useState(0);
   const [victoryHorse1, setVictoryHorse1] = useState(0);
   const [victoryHorse2, setVictoryHorse2] = useState(0);
   const [draw, setDraw] = useState(0);
@@ -29,7 +31,7 @@ export default function Horse() {
   const [showStar, setShowStar] = useState(false);
   const [speed, setSpeed] = useState(30);
   const [speedInterval, setSpeedInterval] = useState(400);
-  const maxPosition = 1200;
+  const maxPosition = 1400;
   const handleShowBorder = () => {
     setShowBorder(prevShowBorder => !prevShowBorder);
   };
@@ -57,8 +59,8 @@ export default function Horse() {
   const resetPosition = () => {
     setPosition1(0);
     setPosition2(0);
-    setLeftPosition1(1200);
-    setLeftPosition2(1200);
+    setLeftPosition1(1400);
+    setLeftPosition2(1400);
     setHistory([]);
     setDisplayText('Inicio');
     setGameOver(false);
@@ -79,7 +81,7 @@ export default function Horse() {
   const handleHorse1 = () => {
     if (gameOver) return;
 
-    const maxPosition = 1200;
+    const maxPosition = 1400;
     const newPosition1 = Math.min(
       maxPosition,
       Math.floor(currentPosition1 + Math.random() * (speed - 10) + speed),
@@ -107,12 +109,14 @@ export default function Horse() {
       setDisplayText('Cavalo 1 venceu!');
       setRaceResults([...raceResults, 'Cavalo 1']);
       setVictoryHorse1(victoryHorse1 + 1);
+      setPositionMedia2(positionMedia2 + leftPosition2);
       setShowStar(true);
       setGameOver(true);
     } else if (newPosition2 >= maxPosition) {
       setDisplayText('Cavalo 2 venceu!');
       setRaceResults([...raceResults, 'Cavalo 2']);
       setVictoryHorse2(victoryHorse2 + 1);
+      setPositionMedia1(positionMedia1 + leftPosition1);
       setShowStar(true);
       setGameOver(true);
     } else if (newPosition1 > newPosition2) {
@@ -279,7 +283,14 @@ export default function Horse() {
             <div className="">
               <button
                 className="bg-red-500 w-full hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded"
-                onClick={() => {setRaceResults([]); setVictoryHorse1(0); setVictoryHorse2(0); setDraw(0);}}
+                onClick={() => {
+                  setRaceResults([]);
+                  setVictoryHorse1(0);
+                  setVictoryHorse2(0);
+                  setDraw(0);
+                  setPositionMedia1(0);
+                  setPositionMedia2(0);
+                }}
               >
                 resetar
               </button>
@@ -301,8 +312,14 @@ export default function Horse() {
               </table>
             </div>
           </div>
-          <div className="col-span-3 my-5">
-            <div className="bg-gray-100 flex flex-col items-center justify-center py-10">
+          <div className="col-span-3 grid grid-cols-4 bg-gray-100 my-5">
+            <div className="flex flex-col p-5 text-xl gap-5">
+            <div className="">Atrasos do cavalo 1: {positionMedia1 }</div>
+              <div className="">Atrasos do cavalo 2: {positionMedia2 }</div>
+              <div className="">Média do cavalo 1: {Math.floor(positionMedia1 / raceResults.length)}</div>
+              <div className="">Média do cavalo 2: {Math.floor(positionMedia2 / raceResults.length)}</div>
+            </div>
+            <div className=" flex col-span-3 flex-col items-center justify-center py-10">
               <h1 className="text-xl font-bold mb-5">
                 Quantidade de vitórias e empates
               </h1>
