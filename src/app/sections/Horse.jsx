@@ -9,7 +9,7 @@ import { GiStarsStack } from 'react-icons/gi';
 import { FaFlagCheckered } from 'react-icons/fa';
 import { GrPowerReset } from 'react-icons/gr';
 
-import Explication from './Explication';
+import {Explication} from './';
 import { Graph1, Graph2, Graph3 } from '../components/Charts';
 
 export default function Horse() {
