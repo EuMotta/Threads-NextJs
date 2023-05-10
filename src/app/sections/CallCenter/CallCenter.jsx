@@ -64,13 +64,13 @@ const CallCenter = () => {
         Iniciar
       </button>
       <div className="overflow-x-auto h-96">
-        <table class="table-auto mt-4">
+        <table className="table-auto mt-4">
           <thead>
             <tr>
-              <th class="px-4 border bg-slate-200 border-slate-900 py-2">
+              <th className="px-4 border bg-slate-200 border-slate-900 py-2">
                 Atendente
               </th>
-              <th class="px-4 border bg-slate-200 border-slate-900 py-2">
+              <th className="px-4 border bg-slate-200 border-slate-900 py-2">
                 Stat
               </th>
             </tr>
@@ -78,10 +78,10 @@ const CallCenter = () => {
           <tbody>
             {attendantStats.map((stat, index) => (
               <tr key={index}>
-                <td class="border border-slate-900 text-center px-4 py-2">
+                <td className="border border-slate-900 text-center px-4 py-2">
                   Atendente {index + 1}
                 </td>
-                <td class="border border-slate-900 text-center px-4 py-2">
+                <td className="border border-slate-900 text-center px-4 py-2">
                   {stat}
                 </td>
               </tr>
