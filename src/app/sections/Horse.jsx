@@ -17,6 +17,8 @@ export default function Horse() {
   const [position2, setPosition2] = useState(0);
   const [positionMedia1, setPositionMedia1] = useState(0);
   const [positionMedia2, setPositionMedia2] = useState(0);
+  const [horseEfficiency1, setHorseEfficiency1] = useState(0);
+  const [horseEfficiency2, setHorseEfficiency2] = useState(0);
   const [victoryHorse1, setVictoryHorse1] = useState(0);
   const [victoryHorse2, setVictoryHorse2] = useState(0);
   const [draw, setDraw] = useState(0);
@@ -99,6 +101,8 @@ export default function Horse() {
     currentPosition1 = newPosition1;
     currentPosition2 = newPosition2;
     setHistory([...history, currentPosition1, currentPosition2]);
+    setHorseEfficiency1(horseEfficiency1 + newPosition1);
+    setHorseEfficiency2(horseEfficiency2 + newPosition2);
 
     if (newPosition1 >= maxPosition && newPosition2 >= maxPosition) {
       setDisplayText('Empate!');
@@ -298,6 +302,22 @@ export default function Horse() {
                   <td>Média do cavalo 2:</td>
                   <td>{Math.floor(positionMedia2 / raceResults.length)}</td>
                 </tr>
+                <tr>
+                  <td>Eficiência do cavalo 1:</td>
+                  <td>{horseEfficiency1}</td>
+                </tr>
+                <tr>
+                  <td>Eficiência do cavalo 2:</td>
+                  <td>{horseEfficiency2}</td>
+                </tr>
+                <tr>
+                  <td>Média de eficiência do cavalo 1:</td>
+                  <td>{Math.floor(horseEfficiency1 / raceResults.length)}</td>
+                </tr>
+                <tr>
+                  <td>Média de eficiência do cavalo 2:</td>
+                  <td>{Math.floor(horseEfficiency2 / raceResults.length)}</td>
+                </tr>
               </tbody>
             </table>
 
@@ -311,6 +331,8 @@ export default function Horse() {
                   setDraw(0);
                   setPositionMedia1(0);
                   setPositionMedia2(0);
+                  setHorseEfficiency1(0);
+                  setHorseEfficiency2(0);
                 }}
               >
                 resetar
