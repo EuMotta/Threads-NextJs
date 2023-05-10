@@ -34,7 +34,7 @@ const Graph1 = ({ victoryHorse1, victoryHorse2, draw }) => {
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
-        <Tooltip content={name} />
+        <Tooltip />
       </PieChart>
     </ResponsiveContainer>
   );
