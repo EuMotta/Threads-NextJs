@@ -39,3 +39,22 @@ export const explication = {
     }
   ]
 }
+
+export const navbar_links = [
+  {
+    name: 'Inicio',
+    href: '/',
+  },
+  {
+    name: 'Como usar',
+    href: '/HowToUse',
+  },
+  {
+    name: 'Horse',
+    href: '/Horse',
+  },
+  {
+    name: 'Sobre',
+    href: '/',
+  },
+]

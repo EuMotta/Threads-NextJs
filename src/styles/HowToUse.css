@@ -1,0 +1,16 @@
+body{
+  background-color: aliceblue;
+}
+.button-back {
+  @apply bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded;
+}
+
+.button-go {
+  @apply bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-300 active:bg-green-400;
+}
+.button-reset {
+  @apply bg-red-500 hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded;
+}
+.button-auto {
+  @apply bg-violet-500 hover:bg-violet-700 text-white text-sm font-bold py-2 px-4 rounded;
+}

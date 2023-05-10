@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.paddings{
+  @apply sm:p-16 px-6 py-12;
+}
+.yPaddings {
+  @apply sm:py-16 py-12;
+}
