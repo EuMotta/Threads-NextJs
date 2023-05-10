@@ -12,15 +12,15 @@ function ImpedirArrastar(event) {
 }
 const Graphics = () => (
   <section
-    id="languages"
-    className=" bg-slate-200 rounded-lg shadow-3xl shadow-slate-300 container mx-auto"
+    id="graphics"
+    className="bg-slate-200 rounded-lg shadow-3xl shadow-slate-300 container mx-auto my-20"
   >
     <motion.div
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
-      className="grid grid-cols-2 mx-5"
+      className="grid grid-cols-2 mx-5 py-10"
     >
       <motion.div
         variants={fadeIn('right', 'tween', 0, 1)}
@@ -60,7 +60,7 @@ const Graphics = () => (
           repeat: Infinity,
           repeatDelay: 1,
         }}
-        variants={fadeIn('right', 'tween', 0, 1)}
+        variants={fadeIn('left', 'tween', 0, 1)}
         drag
         dragConstraints={{
           top: -0.2,

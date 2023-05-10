@@ -11,7 +11,7 @@ function ImpedirArrastar(event) {
 }
 const GoBack = () => (
   <section
-    id="languages"
+    id="GoBack"
     className=" bg-slate-200 rounded-lg shadow-3xl shadow-slate-300 container mx-auto"
   >
     <motion.div
