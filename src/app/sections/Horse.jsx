@@ -10,7 +10,7 @@ import { FaFlagCheckered } from 'react-icons/fa';
 import { GrPowerReset } from 'react-icons/gr';
 
 import Explication from './Explication';
-import Graph1 from '../components/Charts';
+import { Graph1, Graph2, Graph3 } from '../components/Charts';
 
 export default function Horse() {
   const [position1, setPosition1] = useState(0);
@@ -285,7 +285,7 @@ export default function Horse() {
               </div>
             </div>
             <table className="bg-gray-100 font-semibold rounded-md shadow-sm shadow-slate-300 p-5 text-xl">
-              <tbody className='text-center'>
+              <tbody className="text-center">
                 <tr>
                   <td>Atrasos do cavalo 1:</td>
                   <td>{positionMedia1}</td>
@@ -356,16 +356,44 @@ export default function Horse() {
             </div>
           </div>
           <div className="col-span-3 bg-gray-100 my-5">
-            <div className=" flex col-span-3 flex-col items-center justify-center py-10">
-              <h1 className="text-xl font-bold mb-5">
-                Quantidade de vitórias e empates
-              </h1>
-              <div className="bg-white p-5 rounded-lg shadow-md">
-                <Graph1
-                  victoryHorse1={victoryHorse1}
-                  victoryHorse2={victoryHorse2}
-                  draw={draw}
-                />
+            <div className="flex col-span-3 flex-col items-center justify-center py-10">
+              <div className="grid grid-cols-3 gap-5">
+                <div className="bg-white p-5 rounded-lg shadow-md">
+                  <h1 className="text-xl text-center font-bold mb-5">
+                    Quantidade de vitórias e empates
+                  </h1>
+                  <Graph1
+                    victoryHorse1={victoryHorse1}
+                    victoryHorse2={victoryHorse2}
+                    draw={draw}
+                  />
+                </div>
+                <div className="bg-white p-5 rounded-lg shadow-md">
+                  <h1 className="text-xl text-center font-bold mb-5">
+                    Atrasos e Média dos atrasos
+                  </h1>
+                  <Graph2
+                    positionMedia1={positionMedia1}
+                    positionMedia2={positionMedia2}
+                    positionMediaCalc1={Math.floor(
+                      positionMedia1 / raceResults.length,
+                    )}
+                    positionMediaCalc2={Math.floor(
+                      positionMedia2 / raceResults.length,
+                    )}
+                  />
+                </div>
+                <div className="bg-white p-5 rounded-lg shadow-md">
+                  <h1 className="text-xl text-center font-bold mb-5">
+                    Eficiência e média da eficiência
+                  </h1>
+                  <Graph3
+                    horseEfficiency1={horseEfficiency1}
+                    horseEfficiency2={horseEfficiency2}
+                    horseEfficiencyCalc1={Math.floor(horseEfficiency1 / raceResults.length)}
+                    horseEfficiencyCalc2={Math.floor(horseEfficiency2 / raceResults.length)}
+                  />
+                </div>
               </div>
             </div>
             <Explication />
