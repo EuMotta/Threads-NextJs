@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import styles from '../../../styles';
 import { fadeIn, staggerContainer } from '../../../utils/motion';
-import GoBackImage from '../../../images/HowToUse/GoBack.svg';
+import GraphicsImage from '../../../images/HowToUse/Graphics.svg';
 import { HowToGraph1, HowToGraph2 } from '../../components/Charts';
 
 function ImpedirArrastar(event) {
@@ -22,32 +22,6 @@ const Graphics = () => (
       viewport={{ once: true, amount: 0.25 }}
       className="grid grid-cols-2 mx-5 py-10"
     >
-      <motion.div
-        variants={fadeIn('right', 'tween', 0, 1)}
-        className="col-span-1 flex justify-center items-center"
-      >
-        <div className="px-5">
-          <h1 className="font-bold mb-5 font-mono text-5xl">Gráficos</h1>
-          <h3 className="font-semibold mb-5 font-mono text-xl">
-            Dados dos Gráficos
-          </h3>
-          <p className="text text-justify font-mono">
-            &nbsp; Os gráficos apresentam informações importantes sobre os
-            resultados da corrida. Eles mostram a quantidade de vitórias de cada
-            cavalo e também fornecem informações sobre a eficiência média e o
-            atraso médio dos cavalos. Esses cálculos são realizados com base nos
-            resultados da corrida e ajudam a entender melhor o desempenho dos
-            cavalos.
-          </p>
-          <div className="text-center font-bold font-mono ">
-            <span className='text-xl'>Exemplos</span>
-            <div className="grid grid-cols-2 p-2">
-              <HowToGraph1 />
-              <HowToGraph2 />
-            </div>
-          </div>
-        </div>
-      </motion.div>
       <motion.div
         animate={{
           scale: [1.1, 1.1, 1.11, 1.1, 1.1],
@@ -71,11 +45,37 @@ const Graphics = () => (
         className="col-span-1 my-10 flex justify-center items-center"
       >
         <Image
-          src={GoBackImage}
+          src={GraphicsImage}
           onDragStart={ImpedirArrastar}
           width={500}
           height={500}
         />
+      </motion.div>
+      <motion.div
+        variants={fadeIn('right', 'tween', 0, 1)}
+        className="col-span-1 flex justify-center items-center"
+      >
+        <div className="px-5">
+          <h1 className="font-bold mb-5 font-mono text-5xl">Gráficos</h1>
+          <h3 className="font-semibold mb-5 font-mono text-xl">
+            Dados dos Gráficos
+          </h3>
+          <p className="text text-justify font-mono">
+            &nbsp; Os gráficos apresentam informações importantes sobre os
+            resultados da corrida. Eles mostram a quantidade de vitórias de cada
+            cavalo e também fornecem informações sobre a eficiência média e o
+            atraso médio dos cavalos. Esses cálculos são realizados com base nos
+            resultados da corrida e ajudam a entender melhor o desempenho dos
+            cavalos.
+          </p>
+          <div className="text-center font-bold font-mono ">
+            <span className="text-xl">Exemplos</span>
+            <div className="grid grid-cols-2 p-2">
+              <HowToGraph1 />
+              <HowToGraph2 />
+            </div>
+          </div>
+        </div>
       </motion.div>
     </motion.div>
   </section>
