@@ -3,8 +3,8 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
-import HeroHorse from '../../images/HeroHorse.svg';
-import { fadeIn, staggerContainer } from '../../utils/motion';
+import HeroHorse from '../../../images/HeroHorse.svg';
+import { fadeIn, staggerContainer } from '../../../utils/motion';
 
 function ImpedirArrastar(event) {
   event.preventDefault();

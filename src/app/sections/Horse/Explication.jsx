@@ -1,6 +1,6 @@
 import React from 'react';
-import { explication } from '../constants';
-import Graph1 from '../components/Charts';
+import { explication } from '../../constants';
+import Graph1 from '../../components/Charts';
 
 const Explication = () => {
   return (

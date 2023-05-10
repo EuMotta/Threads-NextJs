@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
-import '../../styles/Horse.css';
-import horse1 from '../../images/horse1.svg';
-import { horses } from '../constants';
+import '../../../styles/Horse.css';
+import { horses } from '../../constants';
 import { AiOutlineBorderRight } from 'react-icons/ai';
 import { MdSocialDistance } from 'react-icons/md';
 import { GiStarsStack } from 'react-icons/gi';
@@ -10,7 +9,7 @@ import { FaFlagCheckered } from 'react-icons/fa';
 import { GrPowerReset } from 'react-icons/gr';
 
 import {Explication} from './';
-import { Graph1, Graph2, Graph3 } from '../components/Charts';
+import { Graph1, Graph2, Graph3 } from '../../components/Charts';
 
 export default function Horse() {
   const [position1, setPosition1] = useState(0);
