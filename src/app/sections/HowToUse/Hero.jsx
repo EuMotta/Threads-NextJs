@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
-import styles from '../../../styles';
 import aboutPageSvg from '../../../images/HowToUse/Hero.svg';
 import { fadeIn, staggerContainer } from '../../../utils/motion';
 
@@ -12,7 +11,7 @@ function ImpedirArrastar(event) {
 }
 
 const Hero = () => (
-  <section className=' my-20'>
+  <section className=" my-20">
     <motion.div
       variants={staggerContainer}
       initial="hidden"
@@ -57,20 +56,14 @@ const Hero = () => (
         variants={fadeIn('left', 'tween', 0, 1)}
         className="col-span-1"
       >
-        <div className="mx-5">
-          <h1 className="font-bold mb-5 font-mono text-blue-600 text-6xl leading-none">
-            Como utilizar
-          </h1>
-          <div className="text-3xl font-bold mb-2 leading-tight">
-            Confira todos os recursos como: &nbsp;
-            <div className="text-blue-600 text-3xl">
+        <div className="hero_text">
+          <h1>Como utilizar</h1>
+          <div>
+            <h2>Confira todos os recursos como: &nbsp;</h2>
+            <div className="hero_typewriter">
               <Typewriter
                 options={{
-                  strings: [
-                    'Botões',
-                    'Velocidade',
-                    'Gráficos',
-                  ],
+                  strings: ['Botões', 'Velocidade', 'Gráficos'],
                   autoStart: true,
                   loop: true,
                 }}

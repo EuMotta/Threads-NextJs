@@ -3,7 +3,6 @@
 import React from 'react';
 import { Hero, GoBack, Graphics } from '../sections/HowToUse';
 import '../../styles/HowToUse.css';
-import styles from '../../styles';
 
 export default function page() {
   return (

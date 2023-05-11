@@ -1,8 +1,42 @@
+/* Hero start */
+.hero_text { 
+  @apply mx-5;
+}
+.hero_text h1{
+  @apply font-bold mb-5 font-mono text-blue-600 text-6xl leading-none ;
+}
+.hero_text h2{
+  @apply text-3xl font-bold mb-2 leading-tight;
+}
+.hero_typewriter{
+  @apply text-blue-600 text-3xl;
+}
+
+/* Hero end */
+
+/* GoBack Start */
+.goback_section {
+  @apply bg-slate-200 rounded-lg shadow-3xl shadow-slate-300 container mx-auto ;
+}
+.goback_text { 
+  @apply col-span-1 flex justify-center items-center;
+}
+.goback_text h1 { 
+  @apply font-bold mb-5 font-mono text-5xl;
+}
+.goback_text h3 { 
+  @apply font-semibold mb-5 font-mono text-xl;
+}
+.goback_text p { 
+  @apply text-justify font-mono;
+}
+.goback_button-go {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-300 active:bg-blue-400;
+}
 
 .button-back {
   @apply bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded;
 }
-
 .button-go {
   @apply bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-300 active:bg-green-400;
 }
@@ -12,3 +46,5 @@
 .button-auto {
   @apply bg-violet-500 hover:bg-violet-700 text-white text-sm font-bold py-2 px-4 rounded;
 }
+/* GoBack End */
+
