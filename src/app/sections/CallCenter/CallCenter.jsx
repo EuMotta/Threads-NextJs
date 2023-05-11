@@ -68,7 +68,7 @@ const CallCenter = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 container mx-auto">
       <div className="grid grid-cols-5">
         <div className="">
           <div className="mb-4">
@@ -104,7 +104,7 @@ const CallCenter = () => {
               type="number"
               value={attendantSpeed}
               max={100}
-              min={15}
+              min={10}
               onChange={e => setAttendantSpeed(+e.target.value)}
             />
           </div>
@@ -176,7 +176,7 @@ const CallCenter = () => {
                     <td>{index + 1}</td>
                     <td className='border-2  border-slate-700'>{result.clients}</td>
                     <td>{result.attendants}</td>
-                    <td>{result.time / 1000}</td>
+                    <td>{(result.time / result.clients)/1000}</td>
                   </tr>
                 ))}
               </tbody>

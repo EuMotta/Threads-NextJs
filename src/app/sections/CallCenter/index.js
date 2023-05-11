@@ -1,3 +1,4 @@
 import CallCenter from "./CallCenter";
+import Hero from './Hero'
 
-export default CallCenter;
+export {CallCenter, Hero};
