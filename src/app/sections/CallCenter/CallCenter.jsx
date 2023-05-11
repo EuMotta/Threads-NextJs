@@ -8,49 +8,55 @@ const CallCenter = () => {
   const [attendantSpeed, setAttendantSpeed] = useState(20);
   const [isRunning, setIsRunning] = useState(false);
   const [day, setDay] = useState([]);
-
+  const [time, setTime] = useState(0);
+  const [remainingClients, setRemainingClients] = useState(0);
   const testProgram = () => {
     console.log('Quantidade de dias: ' + JSON.stringify(day));
     console.log('Quantidade de clientes agora: ' + client);
     console.log('Quantidade de atendentes agora: ' + attendant);
   };
+
   const startProgram2 = () => {
-    setDay(prevDay => [...prevDay, { clients: client, attendants: attendant }]);
     startProgram();
+    
     console.log(day);
   };
 
   const startProgram = async () => {
-    setIsRunning(true);
+    if (isRunning) return;
     setAttendant(attendant);
     let remainingClients = client;
     let stats = new Array(attendant).fill(0);
     let promises = [];
-
+    let totalTime = 0;
     /* Promise */
     for (let i = 0; i < attendant; i++) {
-      if (!isRunning) return;
       promises.push(
         new Promise(async resolve => {
           while (remainingClients > 0) {
             stats[i]++;
             remainingClients--;
             console.log(remainingClients);
+            setRemainingClients(remainingClients);
             setAttendantStats([...stats]);
+            let time = (Math.random() * (attendantSpeed - 10) + attendantSpeed) * 1000;
+
             await new Promise(resolve =>
               setTimeout(
                 resolve,
-                (Math.random() * (attendantSpeed - 10) + attendantSpeed) * 1000,
+                time,
+                totalTime += time,
+                setTime(totalTime)
               ),
             );
           }
-
           resolve();
         }),
+        
       );
     }
     await Promise.all(promises);
-
+    setDay(prevDay => [...prevDay, { clients: client, attendants: attendant, time: Math.floor(totalTime) }]);
     setAttendantStats(stats);
     setClient(remainingClients > 0 ? remainingClients : 0);
   };
@@ -58,6 +64,7 @@ const CallCenter = () => {
   const resetProgram = () => {
     setAttendantStats([]);
     setDay([]);
+    setIsRunning(true);
   };
 
   return (
@@ -147,10 +154,33 @@ const CallCenter = () => {
           </div>
         </div>
         <div className="col-span-4">
-          <div className="grid grid-cols-3">
-            <div className="col-span-3">
+          <div className="grid grid-cols-3 gap-4 p-4">
+            <div className="col-span-3 bg-gray-100 rounded-lg p-4">
               <Graph1CallCenter attendantStats={attendantStats} />
             </div>
+            <div className="col-span-3 text-center text-3xl font-mono bg-gray-100 rounded-lg p-4">
+              Restam ainda {remainingClients} clientes
+            </div>
+            <table className="col-span-3 bg-gray-100 rounded-lg p-4">
+              <thead>
+                <tr>
+                  <th>Dia</th>
+                  <th>Clientes</th>
+                  <th>Atendentes</th>
+                  <th>tempo (minutos)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {day.map((result, index) => (
+                  <tr key={index} className='text-center border-2 border-slate-700'>
+                    <td>{index + 1}</td>
+                    <td className='border-2  border-slate-700'>{result.clients}</td>
+                    <td>{result.attendants}</td>
+                    <td>{result.time / 1000}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
