@@ -5,8 +5,11 @@ const CallCenter = () => {
   const [attendant, setAttendant] = useState(10);
   const [client, setClient] = useState(23);
   const [attendantStats, setAttendantStats] = useState([]);
-
+  const [attendantSpeed, setAttendantSpeed] = useState(20);
+  const [isRunning, setIsRunning] = useState(false);
+  
   const startProgram = async () => {
+    setIsRunning(true);
     setAttendant(attendant);
     let remainingClients = client;
     let stats = new Array(attendant).fill(0);
@@ -14,6 +17,7 @@ const CallCenter = () => {
 
     /* Promise */
     for (let i = 0; i < attendant; i++) {
+      if (!isRunning) return;
       promises.push(
         new Promise(async resolve => {
           while (remainingClients > 0) {
@@ -22,7 +26,7 @@ const CallCenter = () => {
             console.log(remainingClients);
             setAttendantStats([...stats]);
             await new Promise(resolve =>
-              setTimeout(resolve, (Math.random() * (20 - 1) + 20) * 1000),
+              setTimeout(resolve, (Math.random() * (attendantSpeed - 10) + attendantSpeed) * 1000),
             );
           }
 
@@ -66,6 +70,19 @@ const CallCenter = () => {
               max={100}
               min={1}
               onChange={e => setClient(+e.target.value)}
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 font-bold mb-2">
+              Velocidade:
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              type="number"
+              value={attendantSpeed}
+              max={100}
+              min={15}
+              onChange={e => setAttendantSpeed(+e.target.value)}
             />
           </div>
           <button

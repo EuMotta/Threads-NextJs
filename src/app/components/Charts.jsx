@@ -154,26 +154,26 @@ const Graph1CallCenter = ({ stat, attendantStats }) => {
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
 
   return (
-    <ResponsiveContainer width={900} height={300}>
- <LineChart
-            width={500}
-            height={200}
-            data={data}
-            syncId="anyId"
-            margin={{
-              top: 10,
-              right: 30,
-              left: 0,
-              bottom: 0,
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Line type="monotone" dataKey="value" stroke="#82ca9d" fill="#82ca9d" />
-            <Brush />
-          </LineChart>
+    <ResponsiveContainer width="100%" height={300}>
+      <LineChart
+        width={500}
+        height={200}
+        data={data}
+        syncId="anyId"
+        margin={{
+          top: 10,
+          right: 30,
+          left: 0,
+          bottom: 0,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+        <Line type="monotone" dataKey="value" stroke="#82ca9d" fill="#82ca9d" />
+        <Brush />
+      </LineChart>
     </ResponsiveContainer>
   );
 };
