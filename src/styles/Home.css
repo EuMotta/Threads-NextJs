@@ -1,1 +1,40 @@
+.home_section{
+  @apply h-screen container mx-auto flex justify-center items-center;
+}
+
+.home_image { 
+  @apply col-span-5 flex flex-wrap justify-center items-center ;
+}
+
+.home_image .home_image_image {
+  @apply rounded-xl shadow-3xl shadow-slate-400;
+}
+
+.home_text{
+  @apply col-span-3 flex flex-wrap flex-col justify-center items-center  text-white p-8 rounded-xl;
+}
+
+.home_text h1 {
+  @apply text-7xl font-bold mb-2;
+}
+
+.home_text h3 {
+  @apply text-4xl font-semibold mb-4;
+}
+
+.home_text p {
+  @apply text-center text-xl mb-4;
+}
+
+.home_buttons{
+  @apply duration-700 flex gap-5;
+}
+
+.home_buttons .button_howtouse{
+  @apply rounded-xl px-10 bg-slate-600  text-lg font-bold text-white py-4 hover:bg-slate-700 hover:shadow-lg hover:-translate-y-1 transition duration-500;
+}
+
+.button_start {
+  @apply rounded-xl px-10 bg-blue-600  text-lg font-bold text-white py-4 hover:bg-slate-700 hover:shadow-lg hover:-translate-y-1 transition duration-500;
+}
 
