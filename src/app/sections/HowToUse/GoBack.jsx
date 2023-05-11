@@ -16,7 +16,7 @@ const GoBack = () => (
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
-      className="grid grid-cols-2 mx-5"
+      className="grid lg:grid-cols-2 lg:gap-5 gap-20 mx-5"
     >
       <motion.div
         variants={fadeIn('right', 'tween', 0, 1)}
@@ -66,7 +66,7 @@ const GoBack = () => (
           right: 0.2,
           bottom: 0.2,
         }}
-        className="col-span-1 my-10 flex justify-center items-center"
+        className="col-span-1 hidden mx-auto lg:block my-10 justify-center items-center"
       >
         <Image
           src={HorseImage}
@@ -98,7 +98,7 @@ const GoBack = () => (
           right: 0.2,
           bottom: 0.2,
         }}
-        className="col-span-1 my-10 flex justify-center items-center"
+        className="col-span-1 mx-auto hidden lg:block my-10 justify-center items-center"
       >
         <Image
           src={CallCenterImage}

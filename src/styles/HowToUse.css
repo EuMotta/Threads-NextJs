@@ -16,7 +16,7 @@
 
 /* GoBack Start */
 .goback_section {
-  @apply bg-slate-200 rounded-lg shadow-3xl shadow-slate-300 container mx-auto ;
+  @apply bg-slate-200 p-5 rounded-lg shadow-3xl shadow-slate-300 container mx-auto ;
 }
 .goback_text { 
   @apply col-span-1 flex justify-center items-center;
