@@ -11,9 +11,17 @@ import {
   YAxis,
   Legend,
   Bar,
+  Line,
+  Brush,
 } from 'recharts';
 
-const Graph3 = ({ horseEfficiency1, horseEfficiency2, horseEfficiencyCalc1, horseEfficiencyCalc2 }) => {
+/* Horse */
+const Graph3 = ({
+  horseEfficiency1,
+  horseEfficiency2,
+  horseEfficiencyCalc1,
+  horseEfficiencyCalc2,
+}) => {
   const data = [
     {
       name: 'Cavalo 1',
@@ -29,29 +37,34 @@ const Graph3 = ({ horseEfficiency1, horseEfficiency2, horseEfficiencyCalc1, hors
 
   return (
     <ResponsiveContainer width={300} height={300}>
-        <BarChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="eficiencia" fill="#8884d8" />
-          <Bar dataKey="mediaEficiencia" fill="#82ca9d" />
-        </BarChart>
+      <BarChart
+        width={500}
+        height={300}
+        data={data}
+        margin={{
+          top: 5,
+          right: 30,
+          left: 20,
+          bottom: 5,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="eficiencia" fill="#8884d8" />
+        <Bar dataKey="mediaEficiencia" fill="#82ca9d" />
+      </BarChart>
     </ResponsiveContainer>
   );
 };
-const Graph2 = ({ positionMedia1, positionMedia2, positionMediaCalc1, positionMediaCalc2 }) => {
+const Graph2 = ({
+  positionMedia1,
+  positionMedia2,
+  positionMediaCalc1,
+  positionMediaCalc2,
+}) => {
   const data = [
     {
       name: 'Cavalo 1',
@@ -67,25 +80,25 @@ const Graph2 = ({ positionMedia1, positionMedia2, positionMediaCalc1, positionMe
 
   return (
     <ResponsiveContainer width={300} height={300}>
-        <BarChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="atraso" fill="#8884d8" />
-          <Bar dataKey="mediaAtraso" fill="#82ca9d" />
-        </BarChart>
+      <BarChart
+        width={500}
+        height={300}
+        data={data}
+        margin={{
+          top: 5,
+          right: 30,
+          left: 20,
+          bottom: 5,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="atraso" fill="#8884d8" />
+        <Bar dataKey="mediaAtraso" fill="#82ca9d" />
+      </BarChart>
     </ResponsiveContainer>
   );
 };
@@ -126,6 +139,41 @@ const Graph1 = ({ victoryHorse1, victoryHorse2, draw }) => {
         </Pie>
         <Tooltip />
       </PieChart>
+    </ResponsiveContainer>
+  );
+};
+/* Horse End */
+
+/* CallCenter */
+const Graph1CallCenter = ({ stat, attendantStats }) => {
+  const data = attendantStats.map((stat, index) => ({
+    name: `Atendente ${index + 1}`,
+    value: stat,
+  }));
+
+  const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
+
+  return (
+    <ResponsiveContainer width={900} height={300}>
+ <LineChart
+            width={500}
+            height={200}
+            data={data}
+            syncId="anyId"
+            margin={{
+              top: 10,
+              right: 30,
+              left: 0,
+              bottom: 0,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Line type="monotone" dataKey="value" stroke="#82ca9d" fill="#82ca9d" />
+            <Brush />
+          </LineChart>
     </ResponsiveContainer>
   );
 };
@@ -177,38 +225,38 @@ const HowToGraph2 = () => {
     {
       name: 'Cavalo 1',
       atraso: 23132,
-      mediaAtraso: Math.floor(2313/5),
+      mediaAtraso: Math.floor(2313 / 5),
     },
     {
       name: 'Cavalo 2',
       atraso: 35102,
-      mediaAtraso: Math.floor(3510/4),
+      mediaAtraso: Math.floor(3510 / 4),
     },
   ];
 
   return (
     <ResponsiveContainer width={300} height={300}>
-        <BarChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="atraso" fill="#8884d8" />
-          <Bar dataKey="mediaAtraso" fill="#82ca9d" />
-        </BarChart>
+      <BarChart
+        width={500}
+        height={300}
+        data={data}
+        margin={{
+          top: 5,
+          right: 30,
+          left: 20,
+          bottom: 5,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="atraso" fill="#8884d8" />
+        <Bar dataKey="mediaAtraso" fill="#82ca9d" />
+      </BarChart>
     </ResponsiveContainer>
   );
 };
 
-export {Graph1, Graph2, Graph3, HowToGraph1, HowToGraph2};
+export { Graph1, Graph2, Graph3, HowToGraph1, HowToGraph2, Graph1CallCenter };
