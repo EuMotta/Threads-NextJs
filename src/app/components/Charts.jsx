@@ -13,6 +13,8 @@ import {
   Bar,
   Line,
   Brush,
+  ComposedChart,
+  Area,
 } from 'recharts';
 
 /* Horse */
@@ -206,11 +208,11 @@ const HowToGraph1 = () => {
       value: 5,
     },
   ];
-  const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
+  const COLORS = ['#0088FE', '#140062', '#FCC201'];
 
   return (
-    <ResponsiveContainer width={300} height={300}>
-      <PieChart width={400} height={400}>
+    <ResponsiveContainer width="100%" height={300}>
+      <PieChart width={200} height={200}>
         <Pie
           data={data}
           cx="50%"
@@ -236,17 +238,27 @@ const HowToGraph2 = () => {
     {
       name: 'Cavalo 1',
       atraso: 23132,
-      mediaAtraso: Math.floor(2313 / 5),
+      mediaAtraso: Math.floor(23132 / 2),
     },
     {
       name: 'Cavalo 2',
       atraso: 35102,
-      mediaAtraso: Math.floor(3510 / 4),
+      mediaAtraso: Math.floor(35102 / 2),
+    },
+    {
+      name: 'Cavalo 3',
+      atraso: 32131,
+      mediaAtraso: Math.floor(32131 / 2),
+    },
+    {
+      name: 'Cavalo 4',
+      atraso: 24640,
+      mediaAtraso: Math.floor(24640 / 2),
     },
   ];
 
   return (
-    <ResponsiveContainer width={300} height={300}>
+    <ResponsiveContainer width="100%" height={300}>
       <BarChart
         width={500}
         height={300}
@@ -264,10 +276,165 @@ const HowToGraph2 = () => {
         <Tooltip />
         <Legend />
         <Bar dataKey="atraso" fill="#8884d8" />
-        <Bar dataKey="mediaAtraso" fill="#82ca9d" />
+        <Bar dataKey="mediaAtraso" fill="#140062" />
       </BarChart>
     </ResponsiveContainer>
   );
 };
+const HowToGraph3 = () => {
+  const data = [
+    {
+      name: 'Atendente 1',
+      atendimentos: 21,
+    },
+    {
+      name: 'Atendente 2',
+      atendimentos: 20,
+    },
+    {
+      name: 'Atendente 3',
+      atendimentos: 19,
+    },
+    {
+      name: 'Atendente 4',
+      atendimentos: 21,
+    },
+    {
+      name: 'Atendente 5',
+      atendimentos: 20,
+    },
+    {
+      name: 'Atendente 6',
+      atendimentos: 20,
+    },
+    {
+      name: 'Atendente 7',
+      atendimentos: 21,
+    },
+    {
+      name: 'Atendente 8',
+      atendimentos: 21,
+    },
+  ];
 
-export { Graph1, Graph2, Graph3, HowToGraph1, HowToGraph2, Graph1CallCenter };
+  return (
+    <ResponsiveContainer width="100%" height={300}>
+      <LineChart
+        width={500}
+        height={200}
+        data={data}
+        syncId="anyId"
+        margin={{
+          top: 10,
+          right: 30,
+          left: 0,
+          bottom: 0,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis domain={[18, 22]} />
+        <Tooltip />
+        <Line
+          type="monotone"
+          dataKey="atendimentos"
+          stroke="#82ca9d"
+          fill="#82ca9d"
+        />
+        <Brush />
+      </LineChart>
+    </ResponsiveContainer>
+  );
+};
+const HowToGraph4 = () => {
+  const data = [
+    {
+      name: 'Atendente 1',
+      atendimentos: 21,
+      velocidadeMédia: 15,
+      solucionados:21,
+    },
+    {
+      name: 'Atendente 2',
+      atendimentos: 20,
+      velocidadeMédia: 15,
+      solucionados:19,
+    },
+    {
+      name: 'Atendente 3',
+      atendimentos: 19,
+      velocidadeMédia: 15,
+      solucionados:18,
+    },
+    {
+      name: 'Atendente 4',
+      atendimentos: 21,
+      velocidadeMédia: 15,
+      solucionados:20,
+    },
+    {
+      name: 'Atendente 5',
+      atendimentos: 20,
+      velocidadeMédia: 15,
+      solucionados:17,
+    },
+    {
+      name: 'Atendente 6',
+      atendimentos: 20,
+      velocidadeMédia: 15,
+      solucionados:17,
+    },
+    {
+      name: 'Atendente 7',
+      atendimentos: 21,
+      velocidadeMédia: 15,
+      solucionados:17,
+    },
+    {
+      name: 'Atendente 8',
+      atendimentos: 21,
+      velocidadeMédia: 15,
+      solucionados:16,
+    },
+  ];
+
+  return (
+    <ResponsiveContainer width="100%" height={300}>
+      <ComposedChart
+        width={500}
+        height={400}
+        data={data}
+        margin={{
+          top: 20,
+          right: 80,
+          bottom: 20,
+          left: 20,
+        }}
+      >
+        <CartesianGrid stroke="#f5f5f5" />
+        <XAxis
+          dataKey="name"
+          label={{ value: 'Pages', position: 'insideBottomRight', offset: 0 }}
+          scale="band"
+        />
+        <YAxis label={{ value: 'Index', angle: -90, position: 'insideLeft' }} />
+        <Tooltip />
+        <Legend />
+        <Area type="monotone" dataKey="atendimentos" fill="#8884d8" stroke="#8884d8" />
+        <Bar dataKey="velocidadeMédia" barSize={20} fill="#413ea0" />
+        <Line type="monotone" dataKey="solucionados" stroke="#ff7300" />
+      </ComposedChart>
+    </ResponsiveContainer>
+  );
+};
+
+export {
+  Graph1,
+  Graph2,
+  Graph3,
+  HowToGraph1,
+  HowToGraph2,
+  HowToGraph3,
+  Graph1CallCenter,
+  HowToGraph4
+};

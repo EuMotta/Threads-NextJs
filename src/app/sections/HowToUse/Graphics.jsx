@@ -5,7 +5,12 @@ import { motion } from 'framer-motion';
 import styles from '../../../styles';
 import { fadeIn, staggerContainer } from '../../../utils/motion';
 import GraphicsImage from '../../../images/HowToUse/Graphics.svg';
-import { HowToGraph1, HowToGraph2 } from '../../components/Charts';
+import {
+  HowToGraph1,
+  HowToGraph2,
+  HowToGraph3,
+  HowToGraph4,
+} from '../../components/Charts';
 
 function ImpedirArrastar(event) {
   event.preventDefault();
@@ -68,16 +73,32 @@ const Graphics = () => (
             resultados da corrida e ajudam a entender melhor o desempenho dos
             cavalos.
           </p>
-          <div className="text-center font-bold font-mono ">
-            <span className="text-xl">Exemplos</span>
-            <div className="grid grid-cols-2 p-2">
-              <HowToGraph1 />
-              <HowToGraph2 />
-            </div>
-          </div>
         </div>
       </motion.div>
     </motion.div>
+    <div className="text-center font-bold font-mono ">
+      <div className="text-3xl mb-10">Exemplos</div>
+      <div className="grid grid-cols-3 gap-5 p-2">
+        <div className="border p-2 border-slate-800 shadow-md shadow-slate-500 bg-slate-300">
+          <h1 className="text-center text-2xl">Vitórias dos cavalos</h1>
+          <HowToGraph1 />
+        </div>
+        <div className="border col-span-2 p-5 border-slate-800 shadow-md shadow-slate-500 bg-slate-300">
+          <h1 className="text-center text-2xl">Média dos cavalos</h1>
+          <HowToGraph2 />
+        </div>
+        <div className="col-span-4 grid gap-5">
+          <div className="border p-5 border-slate-800 shadow-md shadow-slate-500 bg-slate-300">
+            <h1 className="text-center text-2xl">Atendimentos realizados</h1>
+            <HowToGraph3 />
+          </div>
+          <div className="border p-5 border-slate-800 shadow-md shadow-slate-500 bg-slate-300">
+            <h1 className="text-center text-2xl">Gráfico misto</h1>
+            <HowToGraph4 />
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 );
 
