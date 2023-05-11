@@ -7,7 +7,19 @@ const CallCenter = () => {
   const [attendantStats, setAttendantStats] = useState([]);
   const [attendantSpeed, setAttendantSpeed] = useState(20);
   const [isRunning, setIsRunning] = useState(false);
-  
+  const [day, setDay] = useState([]);
+
+  const testProgram = () => {
+    console.log('Quantidade de dias: ' + JSON.stringify(day));
+    console.log('Quantidade de clientes agora: ' + client);
+    console.log('Quantidade de atendentes agora: ' + attendant);
+  };
+  const startProgram2 = () => {
+    setDay(prevDay => [...prevDay, { clients: client, attendants: attendant }]);
+    startProgram();
+    console.log(day);
+  };
+
   const startProgram = async () => {
     setIsRunning(true);
     setAttendant(attendant);
@@ -26,7 +38,10 @@ const CallCenter = () => {
             console.log(remainingClients);
             setAttendantStats([...stats]);
             await new Promise(resolve =>
-              setTimeout(resolve, (Math.random() * (attendantSpeed - 10) + attendantSpeed) * 1000),
+              setTimeout(
+                resolve,
+                (Math.random() * (attendantSpeed - 10) + attendantSpeed) * 1000,
+              ),
             );
           }
 
@@ -42,6 +57,7 @@ const CallCenter = () => {
 
   const resetProgram = () => {
     setAttendantStats([]);
+    setDay([]);
   };
 
   return (
@@ -87,7 +103,7 @@ const CallCenter = () => {
           </div>
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            onClick={startProgram}
+            onClick={startProgram2}
           >
             Iniciar
           </button>
@@ -96,6 +112,12 @@ const CallCenter = () => {
             onClick={resetProgram}
           >
             Resetar
+          </button>
+          <button
+            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            onClick={testProgram}
+          >
+            Test
           </button>
           <div className="overflow-x-auto h-96">
             <table className="table-auto mt-4">
@@ -125,7 +147,11 @@ const CallCenter = () => {
           </div>
         </div>
         <div className="col-span-4">
-          <Graph1CallCenter attendantStats={attendantStats} />
+          <div className="grid grid-cols-3">
+            <div className="col-span-3">
+              <Graph1CallCenter attendantStats={attendantStats} />
+            </div>
+          </div>
         </div>
       </div>
     </div>

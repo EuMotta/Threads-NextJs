@@ -145,6 +145,17 @@ const Graph1 = ({ victoryHorse1, victoryHorse2, draw }) => {
 /* Horse End */
 
 /* CallCenter */
+const CustomTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="custom-tooltip">
+        <p>{payload[0].value}</p>
+      </div>
+    );
+  }
+
+  return null;
+};
 const Graph1CallCenter = ({ stat, attendantStats }) => {
   const data = attendantStats.map((stat, index) => ({
     name: `Atendente ${index + 1}`,
