@@ -90,11 +90,29 @@ export const packageList = [
     href: 'http://recharts.org/en-US/',
     description: 'Recharts é uma biblioteca de gráficos para React que permite criar gráficos de maneira fácil e rápida. Ele foi projetado para ser uma alternativa ao D3.js, oferecendo uma API mais simples e intuitiva para criar gráficos.',
     time: 1.25,
-   },
-   {
+  },
+  {
     title: 'ESLint',
     href: 'https://eslint.org/',
     description: 'ESLint é uma ferramenta de análise de código estática para identificar padrões problemáticos encontrados no código JavaScript. Ele foi projetado para ajudar a escrever código mais limpo e consistente, e para evitar erros comuns.',
     time: 1.50,
-   }
+  }
 ];
+
+export const developingList = [
+  {
+    title: 'A idéia',
+    description: 'De acordo com o andamento da matéria de Sistemas Operacionais, ao entender o funcionamento de um thread podemos perceber que não é dificil sua representação em uma tela, e existem varias formas de representar um thread, até mesmo em um jogo da velha, corrida de cavalos, call center, etc. Então procurei os que fossem mais simples de entender e de reproduzir',
+    time: 0.25,
+  },
+  {
+    title: 'Por que React/NextJS?',
+    description: 'Diferente do javascript, o react tem uma interface mais agradavel de se entender, e principalmente a funcionalidade UseState que facilitou muito o trabalho, podendo armazenar o estado de qualquer variavel e até mesmo de arrays de forma simples, basicamente um get e set. E claro, é a linguagem que eu mais tenho trabalhado nos ultimos meses.',
+    time: 0.25,
+  },
+  {
+    title: 'Quanto tempo demorou?',
+    description: 'Projetos experimentais não têm um prazo de desenvolvimento definido, pois sempre há algo a ser adicionado ou ajustado. Até agora, este projeto levou cerca de 7 dias para ser desenvolvido.',
+    time: 0.25,
+  },
+]

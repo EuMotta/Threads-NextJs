@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hero, Language, Me, Packages, Separator } from '../sections/About';
+import { Developing, Hero, Language, Me, Packages, Separator } from '../sections/About';
 import '../../styles/About.css'
 
 const page = () => {
@@ -10,6 +10,7 @@ const page = () => {
       <Language />
       <Packages />
       <Separator />
+      <Developing />
     </div>
   );
 };

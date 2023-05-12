@@ -1,4 +1,4 @@
 .bg_separator{
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(../images/About/Separator.svg);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.05)), url(../images/About/Separator.svg);
 
 }
