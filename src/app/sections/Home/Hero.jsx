@@ -43,7 +43,7 @@ const Hero = () => {
               Como usar?
             </Link>
             <Link
-              href="/HowToUse"
+              href="/Start"
               className="button_start"
             >
               Iniciar

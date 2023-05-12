@@ -401,8 +401,7 @@ const HowToGraph4 = () => {
   return (
     <ResponsiveContainer width="100%" height={300}>
       <ComposedChart
-        width={500}
-        height={400}
+        width={200} height={200}
         data={data}
         margin={{
           top: 20,

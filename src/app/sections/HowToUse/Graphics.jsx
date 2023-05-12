@@ -87,8 +87,8 @@ const Graphics = () => (
           <h3>Média dos cavalos</h3>
           <HowToGraph2 />
         </div>
-        <div className="col-span-4 grid gap-5">
-          <div className="graphics_graphics_graphic">
+        <div className="col-span-3 flex flex-col gap-5">
+          <div className="graphics_graphics_graphic ">
             <h3>Atendimentos realizados</h3>
             <HowToGraph3 />
           </div>
