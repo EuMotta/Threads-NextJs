@@ -3,7 +3,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { GoCode } from 'react-icons/go';
-import { useState, useEffect } from 'react';
+import { FcUp } from 'react-icons/fc';
+import { useState, useEffect, useRef } from 'react';
 import Logo2 from '../images/Logo.svg';
 import { navbar_links } from './constants';
 
@@ -24,6 +25,23 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
+  }, []);
+
+  const rocketRef = useRef(null);
+  const homeFunc = () => {
+    if (
+      document.body.scrollTop > 80 ||
+      document.documentElement.scrollTop > 80
+    ) {
+      rocketRef.current.classList.add('open');
+    } else {
+      rocketRef.current.classList.remove('open');
+    }
+  };
+  useEffect(() => {
+    window.addEventListener('scroll', homeFunc);
+
+    return () => window.removeEventListener('scroll', homeFunc);
   }, []);
 
   return (
@@ -61,6 +79,15 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      <button
+        ref={rocketRef}
+        onClick={() => {
+          window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        }}
+        className=" scroll-top flex justify-center items-center !bg-indigo-100 hover:!bg-slate-200  scroll-to-target open"
+      >
+        <FcUp className="text-white" />
+      </button>
     </nav>
   );
 };
