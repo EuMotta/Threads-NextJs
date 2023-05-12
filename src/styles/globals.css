@@ -8,3 +8,6 @@
 .yPaddings {
   @apply sm:py-16 py-12;
 }
+.card_1{
+  @apply bg-slate-100 p-5 shadow shadow-slate-600 rounded-xl;
+}

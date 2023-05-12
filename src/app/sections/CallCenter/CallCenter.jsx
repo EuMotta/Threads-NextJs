@@ -18,7 +18,7 @@ const CallCenter = () => {
 
   const startProgram2 = () => {
     startProgram();
-    
+
     console.log(day);
   };
 
@@ -39,24 +39,27 @@ const CallCenter = () => {
             console.log(remainingClients);
             setRemainingClients(remainingClients);
             setAttendantStats([...stats]);
-            let time = (Math.random() * (attendantSpeed - 10) + attendantSpeed) * 1000;
+            let time =
+              (Math.random() * (attendantSpeed - 10) + attendantSpeed) * 1000;
 
             await new Promise(resolve =>
               setTimeout(
                 resolve,
                 time,
-                totalTime += time,
-                setTime(totalTime)
+                (totalTime += time),
+                setTime(totalTime),
               ),
             );
           }
           resolve();
         }),
-        
       );
     }
     await Promise.all(promises);
-    setDay(prevDay => [...prevDay, { clients: client, attendants: attendant, time: Math.floor(totalTime) }]);
+    setDay(prevDay => [
+      ...prevDay,
+      { clients: client, attendants: attendant, time: Math.floor(totalTime) },
+    ]);
     setAttendantStats(stats);
     setClient(remainingClients > 0 ? remainingClients : 0);
   };
@@ -68,9 +71,9 @@ const CallCenter = () => {
   };
 
   return (
-    <div className="p-4 container mx-auto">
+    <div className="p-4 font-mono container mx-auto">
       <div className="grid grid-cols-5">
-        <div className="">
+        <div className="card_1">
           <div className="mb-4">
             <label className="block text-gray-700 font-bold mb-2">
               Atendentes:
@@ -108,24 +111,26 @@ const CallCenter = () => {
               onChange={e => setAttendantSpeed(+e.target.value)}
             />
           </div>
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            onClick={startProgram2}
-          >
-            Iniciar
-          </button>
-          <button
-            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            onClick={resetProgram}
-          >
-            Resetar
-          </button>
-          <button
-            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            onClick={testProgram}
-          >
-            Test
-          </button>
+          <div className="flex flex-wrap gap-5">
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              onClick={startProgram2}
+            >
+              Iniciar
+            </button>
+            <button
+              className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              onClick={resetProgram}
+            >
+              Resetar
+            </button>
+            <button
+              className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              onClick={testProgram}
+            >
+              Test
+            </button>
+          </div>
           <div className="overflow-x-auto h-96">
             <table className="table-auto mt-4">
               <thead>
@@ -154,14 +159,14 @@ const CallCenter = () => {
           </div>
         </div>
         <div className="col-span-4">
-          <div className="grid grid-cols-3 gap-4 p-4">
-            <div className="col-span-3 bg-gray-100 rounded-lg p-4">
+          <div className="grid grid-cols-3  gap-4 p-4">
+            <div className="col-span-3 card_1 ">
               <Graph1CallCenter attendantStats={attendantStats} />
             </div>
-            <div className="col-span-3 text-center text-3xl font-mono bg-gray-100 rounded-lg p-4">
+            <div className="col-span-3 text-center text-3xl font-mono card_1">
               Restam ainda {remainingClients} clientes
             </div>
-            <table className="col-span-3 bg-gray-100 rounded-lg p-4">
+            <table className="col-span-3 card_1">
               <thead>
                 <tr>
                   <th>Dia</th>
@@ -172,11 +177,16 @@ const CallCenter = () => {
               </thead>
               <tbody>
                 {day.map((result, index) => (
-                  <tr key={index} className='text-center border-2 border-slate-700'>
+                  <tr
+                    key={index}
+                    className="text-center border-2 border-slate-700"
+                  >
                     <td>{index + 1}</td>
-                    <td className='border-2  border-slate-700'>{result.clients}</td>
+                    <td className="border-2  border-slate-700">
+                      {result.clients}
+                    </td>
                     <td>{result.attendants}</td>
-                    <td>{(result.time / result.clients)/1000}</td>
+                    <td>{result.time / result.clients / 1000}</td>
                   </tr>
                 ))}
               </tbody>

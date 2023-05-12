@@ -109,23 +109,23 @@ export default function Horse() {
       setDraw(draw + 1);
       setGameOver(true);
     } else if (newPosition1 >= maxPosition) {
-      setDisplayText('Cavalo 1 venceu!');
-      setRaceResults([...raceResults, 'Cavalo 1']);
+      setDisplayText('Mario venceu!');
+      setRaceResults([...raceResults, 'Mario']);
       setVictoryHorse1(victoryHorse1 + 1);
       setPositionMedia2(positionMedia2 + leftPosition2);
       setShowStar(true);
       setGameOver(true);
     } else if (newPosition2 >= maxPosition) {
-      setDisplayText('Cavalo 2 venceu!');
-      setRaceResults([...raceResults, 'Cavalo 2']);
+      setDisplayText('Josivaldo venceu!');
+      setRaceResults([...raceResults, 'Josivaldo']);
       setVictoryHorse2(victoryHorse2 + 1);
       setPositionMedia1(positionMedia1 + leftPosition1);
       setShowStar(true);
       setGameOver(true);
     } else if (newPosition1 > newPosition2) {
-      setDisplayText('Cavalo 1 está na frente!');
+      setDisplayText('Mario está na frente!');
     } else if (newPosition2 > newPosition1) {
-      setDisplayText('Cavalo 2 está na frente!');
+      setDisplayText('Josivaldo está na frente!');
     } else if (newPosition2 === newPosition1) {
       setDisplayText('Empate');
     }
@@ -163,7 +163,7 @@ export default function Horse() {
                 </div>
                 {showStar &&
                 item.position === 'position1' &&
-                displayText === 'Cavalo 1 venceu!' ? (
+                displayText === 'Mario venceu!' ? (
                   <div className="absolute left-14 ">
                     <GiStarsStack className="text-yellow-300 text-xl" />
                   </div>
@@ -171,7 +171,7 @@ export default function Horse() {
 
                 {showStar &&
                 item.position === 'position2' &&
-                displayText === 'Cavalo 2 venceu!' ? (
+                displayText === 'Josivaldo venceu!' ? (
                   <div className="absolute left-14 ">
                     <GiStarsStack className="text-yellow-300 text-xl" />
                   </div>
@@ -186,7 +186,7 @@ export default function Horse() {
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-4 gap-5">
+        <div className="grid font-mono grid-cols-4 gap-5">
           <div className="col-span-1 flex flex-col gap-5">
             <div className="">
               <div className="p-5 mt-5 bg-gray-100  rounded-lg shadow-md">
@@ -240,8 +240,8 @@ export default function Horse() {
               </div>
             </div>
             <div className="p-5 mt-5 bg-gray-100 flex gap-5  rounded-lg shadow-md">
-              <div className="flex gap-5 flex-col">
-                <div className="flex">
+              <div className="flex  gap-5 flex-col">
+                <div className="flex flex-wrap items-center justify-center">
                   <input
                     type="number"
                     value={speed}
@@ -259,7 +259,7 @@ export default function Horse() {
                     Velocidade
                   </div>
                 </div>
-                <div className="flex">
+                <div className="flex flex-wrap items-center justify-center">
                   <input
                     type="number"
                     value={speedInterval}
@@ -356,8 +356,8 @@ export default function Horse() {
           </div>
           <div className="col-span-3 bg-gray-100 my-5">
             <div className="flex col-span-3 flex-col items-center justify-center py-10">
-              <div className="grid grid-cols-3 gap-5">
-                <div className="bg-white p-5 rounded-lg shadow-md">
+              <div className="flex  flex-wrap justify-center items-center gap-5">
+                <div className="bg-slate-50 p-3 rounded-lg shadow-md">
                   <h1 className="text-xl text-center font-bold mb-5">
                     Quantidade de vitórias e empates
                   </h1>
@@ -367,7 +367,7 @@ export default function Horse() {
                     draw={draw}
                   />
                 </div>
-                <div className="bg-white p-5 rounded-lg shadow-md">
+                <div className="bg-slate-50  p-3 rounded-lg shadow-md">
                   <h1 className="text-xl text-center font-bold mb-5">
                     Atrasos e Média dos atrasos
                   </h1>
@@ -382,7 +382,7 @@ export default function Horse() {
                     )}
                   />
                 </div>
-                <div className="bg-white p-5 rounded-lg shadow-md">
+                <div className="bg-slate-50  p-3 rounded-lg shadow-md">
                   <h1 className="text-xl text-center font-bold mb-5">
                     Eficiência e média da eficiência
                   </h1>

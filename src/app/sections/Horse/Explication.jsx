@@ -4,14 +4,14 @@ import Graph1 from '../../components/Charts';
 
 const Explication = () => {
   return (
-    <div className="col-span-3">
-      <div className="p-5 mt-5 bg-gray-100 rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold mb-4">
+    <div className="col-span-3 ">
+      <div className="p-5 mt-5 font-mono bg-gray-100 rounded-lg shadow-md">
+        <h1 className="text-2xl  font-bold mb-4">
           Threads em uma corrida de cavalos
         </h1>
         <div>
           <h2 className="text-xl font-semibold mb-2">O que são threads?</h2>
-          <p className="mb-4">
+          <p className="mb-4  text-lg">
             Threads são uma maneira de dividir um programa em duas ou mais
             tarefas simultâneas que podem ser executadas independentemente. Isso
             significa que cada thread pode executar uma parte diferente do
@@ -24,7 +24,7 @@ const Explication = () => {
           <h2 className="text-xl font-semibold mb-2">
             Como usar threads em uma corrida de cavalos?
           </h2>
-          <p className="mb-4">
+          <p className="mb-4 text-lg">
             Em uma simulação de corrida de cavalos com dois cavalos, você pode
             usar threads para controlar o movimento de cada cavalo de forma
             independente. Cada thread pode ser responsável por atualizar a
@@ -34,7 +34,7 @@ const Explication = () => {
             velocidade, se a velocidade máxima for 50, varia entre 40 a 50.
           </p>
         </div>
-        <div className="p-5 mt-5 bg-gray-100 rounded-lg shadow-md shadow-slate-500">
+        <div className="p-5 mt-5 font-mono bg-gray-100 rounded-lg shadow-md shadow-slate-500">
           <h1 className="text-2xl font-bold mb-4">
             Exemplos de variação do cálculo
           </h1>

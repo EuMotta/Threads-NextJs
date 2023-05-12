@@ -11,7 +11,7 @@ function ImpedirArrastar(event) {
 }
 
 const Hero = () => (
-  <section className="container mx-auto py-20 border shadow-sm shadow-slate-500 my-20">
+  <section className="container yPaddings mx-auto">
     <motion.div
       variants={staggerContainer}
       initial="hidden"
