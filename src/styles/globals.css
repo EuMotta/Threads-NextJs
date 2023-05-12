@@ -11,3 +11,37 @@
 .card_1{
   @apply bg-slate-100 p-5 shadow shadow-slate-600 rounded-xl;
 }
+.scroll-top {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  position: fixed;
+  bottom: 105%;
+  right: 30px;
+  font-size: 16px;
+  border-radius: 4px;
+  z-index: 999;
+  color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+  background: #203793;
+  transition: 300ms ease;
+  border: none;
+}
+.scroll-top.open {
+  bottom: 15%;
+}
+
+/* ScrollBar */
+::-webkit-scrollbar-thumb {
+  background: #5032d6;
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
