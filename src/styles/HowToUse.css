@@ -48,3 +48,33 @@
 }
 /* GoBack End */
 
+/* Graphics Start */
+.graphics_section {
+  @apply bg-slate-200 rounded-lg shadow-3xl shadow-slate-300 container mx-auto my-20;
+}
+.graphics_text {
+  @apply flex justify-center items-center;
+}
+.graphics_text_text {
+  @apply px-5;
+}
+.graphics_section .graphics_text .graphics_text_text h1 {
+  @apply font-bold mb-5 font-mono text-5xl ;
+}
+.graphics_section .graphics_text .graphics_text_text h3 {
+  @apply font-semibold mb-5 font-mono text-xl ;
+}
+.graphics_section .graphics_text .graphics_text_text p {
+  @apply text-justify font-mono;
+}
+.graphics_section .graphics_graphics {
+  @apply text-center font-bold font-mono ;
+}
+.graphics_section .graphics_graphics .graphics_graphics_graphic {
+  @apply border p-2 border-slate-800 shadow-md shadow-slate-500 bg-slate-300 ;
+}
+.graphics_section .graphics_graphics .graphics_graphics_graphic h3 {
+  @apply text-center text-2xl ;
+}
+
+
