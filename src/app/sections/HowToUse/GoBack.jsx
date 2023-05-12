@@ -62,7 +62,7 @@ const GoBack = () => (
         drag
         dragConstraints={{
           top: -0.2,
-          up: -0.2,
+          left: -0.2,
           right: 0.2,
           bottom: 0.2,
         }}
