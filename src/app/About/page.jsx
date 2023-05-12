@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { Hero, Language, Me, Packages } from '../sections/About';
 
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <div>
+      <Hero />
+      <Me />
+      <Language />
+      <Packages />
+    </div>
+  );
+};
 
-export default page
+export default page;

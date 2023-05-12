@@ -55,6 +55,46 @@ export const navbar_links = [
   },
   {
     name: 'Sobre',
-    href: '/',
+    href: '/About',
   },
 ]
+
+export const packageList = [
+  {
+    title: 'React-icons',
+    href: 'https://react-icons.github.io/react-icons',
+    description: 'O React-Icons é uma biblioteca de ícones para o React, o que significa que ela permite a inserção de ícones em aplicações React de maneira fácil e rápida. A biblioteca inclui uma ampla variedade de ícones de diferentes fontes, como Font Awesome, Material Design e muito mais.',
+    time: 0.25,
+  },
+
+  {
+    title: 'Typewriter',
+    href: 'https://github.com/tameemsafi/typewriterjs#readme',
+    description: 'O Typewriter é uma biblioteca de animação para JavaScript que cria um efeito de escrita em efeito máquina de escrever. Ele permite que você adicione esse efeito a qualquer elemento HTML de maneira fácil e rápida.',
+    time: 0.50,
+  },
+  {
+    title: 'TailwindCSS',
+    href: 'https://tailwindcss.com',
+    description: 'O Tailwind CSS é uma biblioteca de estilo baseada em classes que facilita a criação de designs customizados. Ele permite que você adicione estilos a elementos HTML de maneira rápida e fácil, usando classes pré-definidas que seguem uma sintaxe padrão. Resumido em um Bootstrap com esteroides',
+    time: 0.75,
+  },
+  {
+    title: 'Framer Motion',
+    href: 'https://www.framer.com/motion/',
+    description: 'O Framer Motion é uma biblioteca de animação para o React que permite criar animações de maneira fácil e rápida. Ele foi projetado para ser uma alternativa ao react-motion, oferecendo uma API mais simples e intuitiva para criar animações.',
+    time: 1.00,
+  },
+  {
+    title: 'Recharts',
+    href: 'http://recharts.org/en-US/',
+    description: 'Recharts é uma biblioteca de gráficos para React que permite criar gráficos de maneira fácil e rápida. Ele foi projetado para ser uma alternativa ao D3.js, oferecendo uma API mais simples e intuitiva para criar gráficos.',
+    time: 1.25,
+   },
+   {
+    title: 'ESLint',
+    href: 'https://eslint.org/',
+    description: 'ESLint é uma ferramenta de análise de código estática para identificar padrões problemáticos encontrados no código JavaScript. Ele foi projetado para ajudar a escrever código mais limpo e consistente, e para evitar erros comuns.',
+    time: 1.50,
+   }
+];
