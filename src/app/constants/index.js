@@ -116,3 +116,30 @@ export const developingList = [
     time: 0.25,
   },
 ]
+export const threadList = [
+  {
+    title: 'O que é um Thread',
+    description: 'Um thread é uma sequência de instruções que pode ser executada de forma independente dentro de um processo. Isso permite que várias tarefas sejam executadas simultaneamente dentro do mesmo programa.',
+    time: 0.25,
+  },
+  {
+    title: 'Multithreading',
+    description: 'Multithreading é o processo de usar vários threads para executar tarefas simultaneamente dentro de um programa. Isso pode melhorar o desempenho e a responsividade do programa.',
+    time: 0.5,
+  },
+  {
+    title: 'Criação de Threads',
+    description: 'Threads podem ser criados usando funções específicas da linguagem de programação ou do sistema operacional. Por exemplo, em Java, você pode criar um thread criando uma instância da classe `Thread` e fornecendo o código a ser executado pelo thread.',
+    time: 0.75,
+  },
+  {
+    title: 'Sincronização de Threads',
+    description: 'A sincronização de threads é o processo de coordenar a execução de vários threads para garantir que eles não interfiram uns com os outros. Isso é feito usando técnicas como semáforos, mutexes e monitores.',
+    time: 1,
+  },
+  {
+    title: 'Aplicação de Threads',
+    description: 'Threads têm muitas aplicações práticas, como melhorar o desempenho e a responsividade de programas, permitir a execução simultânea de tarefas e simplificar o design de programas complexos.',
+    time: 1.25,
+  },
+]

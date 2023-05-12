@@ -40,7 +40,7 @@ const CallCenter = () => {
             setRemainingClients(remainingClients);
             setAttendantStats([...stats]);
             let time =
-              (Math.random() * (attendantSpeed - 10) + attendantSpeed) * 1000;
+              (Math.random() * (attendantSpeed - 1) + attendantSpeed) * 1000;
 
             await new Promise(resolve =>
               setTimeout(
