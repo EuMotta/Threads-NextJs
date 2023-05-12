@@ -77,4 +77,10 @@
   @apply text-center text-2xl ;
 }
 
+.bg_simulate {
+  background-image: url(../images/HowToUse/Play.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 
