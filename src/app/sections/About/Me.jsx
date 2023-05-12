@@ -15,7 +15,7 @@ function ImpedirArrastar(event) {
 }
 const Me = () => (
   <section id="Me" className="paddings bg-slate-50 sm:16 sm:pl-6 z-10">
-    <div className="max-w-screen-xl mx-auto">
+    <div className="container mx-auto">
       <div className="grid w-full h-full  sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-7">
         <motion.div
           variants={staggerContainer}
@@ -25,22 +25,11 @@ const Me = () => (
           className="col-span-3"
         >
           <motion.div
-            variants={fadeIn('right', 'tween', 0, 1)}
+            variants={fadeIn('up', 'tween', 0, 1)}
             className="flex justify-center md:flex md:justify-center"
           >
             <motion.div
               className="bg-gradient-to-r from-[rgb(86,128,237)] to-[#ed4b15] rounded-full p-2 shadow-md shadow-slate-700"
-              animate={{
-                scale: [1, 1, 1, 1, 1],
-                rotate: [5, -5, 5, -5, 5],
-                borderRadius: ['50%', '40%', '50%', '40%', '50%'],
-              }}
-              transition={{
-                duration: 2,
-                ease: 'easeInOut',
-                repeat: Infinity,
-                repeatDelay: 1,
-              }}
             >
               <motion.div
                 whileHover={{ scale: 1.03 }}
@@ -49,8 +38,8 @@ const Me = () => (
                 drag
                 dragConstraints={{
                   top: -10,
-                  left: -20,
-                  right: 20,
+                  down: -20,
+                  up: 20,
                   bottom: 10,
                 }}
               >
@@ -78,7 +67,7 @@ const Me = () => (
           className="col-span-4 glassmorphism-2 rounded-xl p-5 lg:mr-36"
         >
           <motion.div
-            variants={fadeIn('left', 'tween', 0, 1)}
+            variants={fadeIn('down', 'tween', 0, 1)}
             className="flex flex-col sm:text-center md:text-center lg:text-start lg:justify-start gap-5"
           >
             <div className="flex gap-3 text-center glassmorphism-2 p-2 rounded-xl xs:flex-col sm:f lg:text-start sm:justify-center md:justify-center lg:justify-start items-center">

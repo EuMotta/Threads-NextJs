@@ -21,7 +21,7 @@ const Languages = () => (
       className="grid grid-cols-2 z-10 container mx-auto"
     >
       <motion.div
-        variants={fadeIn('right', 'tween', 0, 1)}
+        variants={fadeIn('up', 'tween', 0, 1)}
         className="col-span-1"
       >
         <div className="px-5">
@@ -45,24 +45,13 @@ const Languages = () => (
       </motion.div>
       <div className="col-span-1 ">
         <motion.div
-          animate={{
-            scale: [1.4, 1.4, 1.41, 1.4, 1.4],
-            rotate: [0.1, -0.1, 0.1, -0.1, 0.1],
-            borderRadius: ['50%', '48%', '50%', '48%', '50%'],
-          }}
-          transition={{
-            duration: 2,
-            ease: 'easeInOut',
-            repeat: Infinity,
-            repeatDelay: 1,
-          }}
-          variants={fadeIn('left', 'tween', 0, 1)}
+          variants={fadeIn('down', 'tween', 0, 1)}
           className="flex justify-center"
           drag
           dragConstraints={{
             top: -0.2,
-            left: -0.2,
-            right: 0.2,
+            down: -0.2,
+            up: 0.2,
             bottom: 0.2,
           }}
         >

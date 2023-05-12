@@ -1,5 +1,6 @@
 import React from 'react';
-import { Hero, Language, Me, Packages } from '../sections/About';
+import { Hero, Language, Me, Packages, Separator } from '../sections/About';
+import '../../styles/About.css'
 
 const page = () => {
   return (
@@ -8,6 +9,7 @@ const page = () => {
       <Me />
       <Language />
       <Packages />
+      <Separator />
     </div>
   );
 };

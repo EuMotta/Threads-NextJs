@@ -43,24 +43,13 @@ const Packages = () => (
         </div>
         <div className="col-span-1 my-10">
           <motion.div
-            animate={{
-              scale: [1.3, 1.3, 1.31, 1.3, 1.3],
-              rotate: [0.1, -0.1, 0.1, -0.1, 0.1],
-              borderRadius: ['50%', '48%', '50%', '48%', '50%'],
-            }}
-            transition={{
-              duration: 2,
-              ease: 'easeInOut',
-              repeat: Infinity,
-              repeatDelay: 1,
-            }}
-            variants={fadeIn('left', 'tween', 0, 1)}
+            variants={fadeIn('down', 'tween', 0, 1)}
             className="flex justify-center"
             drag
             dragConstraints={{
               top: -0.2,
-              left: -0.2,
-              right: 0.2,
+              down: -0.2,
+              up: 0.2,
               bottom: 0.2,
             }}
           >
@@ -71,24 +60,13 @@ const Packages = () => (
       <div className="grid mt-10 grid-cols-2">
         <div className="col-span-1 my-10">
           <motion.div
-            animate={{
-              scale: [1.3, 1.3, 1.31, 1.3, 1.3],
-              rotate: [0.1, -0.1, 0.1, -0.1, 0.1],
-              borderRadius: ['50%', '48%', '50%', '48%', '50%'],
-            }}
-            transition={{
-              duration: 2,
-              ease: 'easeInOut',
-              repeat: Infinity,
-              repeatDelay: 1,
-            }}
-            variants={fadeIn('left', 'tween', 0, 1)}
+            variants={fadeIn('down', 'tween', 0, 1)}
             className="flex justify-center z-10"
             drag
             dragConstraints={{
               top: -0.2,
-              left: -0.2,
-              right: 0.2,
+              down: -0.2,
+              up: 0.2,
               bottom: 0.2,
             }}
           >
