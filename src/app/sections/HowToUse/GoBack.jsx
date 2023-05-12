@@ -90,7 +90,7 @@ const GoBack = () => (
           repeat: Infinity,
           repeatDelay: 1,
         }}
-        variants={fadeIn('right', 'tween', 0, 1)}
+        variants={fadeIn('left', 'tween', 0, 1)}
         drag
         dragConstraints={{
           top: -0.2,
@@ -108,7 +108,7 @@ const GoBack = () => (
         />
       </motion.div>
       <motion.div
-        variants={fadeIn('right', 'tween', 0, 1)}
+        variants={fadeIn('left', 'tween', 0, 1)}
         className="goback_text"
       >
         <div className="px-5">
