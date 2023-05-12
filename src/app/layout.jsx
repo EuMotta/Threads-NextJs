@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import Navbar from './Navbar'
 
 export const metadata = {
-  title: 'ThreadHorses',
+  title: 'ThreadWorld',
 }
 
 export default function RootLayout({ children }) {
