@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+h1 {
+  @apply font-bold mb-5 font-mono text-5xl;
+}
+
+h2 {
+  @apply text-4xl font-mono font-semibold;
+}
+
+h3 {
+  @apply text-3xl font-mono font-medium;
+}
+
+h4 {
+  @apply text-2xl font-mono font-normal;
+}
+
+h5 {
+  @apply text-xl font-mono font-light;
+}
+
+p {
+  @apply text-justify text-lg font-mono;
+}
+.constant {
+  @apply bg-slate-200 shadow-sm shadow-slate-400 border p-1 rounded-lg font-bold;
+}
 .paddings{
   @apply sm:p-16 px-6 py-12;
 }

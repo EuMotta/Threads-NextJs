@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
 import LibrarySvg1 from '../../../images/About/packageSvg1.svg';
 import LibrarySvg2 from '../../../images/About/packageSvg2.svg';
 
@@ -24,9 +23,9 @@ const Threads = () => (
       <div className="grid grid-cols-2">
         <div className="col-span-1">
           <div className="px-5">
-            <h1 className="font-bold mb-5 font-mono text-2xl">
+            <h2 className=" mb-5 ">
               Threads
-            </h1>
+            </h2>
             <div>
               {threadList.slice(0, 3).map((thread) => (
                 <motion.div
@@ -34,8 +33,8 @@ const Threads = () => (
                   className="mb-1 mt-5"
                   key={thread.title}
                 >
-                  <div className="font-semibold underline hover:text-blue-600 transition-all z-50 font-mono text-xl">{thread.title}</div>
-                  <p className="text-justify font-mono">&nbsp;{thread.description}</p>
+                  <div className="font-semibold underline hover:text-blue-600 transition-all z-50 font-mono text-2xl">{thread.title}</div>
+                  <p>&nbsp;{thread.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -82,8 +81,8 @@ const Threads = () => (
                   className="mb-1 mt-5"
                   key={thread.title}
                 >
-                  <div className="font-semibold underline hover:text-blue-600 transition-all font-mono text-xl">{thread.title}</div>
-                  <p className="text-justify font-mono">&nbsp;{thread.description}</p>
+                  <div className="font-semibold underline hover:text-blue-600 transition-all font-mono text-2xl">{thread.title}</div>
+                  <p>&nbsp;{thread.description}</p>
                 </motion.div>
               ))}
             </div>

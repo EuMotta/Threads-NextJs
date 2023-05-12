@@ -25,10 +25,10 @@ const Languages = () => (
         className="col-span-1"
       >
         <div className="px-5">
-          <h1 className="font-bold mb-5 font-mono text-2xl">
+          <h2 className="mb-5">
             Base de desenvolvimento
-          </h1>
-          <h3 className="font-semibold mb-5 font-mono text-xl">NEXTjs</h3>
+          </h2>
+          <h3 className="mb-5">NEXTjs</h3>
           <p className=" text-justify text-lg font-mono font-bold">
             &nbsp;No desenvolvimento deste projeto, utilizei o NEXTjs como
             plataforma principal. Trata-se de uma extensão do React que auxilia

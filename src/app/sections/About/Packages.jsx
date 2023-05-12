@@ -24,7 +24,7 @@ const Packages = () => (
       <div className="grid grid-cols-2">
         <div className="col-span-1">
           <div className="px-5">
-            <h1 className="font-bold mb-5 font-mono text-2xl">
+            <h1 className="mb-5">
               Bibliotecas
             </h1>
             <div>
@@ -34,8 +34,8 @@ const Packages = () => (
                   className="mb-1 mt-5"
                   key={library.title}
                 >
-                  <Link href={library.href} className="font-semibold underline hover:text-blue-600 transition-all z-50 font-mono text-xl">{library.title}</Link>
-                  <p className="text-sm text-justify font-mono">&nbsp;{library.description}</p>
+                  <Link href={library.href} className="font-semibold underline hover:text-blue-600 transition-all z-50 font-mono text-2xl">{library.title}</Link>
+                  <p>&nbsp;{library.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -82,8 +82,8 @@ const Packages = () => (
                   className="mb-1 mt-5"
                   key={library.title}
                 >
-                  <Link href={library.href} className="font-semibold underline hover:text-blue-600 transition-all font-mono text-xl">{library.title}</Link>
-                  <p className="text-sm text-justify font-mono">&nbsp;{library.description}</p>
+                  <Link href={library.href} className="font-semibold underline hover:text-blue-600 transition-all font-mono text-2xl">{library.title}</Link>
+                  <p>&nbsp;{library.description}</p>
                 </motion.div>
               ))}
             </div>

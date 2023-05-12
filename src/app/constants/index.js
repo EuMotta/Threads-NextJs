@@ -99,23 +99,68 @@ export const packageList = [
   }
 ];
 
-export const developingList = [
-  {
-    title: 'A idéia',
-    description: 'De acordo com o andamento da matéria de Sistemas Operacionais, ao entender o funcionamento de um thread podemos perceber que não é dificil sua representação em uma tela, e existem varias formas de representar um thread, até mesmo em um jogo da velha, corrida de cavalos, call center, etc. Então procurei os que fossem mais simples de entender e de reproduzir',
-    time: 0.25,
-  },
-  {
-    title: 'Por que React/NextJS?',
-    description: 'Diferente do javascript, o react tem uma interface mais agradavel de se entender, e principalmente a funcionalidade UseState que facilitou muito o trabalho, podendo armazenar o estado de qualquer variavel e até mesmo de arrays de forma simples, basicamente um get e set. E claro, é a linguagem que eu mais tenho trabalhado nos ultimos meses.',
-    time: 0.25,
-  },
-  {
-    title: 'Quanto tempo demorou?',
-    description: 'Projetos experimentais não têm um prazo de desenvolvimento definido, pois sempre há algo a ser adicionado ou ajustado. Até agora, este projeto levou cerca de 7 dias para ser desenvolvido.',
-    time: 0.25,
-  },
-]
+export const developingList = {
+
+  idea: [
+    {
+      title: 'A idéia',
+      description: 'De acordo com o andamento da matéria de Sistemas Operacionais, ao entender o funcionamento de um thread podemos perceber que não é dificil sua representação em uma tela, e existem varias formas de representar um thread, até mesmo em um jogo da velha, corrida de cavalos, call center, etc. Então procurei os que fossem mais simples de entender e de reproduzir',
+      time: 0.25,
+    },
+    {
+      title: 'Por que React/NextJS?',
+      description: 'Diferente do javascript, o react tem uma interface mais agradavel de se entender, e principalmente a funcionalidade UseState que facilitou muito o trabalho, podendo armazenar o estado de qualquer variavel e até mesmo de arrays de forma simples, basicamente um get e set. E claro, é a linguagem que eu mais tenho trabalhado nos ultimos meses.',
+      time: 0.25,
+    },
+    {
+      title: 'Quanto tempo demorou?',
+      description: 'Projetos experimentais não têm um prazo de desenvolvimento definido, pois sempre há algo a ser adicionado ou ajustado. Até agora, este projeto levou cerca de 7 dias para ser desenvolvido.',
+      time: 0.25,
+    },
+  ],
+  construction: [
+    {
+      title: 'Como foi a construção?',
+      description: (
+        <>
+          &nbsp; Comecei a desenvolver a ideia dos cavalos e, para isso, precisei encontrar uma maneira de armazenar o estado e os valores de cada cavalo a cada frame. Decidi usar o <span className='constant'>useState</span> do React para armazenar não apenas o estado dos cavalos, mas também o histórico de corridas e todas as outras variáveis que utilizei.
+        </>
+      ),
+      time: 0.25,
+    },
+    {
+      title: 'Como funciona o useState?',
+      description: (
+        <>
+          O <span className='constant'>useState</span> é um Hook do React que permite adicionar estado ao componente criado. Ele retorna um par de valores: o valor atual do estado e uma função para atualizá-lo, como se fosse um get e set em Java. Quando a função de atualização é chamada com um novo valor, o componente é renderizado novamente com o novo estado.
+        </>
+      ),
+      time: 0.5,
+    }
+
+  ],
+  resultCalc: [
+    {
+      title: 'Valor aleatório',
+      description: (
+        <>
+          Para representar um thread em uma linguagem web é um pouco complicado, e para facilitar eu utilizei um valor aleatório gerado em um intervalo, pela formula: <span className='constant'>(Math.random() * (valorInserido - 10) + valorInserido)</span>, ao inserir, por exemplo 30, o cálculo seria 30-10, assim a velocidade varia de 20 a 30.
+        </>
+      ),
+      time: 0.5,
+    },
+    {
+      title: 'Atualizado a cada segundo',
+      description: (
+        <>
+          Para simular um thread de maneira eficiente, implementei um sistema automatizado que permite ao usuário ajustar a velocidade da simulação em milissegundos. Isso oferece flexibilidade para realizar a simulação de várias maneiras diferentes, desde processos lentos até processos rápidos.
+        </>
+      ),
+      time: 0.5,
+    }
+  ]
+
+}
 export const threadList = [
   {
     title: 'O que é um Thread',
