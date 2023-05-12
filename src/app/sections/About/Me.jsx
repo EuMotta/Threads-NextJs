@@ -38,8 +38,8 @@ const Me = () => (
                 drag
                 dragConstraints={{
                   top: -10,
-                  down: -20,
-                  up: 20,
+                  left: -20,
+                  right: 20,
                   bottom: 10,
                 }}
               >

@@ -19,7 +19,7 @@ const GoBack = () => (
       className="grid lg:grid-cols-2 lg:gap-5 gap-20 mx-5"
     >
       <motion.div
-        variants={fadeIn('right', 'tween', 0, 1)}
+        variants={fadeIn('down', 'tween', 0, 1)}
         className="goback_text"
       >
         <div className="px-5">
@@ -58,11 +58,11 @@ const GoBack = () => (
           repeat: Infinity,
           repeatDelay: 1,
         }}
-        variants={fadeIn('right', 'tween', 0, 1)}
+        variants={fadeIn('down', 'tween', 0, 1)}
         drag
         dragConstraints={{
           top: -0.2,
-          left: -0.2,
+          up: -0.2,
           right: 0.2,
           bottom: 0.2,
         }}
@@ -90,11 +90,11 @@ const GoBack = () => (
           repeat: Infinity,
           repeatDelay: 1,
         }}
-        variants={fadeIn('left', 'tween', 0, 1)}
+        variants={fadeIn('up', 'tween', 0, 1)}
         drag
         dragConstraints={{
           top: -0.2,
-          left: -0.2,
+          up: -0.2,
           right: 0.2,
           bottom: 0.2,
         }}
@@ -108,7 +108,7 @@ const GoBack = () => (
         />
       </motion.div>
       <motion.div
-        variants={fadeIn('left', 'tween', 0, 1)}
+        variants={fadeIn('up', 'tween', 0, 1)}
         className="goback_text"
       >
         <div className="px-5">
