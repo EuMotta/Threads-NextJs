@@ -50,8 +50,8 @@ export const navbar_links = [
     href: '/HowToUse',
   },
   {
-    name: 'Horse',
-    href: '/Horse',
+    name: 'Simular',
+    href: '/Start',
   },
   {
     name: 'Sobre',
