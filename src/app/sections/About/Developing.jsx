@@ -11,7 +11,7 @@ function ImpedirArrastar(event) {
   event.preventDefault();
 }
 const Developing = () => (
-  <section className="paddings z-10 bg-slate-50">
+  <section className="paddings z-10">
     <motion.div
       variants={staggerContainer}
       initial="hidden"
@@ -30,8 +30,8 @@ const Developing = () => (
                   className="mb-1 mt-5"
                   key={item.title}
                 >
-                  <div className="font-semibold underline hover:text-blue-600 transition-all z-50 font-mono text-xl">
-                    {item.title}
+                  <div className="font-semibold  transition-all z-50 font-mono text-xl">
+                    <h4> {item.title}</h4>
                   </div>
                   <p className="text-justify font-mono">
                     &nbsp;{item.description}
@@ -67,10 +67,11 @@ const Developing = () => (
 
       <div className="grid grid-cols-2">
         <div className="col-span-1 my-10">
-          <div className="bg-slate-100 p-5 shadow-sm shadow-slate-600 overflow-scroll h-96 justify-center">
+          <div className="card_1 p-5 shadow-sm shadow-slate-600 overflow-scroll h-96 justify-center">
             <h3>Exemplo de useState</h3>
             <pre>
-              {`import { useState } from 'react';
+              <p className="text-sm">
+                {`import { useState } from 'react';
 
   function MeuComponente() {
     const [meuEstado, setMeuEstado] = useState(0);
@@ -84,6 +85,7 @@ const Developing = () => (
       </>
     );
   }`}
+              </p>
             </pre>
             <p>
               &nbsp;No caso acima, a variavel{' '}
@@ -102,8 +104,8 @@ const Developing = () => (
                   className="mb-1 mt-5"
                   key={item.title}
                 >
-                  <div className="font-semibold underline hover:text-blue-600 transition-all z-50 font-mono text-xl">
-                    {item.title}
+                  <div className="font-semibold hover:text-blue-600 transition-all z-50 font-mono text-xl">
+                    <h4>{item.title}</h4>
                   </div>
                   <p className="text-justify font-mono">
                     &nbsp;{item.description}
@@ -126,8 +128,8 @@ const Developing = () => (
                   className="mb-1 mt-5"
                   key={item.title}
                 >
-                  <div className="font-semibold underline hover:text-blue-600 transition-all z-50 font-mono text-xl">
-                    {item.title}
+                  <div className="font-semibold transition-all z-50">
+                    <h4> {item.title}</h4>
                   </div>
                   <p className="text-justify font-mono">
                     &nbsp;{item.description}
@@ -138,10 +140,11 @@ const Developing = () => (
           </div>
         </div>
         <div className="col-span-1 my-10">
-          <div className="bg-slate-100 p-5 shadow-sm shadow-slate-600 overflow-scroll h-96 justify-center">
+          <div className="card_1 p-5 shadow-sm shadow-slate-600 overflow-scroll h-96 justify-center">
             <h3>Cálculo</h3>
             <pre>
-              {`  ...
+              <p className="text-sm">
+                {`  ...
   function MeuComponente() {
     ...
     const handleHorse1 = () => {
@@ -157,11 +160,13 @@ const Developing = () => (
     ...
     }
   }`}
+              </p>
             </pre>
-            <h3>
-              Velocidade:
-            </h3>
-            <pre>{` const [speedInterval, setSpeedInterval] = useState(400);
+            <h3>Velocidade:</h3>
+            <pre>
+              {' '}
+              <p className="text-sm">
+                {` const [speedInterval, setSpeedInterval] = useState(400);
 
     const startRace = () => {
     const intervalId = setInterval(() => {
@@ -170,7 +175,9 @@ const Developing = () => (
         clearInterval(intervalId);
       }
     }, speedInterval);
-  };`}</pre>
+  };`}{' '}
+              </p>
+            </pre>
           </div>
         </div>
       </div>

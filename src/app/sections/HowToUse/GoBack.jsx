@@ -20,7 +20,7 @@ const GoBack = () => (
     >
       <motion.div
         variants={fadeIn('down', 'tween', 0, 1)}
-        className="goback_text"
+        className="goback_text card_1"
       >
         <div className="px-5">
           <h1>Botões</h1>
@@ -109,7 +109,7 @@ const GoBack = () => (
       </motion.div>
       <motion.div
         variants={fadeIn('up', 'tween', 0, 1)}
-        className="goback_text"
+        className="goback_text card_1"
       >
         <div className="px-5">
           <h1>Call Center</h1>

@@ -14,7 +14,7 @@ function ImpedirArrastar(event) {
   event.preventDefault();
 }
 const Me = () => (
-  <section id="Me" className="paddings bg-slate-50 sm:16 sm:pl-6 z-10">
+  <section id="Me" className="paddings  sm:16 sm:pl-6 z-10">
     <div className="container mx-auto">
       <div className="grid w-full h-full  sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-7">
         <motion.div
@@ -72,20 +72,20 @@ const Me = () => (
           >
             <div className="flex gap-3 text-center glassmorphism-2 p-2 rounded-xl xs:flex-col sm:f lg:text-start sm:justify-center md:justify-center lg:justify-start items-center">
               <FiCoffee className="text-indigo-400 text-5xl" />
-              <p className="text-slate-900 font-bold font-mono text-xl">
+              <p className=" font-bold font-mono text-xl">
                 O café e a música são elementos fundamentais para a minha
                 concentração
               </p>
             </div>
             <div className="flex gap-3 text-center glassmorphism-2  p-2 rounded-xl sm:text-center lg:text-start  md:justify-center lg:justify-start items-center">
               <FaGlobeAsia className="text-indigo-600 text-3xl" />
-              <p className="text-slate-900 font-bold font-mono text-xl">
+              <p className=" font-bold font-mono text-xl">
                 Brasil, São Paulo, Guaratinguetá
               </p>
             </div>
             <div className="flex gap-3 text-center glassmorphism-2  p-2 rounded-xl sm:text-center lg:text-start  md:justify-center lg:justify-start items-center">
               <IoMdSchool className="text-orange-500 text-6xl" />
-              <p className="text-slate-900 font-bold font-mono text-xl">
+              <p className="font-bold font-mono text-xl">
                 Cursando Analise e Desenvolvimento de Sistemas pela FATEC Guaratinguetá
               </p>
             </div>

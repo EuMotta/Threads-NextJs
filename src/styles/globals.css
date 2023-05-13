@@ -2,31 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-color: #f0f8ff;
+  --text-h1-color: #0F172A;
+  --text-h2-color: #0F172A;
+  --text-h3-color: #0F172A;
+  --text-h4-color: #0F172A;
+  --text-h5-color: #0F172A;
+  --text-p-color: #0F172A;
+  --card-color: #cbd5e1;
+  --card-2-color: #d9e1ee;
+  --tt: #475e74;
+}
+main.primary-color {
+  background-color: var(--primary-color);
+}
+
 h1 {
   @apply font-bold mb-5 font-mono text-5xl;
+  color: var(--text-h1-color);
 }
 
 h2 {
   @apply text-4xl font-mono font-semibold;
+  color: var(--text-h2-color);
 }
 
 h3 {
   @apply text-3xl font-mono font-medium;
+  color: var(--text-h3-color);
 }
 
 h4 {
   @apply text-2xl font-mono font-normal;
+  color: var(--text-h4-color);
 }
 
 h5 {
   @apply text-xl font-mono font-light;
+  color: var(--text-h5-color);
 }
 
 p {
   @apply text-justify text-lg font-mono;
+  color: var(--text-p-color);
 }
 .constant {
-  @apply bg-slate-200 shadow-sm shadow-slate-400 border p-1 rounded-lg font-bold;
+  background: rgba(0, 0, 0, 0.11);
+  box-shadow: 0 2px 2px 0 rgba(54, 54, 54, 0.705);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.678);
 }
 .paddings{
   @apply sm:p-16 px-6 py-12;
@@ -35,7 +61,12 @@ p {
   @apply sm:py-16 py-12;
 }
 .card_1{
-  @apply bg-slate-100 p-5 shadow shadow-slate-600 rounded-xl;
+  @apply p-5 shadow shadow-slate-600 rounded-xl;
+  background-color: var(--card-color);
+}
+.card_2{
+  @apply p-5 shadow shadow-slate-600 rounded-xl;
+  background-color: var(--card-2-color);
 }
 .scroll-top {
   width: 40px;

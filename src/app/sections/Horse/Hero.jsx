@@ -28,7 +28,7 @@ const Hero = () => (
             Corrida de cavalos!
           </h1>
           <div className="text-3xl font-bold mb-2 leading-tight">
-            Quem será o vencedor? &nbsp;
+            <h2>Quem será o vencedor? &nbsp;</h2>
             <div className="text-blue-600 text-3xl">
               <Typewriter
                 options={{
@@ -40,7 +40,7 @@ const Hero = () => (
             </div>
           </div>
           <div className="font-mono text-xl">
-            Inicie a corrida e descubra o vencedor!
+            <h4>Inicie a corrida e descubra o vencedor!</h4>
           </div>
         </div>
       </motion.div>

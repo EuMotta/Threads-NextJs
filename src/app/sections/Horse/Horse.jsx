@@ -134,7 +134,7 @@ export default function Horse() {
   return (
     <main className="container mx-auto">
       <div className="">
-        <div className="bg-gray-100 p-5 rounded-lg shadow-md shadow-slate-500">
+        <div className="card_2 p-5 rounded-lg shadow-md shadow-slate-500">
           {horses.map(item => (
             <div className="bg-road">
               <div className="relative">
@@ -189,17 +189,17 @@ export default function Horse() {
         <div className="grid font-mono grid-cols-4 gap-5">
           <div className="col-span-1 flex flex-col gap-5">
             <div className="">
-              <div className="p-5 mt-5 bg-gray-100  rounded-lg shadow-md">
+              <div className="p-5 mt-5 card_2  rounded-lg shadow-md">
                 <div className="flex">
                   <div className=" w-5/6">
                     <div className="text-lg font-semibold mb-2">
-                      {displayText}
+                     <h4>{displayText}</h4> 
                     </div>
                     <div className="border p-2 rounded-lg mb-2">
-                      {position1}
+                    <h4> {position1}</h4> 
                     </div>
                     <div className="border p-2 rounded-lg mb-4">
-                      {position2}
+                    <h4> {position2}</h4> 
                     </div>
                   </div>
                   <div className="w-1/6 p-2 flex flex-col justify-center items-center">
@@ -239,7 +239,7 @@ export default function Horse() {
                 </div>
               </div>
             </div>
-            <div className="p-5 mt-5 bg-gray-100 flex gap-5  rounded-lg shadow-md">
+            <div className="p-5 mt-5 card_2 flex gap-5  rounded-lg shadow-md">
               <div className="flex  gap-5 flex-col">
                 <div className="flex flex-wrap items-center justify-center">
                   <input
@@ -256,7 +256,7 @@ export default function Horse() {
                     className="shadow-sm shadow-slate-500 rounded-md p-2 w-2/5"
                   />
                   <div className="text-lg font-bold flex  justify-center items-center ml-2">
-                    Velocidade
+                  <p>Velocidade</p>  
                   </div>
                 </div>
                 <div className="flex flex-wrap items-center justify-center">
@@ -267,7 +267,7 @@ export default function Horse() {
                     className="shadow-sm shadow-slate-500 rounded-md p-2 w-2/5"
                   />
                   <div className="text-lg font-bold flex justify-center items-center ml-2">
-                    Intervalo
+                  <p>  Intervalo</p>
                   </div>
                 </div>
               </div>
@@ -283,39 +283,39 @@ export default function Horse() {
                 </button>
               </div>
             </div>
-            <table className="bg-gray-100 font-semibold rounded-md shadow-sm shadow-slate-300 p-5 text-xl">
+            <table className="card_2 font-semibold rounded-md shadow-sm shadow-slate-300 p-5 text-xl">
               <tbody className="text-center">
                 <tr>
-                  <td>Atrasos do cavalo 1:</td>
-                  <td>{positionMedia1}</td>
+                  <td><h5>Atrasos do cavalo 1:</h5></td>
+                  <td><h4>{positionMedia1}</h4></td>
                 </tr>
                 <tr>
-                  <td>Atrasos do cavalo 2:</td>
-                  <td>{positionMedia2}</td>
+                  <td><h5>Atrasos do cavalo 2:</h5></td>
+                  <td><h4>{positionMedia2}</h4></td>
                 </tr>
                 <tr>
-                  <td>Média do cavalo 1:</td>
-                  <td>{Math.floor(positionMedia1 / raceResults.length)}</td>
+                  <td><h5>Média do cavalo 1:</h5></td>
+                  <td><h4>{Math.floor(positionMedia1 / raceResults.length)}</h4></td>
                 </tr>
                 <tr>
-                  <td>Média do cavalo 2:</td>
-                  <td>{Math.floor(positionMedia2 / raceResults.length)}</td>
+                  <td><h5>Média do cavalo 2:</h5></td>
+                  <td><h4>{Math.floor(positionMedia2 / raceResults.length)}</h4></td>
                 </tr>
                 <tr>
-                  <td>Eficiência do cavalo 1:</td>
-                  <td>{horseEfficiency1}</td>
+                  <td><h5>Eficiência do cavalo 1:</h5></td>
+                  <td><h4>{horseEfficiency1}</h4></td>
                 </tr>
                 <tr>
-                  <td>Eficiência do cavalo 2:</td>
-                  <td>{horseEfficiency2}</td>
+                  <td><h5>Eficiência do cavalo 2:</h5></td>
+                  <td><h4>{horseEfficiency2}</h4></td>
                 </tr>
                 <tr>
-                  <td>Média de eficiência do cavalo 1:</td>
-                  <td>{Math.floor(horseEfficiency1 / raceResults.length)}</td>
+                  <td><h5>Média de eficiência do cavalo 1:</h5></td>
+                  <td><h4>{Math.floor(horseEfficiency1 / raceResults.length)}</h4></td>
                 </tr>
                 <tr>
-                  <td>Média de eficiência do cavalo 2:</td>
-                  <td>{Math.floor(horseEfficiency2 / raceResults.length)}</td>
+                  <td><h5>Média de eficiência do cavalo 2:</h5></td>
+                  <td><h4>{Math.floor(horseEfficiency2 / raceResults.length)}</h4></td>
                 </tr>
               </tbody>
             </table>
@@ -336,28 +336,28 @@ export default function Horse() {
               >
                 resetar
               </button>
-              <table className="table-auto w-full mb-4 text-center bg-gray-100 rounded-md shadow-sm shadow-slate-300">
+              <table className="table-auto w-full mb-4 text-center card_2 rounded-md shadow-sm shadow-slate-300">
                 <thead>
-                  <tr className="text-center">
-                    <th className="px-4 py-2">Corrida</th>
-                    <th className="px-4 py-2">Resultado</th>
+                  <tr>
+                    <th className="px-4 py-2"><p className="text-center">Corrida</p></th>
+                    <th className="px-4 py-2"><p className="text-center">Resultado</p></th>
                   </tr>
                 </thead>
                 <tbody>
                   {raceResults.map((result, index) => (
                     <tr key={index}>
-                      <td>{index + 1}</td>
-                      <td>{result}</td>
+                      <td><p>{index + 1}</p></td>
+                      <td><p>{result}</p></td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
           </div>
-          <div className="col-span-3 bg-gray-100 my-5">
+          <div className="col-span-3 card_2 my-5">
             <div className="flex col-span-3 flex-col items-center justify-center py-10">
               <div className="flex  flex-wrap justify-center items-center gap-5">
-                <div className="bg-slate-50 p-3 rounded-lg shadow-md">
+                <div className="card_1 p-3 rounded-lg shadow-md">
                   <h1 className="text-xl text-center font-bold mb-5">
                     Quantidade de vitórias e empates
                   </h1>
@@ -367,7 +367,7 @@ export default function Horse() {
                     draw={draw}
                   />
                 </div>
-                <div className="bg-slate-50  p-3 rounded-lg shadow-md">
+                <div className="card_1  p-3 rounded-lg shadow-md">
                   <h1 className="text-xl text-center font-bold mb-5">
                     Atrasos e Média dos atrasos
                   </h1>
@@ -382,7 +382,7 @@ export default function Horse() {
                     )}
                   />
                 </div>
-                <div className="bg-slate-50  p-3 rounded-lg shadow-md">
+                <div className="card_1  p-3 rounded-lg shadow-md">
                   <h1 className="text-xl text-center font-bold mb-5">
                     Eficiência e média da eficiência
                   </h1>

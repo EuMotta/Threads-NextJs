@@ -16,7 +16,7 @@
 
 /* GoBack Start */
 .goback_section {
-  @apply bg-slate-200 p-5 rounded-lg shadow-3xl shadow-slate-300 container mx-auto ;
+  @apply p-5 rounded-lg container mx-auto ;
 }
 .goback_text { 
   @apply col-span-1 flex justify-center items-center;
@@ -44,7 +44,7 @@
 
 /* Graphics Start */
 .graphics_section {
-  @apply bg-slate-200 rounded-lg shadow-3xl shadow-slate-300 container mx-auto my-20;
+  @apply rounded-lg container mx-auto py-20;
 }
 .graphics_text {
   @apply flex justify-center items-center;
@@ -56,7 +56,8 @@
   @apply text-center font-bold font-mono ;
 }
 .graphics_section .graphics_graphics .graphics_graphics_graphic {
-  @apply border p-2 border-slate-800 shadow-md shadow-slate-500 bg-slate-300 ;
+  @apply border p-2 border-slate-800 shadow-md shadow-slate-500;
+
 }
 .graphics_section .graphics_graphics .graphics_graphics_graphic h3 {
   @apply text-center text-2xl ;

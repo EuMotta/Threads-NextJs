@@ -28,7 +28,7 @@ const Hero = () => (
             Central de Atendimento
           </h1>
           <div className="text-3xl font-bold mb-2 leading-tight">
-            Atendentes e clientes &nbsp;
+            <h3>Atendentes e clientes &nbsp;</h3>
             <div className="text-blue-600 text-3xl">
               <Typewriter
                 options={{
@@ -40,7 +40,7 @@ const Hero = () => (
             </div>
           </div>
           <div className="font-mono text-xl">
-            Inicie seu atendimento!
+           <h4> Inicie seu atendimento!</h4>
           </div>
         </div>
       </motion.div>

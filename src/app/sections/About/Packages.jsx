@@ -13,28 +13,31 @@ function ImpedirArrastar(event) {
   event.preventDefault();
 }
 const Packages = () => (
-  <section className='paddings z-10 bg-slate-50'>
+  <section className="paddings z-10 ">
     <motion.div
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
-      className='container mx-auto'
+      className="container mx-auto"
     >
       <div className="grid grid-cols-2">
         <div className="col-span-1">
           <div className="px-5">
-            <h1 className="mb-5">
-              Bibliotecas
-            </h1>
+            <h1 className="mb-5">Bibliotecas</h1>
             <div>
-              {packageList.slice(0, 3).map((library) => (
+              {packageList.slice(0, 3).map(library => (
                 <motion.div
                   variants={textVariant(`${library.time}`)}
                   className="mb-1 mt-5"
                   key={library.title}
                 >
-                  <Link href={library.href} className="font-semibold underline hover:text-blue-600 transition-all z-50 font-mono text-2xl">{library.title}</Link>
+                  <Link
+                    href={library.href}
+                    className="font-semibold hover:text-blue-600 transition-all z-50 font-mono text-2xl"
+                  >
+                    <h4>{library.title}</h4>
+                  </Link>
                   <p>&nbsp;{library.description}</p>
                 </motion.div>
               ))}
@@ -53,7 +56,14 @@ const Packages = () => (
               bottom: 0.2,
             }}
           >
-            <Image src={LibrarySvg1} width={400} height={400} unoptimized alt="Librarys" onDragStart={ImpedirArrastar} />
+            <Image
+              src={LibrarySvg1}
+              width={400}
+              height={400}
+              unoptimized
+              alt="Librarys"
+              onDragStart={ImpedirArrastar}
+            />
           </motion.div>
         </div>
       </div>
@@ -70,19 +80,32 @@ const Packages = () => (
               bottom: 0.2,
             }}
           >
-            <Image className="pointer-events-none" src={LibrarySvg2} width={400} height={400} unoptimized alt="Librarys" onDragStart={ImpedirArrastar} />
+            <Image
+              className="pointer-events-none"
+              src={LibrarySvg2}
+              width={400}
+              height={400}
+              unoptimized
+              alt="Librarys"
+              onDragStart={ImpedirArrastar}
+            />
           </motion.div>
         </div>
         <div className="col-span-1">
           <div className="px-5">
             <div className="z-50">
-              {packageList.slice(3, 6).map((library) => (
+              {packageList.slice(3, 6).map(library => (
                 <motion.div
                   variants={textVariant(`${library.time}`)}
                   className="mb-1 mt-5"
                   key={library.title}
                 >
-                  <Link href={library.href} className="font-semibold underline hover:text-blue-600 transition-all font-mono text-2xl">{library.title}</Link>
+                  <Link
+                    href={library.href}
+                    className="font-semibold underline hover:text-blue-600 transition-all font-mono text-2xl"
+                  >
+                    <h4>{library.title}</h4>
+                  </Link>
                   <p>&nbsp;{library.description}</p>
                 </motion.div>
               ))}

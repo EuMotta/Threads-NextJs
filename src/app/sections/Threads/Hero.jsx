@@ -11,7 +11,7 @@ function ImpedirArrastar(event) {
 }
 
 const Hero = () => (
-  <section className="z-10 container mx-auto paddings">
+  <section className='z-10 container mx-auto paddings'>
     <motion.div
       variants={staggerContainer}
       initial="hidden"
@@ -49,10 +49,8 @@ const Hero = () => (
           <h1 className="font-bold mb-5 font-mono text-blue-600 text-7xl leading-none">
             Desenvolvimento do projeto
           </h1>
-          <div className="text-4xl font-bold mb-2 text-color leading-tight">
-            <h1>
-              Confira como foi o desenvolvimento do projeto
-            </h1>
+          <div className="text-4xl font-bold mb-2 leading-tight">
+            Confira quem desenvolveu e como foi o desenvolvimento do projeto
             <div className="text-blue-600 my-5 text-5xl">
               <Typewriter
                 options={{
@@ -69,7 +67,7 @@ const Hero = () => (
                 }}
               />
             </div>
-          </div>
+          </div> 
         </div>
       </motion.div>
     </motion.div>

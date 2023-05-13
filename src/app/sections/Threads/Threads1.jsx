@@ -11,7 +11,7 @@ import { threadList } from '../../constants';
 function ImpedirArrastar(event) {
   event.preventDefault();
 }
-const Threads = () => (
+const Threads1 = () => (
   <section className='paddings z-10 bg-slate-50'>
     <motion.div
       variants={staggerContainer}
@@ -23,7 +23,7 @@ const Threads = () => (
       <div className="grid grid-cols-2">
         <div className="col-span-1">
           <div className="px-5">
-            <h2 className=" mb-5 ">
+            <h2 href="/Threads" className=" mb-5 hover:text-blue-600 transition-all cursor-pointer">
               Threads
             </h2>
             <div>
@@ -93,4 +93,4 @@ const Threads = () => (
   </section>
 );
 
-export default Threads;
+export default Threads1;

@@ -72,11 +72,11 @@ const CallCenter = () => {
 
   return (
     <div className="p-4 font-mono container mx-auto">
-      <div className="grid grid-cols-5">
+      <div className="grid grid-cols-4">
         <div className="card_1">
           <div className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2">
-              Atendentes:
+            <label className="block  font-bold mb-2">
+            <h4>  Atendentes:</h4>
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -87,7 +87,7 @@ const CallCenter = () => {
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 font-bold mb-2">
-              Clientes:
+            <h4>  Clientes: </h4>
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -100,7 +100,7 @@ const CallCenter = () => {
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 font-bold mb-2">
-              Velocidade:
+            <h4>  Velocidade: </h4>
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -131,26 +131,26 @@ const CallCenter = () => {
               Test
             </button>
           </div>
-          <div className="overflow-x-auto h-96">
+          <div className="overflow-x-auto w-full h-96">
             <table className="table-auto mt-4">
               <thead>
                 <tr>
-                  <th className="px-4 border bg-slate-200 border-slate-900 py-2">
-                    Atendente
+                  <th className="px-2 border card_2 !shadow-none !py-2 border-slate-900 ">
+                  <h5>  Atendente  </h5>
                   </th>
-                  <th className="px-4 border bg-slate-200 border-slate-900 py-2">
-                    Clientes
+                  <th className="px-2 border card_2 !shadow-none !py-2 border-slate-900 ">
+                  <h5>  Clientes  </h5>
                   </th>
                 </tr>
               </thead>
               <tbody>
                 {attendantStats.map((stat, index) => (
                   <tr key={index}>
-                    <td className="border border-slate-900 text-center px-4 py-2">
-                      Atendente {index + 1}
+                    <td className="border border-slate-900 text-center px-2 py-2">
+                    <h5 className=' !text-sm '>  Atendente {index + 1}</h5>
                     </td>
-                    <td className="border border-slate-900 text-center px-4 py-2">
-                      {stat}
+                    <td className="border border-slate-900 text-center px-2 py-2">
+                    <h5 className=' !text-sm '> {stat}</h5> 
                     </td>
                   </tr>
                 ))}
@@ -158,21 +158,21 @@ const CallCenter = () => {
             </table>
           </div>
         </div>
-        <div className="col-span-4">
+        <div className="col-span-3">
           <div className="grid grid-cols-3  gap-4 p-4">
             <div className="col-span-3 card_1 ">
               <Graph1CallCenter attendantStats={attendantStats} />
             </div>
             <div className="col-span-3 text-center text-3xl font-mono card_1">
-              Restam ainda {remainingClients} clientes
+            <h3> Restam ainda {remainingClients} clientes</h3> 
             </div>
             <table className="col-span-3 card_1">
               <thead>
                 <tr>
-                  <th>Dia</th>
-                  <th>Clientes</th>
-                  <th>Atendentes</th>
-                  <th>tempo (minutos)</th>
+                  <th><p className='text-center'>Dia</p></th>
+                  <th><p className='text-center'>Clientes</p></th>
+                  <th><p className='text-center'>Atendentes</p></th>
+                  <th><p className='text-center'>tempo (minutos)</p></th>
                 </tr>
               </thead>
               <tbody>
@@ -181,12 +181,12 @@ const CallCenter = () => {
                     key={index}
                     className="text-center border-2 border-slate-700"
                   >
-                    <td>{index + 1}</td>
+                    <td><p className='text-center'>{index + 1}</p></td>
                     <td className="border-2  border-slate-700">
-                      {result.clients}
+                    <p className='text-center'>{result.clients}</p>
                     </td>
-                    <td>{result.attendants}</td>
-                    <td>{result.time / result.clients / 1000}</td>
+                    <td><p className='text-center'>{result.attendants}</p></td>
+                    <td><p className='text-center'>{result.time / result.clients / 1000}</p></td>
                   </tr>
                 ))}
               </tbody>

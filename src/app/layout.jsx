@@ -12,7 +12,8 @@ export default function RootLayout({ children }) {
         <header>
           <Navbar />
         </header>
-        {children}
+        <main className='primary-color'>{children}</main>
+        
       </body>
     </html>
   );

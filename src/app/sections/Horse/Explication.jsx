@@ -5,7 +5,7 @@ import Graph1 from '../../components/Charts';
 const Explication = () => {
   return (
     <div className="col-span-3 ">
-      <div className="p-5 mt-5 font-mono bg-gray-100 rounded-lg shadow-md">
+      <div className="p-5 mt-5 font-mono card_2 rounded-lg shadow-md">
         <h1 className="text-2xl  font-bold mb-4">
           Threads em uma corrida de cavalos
         </h1>
@@ -34,28 +34,29 @@ const Explication = () => {
             velocidade, se a velocidade máxima for 50, varia entre 40 a 50.
           </p>
         </div>
-        <div className="p-5 mt-5 font-mono bg-gray-100 rounded-lg shadow-md shadow-slate-500">
+        <div className="p-5 mt-5 font-mono card_1 rounded-lg shadow-md shadow-slate-500">
           <h1 className="text-2xl font-bold mb-4">
             Exemplos de variação do cálculo
           </h1>
           <table className="table-auto w-full mb-4 text-center">
-            <thead>
-              <tr className="text-center">
-                <th className="px-4 py-2 ">Speed</th>
-                <th className="px-4 py-2 ">Calculo</th>
-                <th className="px-4 py-2 ">Resultado</th>
-              </tr>
-            </thead>
-            <tbody>
-              {explication.textExample.map(item => (
-                <tr>
-                  <td>{item.value}</td>
-                  <td>{item.formula}</td>
-                  <td>{item.description}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+  <thead>
+    <tr>
+      <th className="px-4 py-2 "><p className="text-center">Speed</p></th>
+      <th className="px-4 py-2 "><p className="text-center">Calculo</p></th>
+      <th className="px-4 py-2 "><p className="text-center">Resultado</p></th>
+    </tr>
+  </thead>
+  <tbody>
+    {explication.textExample.map(item => (
+      <tr>
+        <td ><p className="text-center">{item.value}</p></td>
+        <td ><p className="text-center">{item.formula}</p></td>
+        <td><p className="text-center">{item.description}</p></td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
         </div>
       </div>
     </div>

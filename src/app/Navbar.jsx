@@ -44,6 +44,31 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', homeFunc);
   }, []);
 
+  const handleClick = () => {
+    const root = document.querySelector(':root');
+    const currentColor = getComputedStyle(root).getPropertyValue('--primary-color').trim();
+    if (currentColor === '#0F172A') {
+      root.style.setProperty('--primary-color', 'aliceblue');
+      root.style.setProperty('--text-h1-color', '#0F172A');
+      root.style.setProperty('--text-h2-color', '#0F172A');
+      root.style.setProperty('--text-h3-color', '#0F172A');
+      root.style.setProperty('--text-h4-color', '#0F172A');
+      root.style.setProperty('--text-h5-color', '#0F172A');
+      root.style.setProperty('--text-p-color', '#0F172A');
+      root.style.setProperty('--card-color', '#cbd5e1');
+      root.style.setProperty('--card-2-color', '#e5e7eb');
+    } else {
+      root.style.setProperty('--text-h1-color', 'aliceblue');
+      root.style.setProperty('--text-h2-color', 'aliceblue');
+      root.style.setProperty('--text-h3-color', 'aliceblue');
+      root.style.setProperty('--text-h4-color', 'aliceblue');
+      root.style.setProperty('--text-h5-color', 'aliceblue');
+      root.style.setProperty('--text-p-color', 'aliceblue');
+      root.style.setProperty('--primary-color', '#0F172A');
+      root.style.setProperty('--card-color', '#334454');
+      root.style.setProperty('--card-2-color', '#475e74');
+    }
+  };
   return (
     <nav
       className={`bg-gray-800 duration-500 ${
@@ -59,9 +84,7 @@ const Navbar = () => {
                   <span className="text-3xl">
                     <GoCode />
                   </span>
-                  <span className="te font-mono">
-                    <h1 className="text-2xl">ThreadWorld</h1>
-                  </span>
+                  <span className="p-0 font-mono text-2xl">ThreadWorld</span>
                 </div>
               </Link>
             </div>
@@ -76,6 +99,9 @@ const Navbar = () => {
                 ))}
               </div>
             </div>
+          </div>
+          <div className="a">
+            <button onClick={handleClick} className="text-white">aa</button>
           </div>
         </div>
       </div>

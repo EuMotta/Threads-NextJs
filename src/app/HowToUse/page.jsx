@@ -6,7 +6,7 @@ import '../../styles/HowToUse.css';
 
 export default function page() {
   return (
-    <main className="bg-slate-50">
+    <main>
       <div className="">
         <Hero />
         <GoBack />

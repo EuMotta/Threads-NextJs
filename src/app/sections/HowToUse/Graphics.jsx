@@ -58,7 +58,7 @@ const Graphics = () => (
       </motion.div>
       <motion.div
         variants={fadeIn('right', 'tween', 0, 1)}
-        className="col-span-1 graphics_text"
+        className="col-span-1 graphics_text card_1"
       >
         <div className="graphics_text_text">
           <h1>Gráficos</h1>
@@ -79,20 +79,20 @@ const Graphics = () => (
     <div className="graphics_graphics">
       <h2 className="text-3xl mb-10">Exemplos</h2>
       <div className="grid grid-cols-3 gap-5 p-2">
-        <div className="graphics_graphics_graphic">
+        <div className="graphics_graphics_graphic card_1">
           <h3>Vitórias dos cavalos</h3>
           <HowToGraph1 />
         </div>
-        <div className="graphics_graphics_graphic">
+        <div className="graphics_graphics_graphic card_1">
           <h3>Média dos cavalos</h3>
           <HowToGraph2 />
         </div>
         <div className="col-span-3 flex flex-col gap-5">
-          <div className="graphics_graphics_graphic ">
+          <div className="graphics_graphics_graphic card_1">
             <h3>Atendimentos realizados</h3>
             <HowToGraph3 />
           </div>
-          <div className="graphics_graphics_graphic">
+          <div className="graphics_graphics_graphic card_1">
             <h3>Gráfico misto</h3>
             <HowToGraph4 />
           </div>
