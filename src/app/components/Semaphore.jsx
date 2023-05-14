@@ -8,8 +8,8 @@ const Semaphore = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimeLeft((time) => time - 1);
-      setTimeLeft2((time) => time - 1);
+      setTimeLeft(time => time - 1);
+      setTimeLeft2(time => time - 1);
     }, 1000);
 
     if (timeLeft === 0) {
@@ -52,7 +52,7 @@ const Semaphore = () => {
   }, [timeLeft, timeLeft2]);
 
   return (
-    <div>
+    <div className=" gap-10 grid grid-cols-2 justify-center items-center">
       <div className=" flex flex-col justify-center items-center">
         <div className="bg-slate-900 p-2 rounded-lg flex flex-col gap-3 shadow-md shadow-slate-800">
           <div
@@ -80,8 +80,9 @@ const Semaphore = () => {
             className="rounded-full shadow-md shadow-slate-600"
           />
         </div>
+        <p className="text-center">Tempo restante: {timeLeft}</p>
       </div>
-      <p>Tempo restante: {timeLeft}</p>
+
       <div className=" flex flex-col justify-center items-center">
         <div className="bg-slate-900 p-2 rounded-lg flex flex-col gap-3 shadow-md shadow-slate-800">
           <div
@@ -108,9 +109,9 @@ const Semaphore = () => {
             }}
             className="rounded-full shadow-md shadow-slate-600"
           />
-        </div>
+        </div>{' '}
+        <p className="text-center">Tempo restante: {timeLeft2}</p>
       </div>
-      <p>Tempo restante: {timeLeft2}</p>
     </div>
   );
 };
