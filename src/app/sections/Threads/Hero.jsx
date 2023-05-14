@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
-import aboutPageSvg from '../../../images/About/about.svg';
+import aboutPageSvg from '../../../images/Threads/Hero.svg';
 import { fadeIn, staggerContainer } from '../../../utils/motion';
 
 function ImpedirArrastar(event) {
@@ -17,7 +17,7 @@ const Hero = () => (
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
-      className="grid grid-cols-2"
+      className="grid grid-cols-2 paddings"
     >
       <div className="col-span-1">
         <motion.div
@@ -33,8 +33,8 @@ const Hero = () => (
         >
           <Image
             src={aboutPageSvg}
-            width={400}
-            height={400}
+            width={600}
+            height={600}
             unoptimized
             onDragStart={ImpedirArrastar}
             alt="Hero"
@@ -50,7 +50,7 @@ const Hero = () => (
             Desenvolvimento do projeto
           </h1>
           <div className="text-4xl font-bold mb-2 leading-tight">
-            Confira quem desenvolveu e como foi o desenvolvimento do projeto
+            <h2>Confira quem desenvolveu e como foi o desenvolvimento do projeto</h2>
             <div className="text-blue-600 my-5 text-5xl">
               <Typewriter
                 options={{

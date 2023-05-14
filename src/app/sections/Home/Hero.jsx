@@ -30,9 +30,9 @@ const Hero = () => {
           variants={fadeIn('up', 'tween', 0, 1)}
           className="home_text"
         >
-          <h1>ThreadWorld</h1>
-          <h3>Project</h3>
-          <p>
+          <h1 className='text-white'>ThreadWorld</h1>
+          <h3 className='text-white'>Project</h3>
+          <p className='text-white'>
             Projeto de Threads desenvolvido em Next.js
           </p>
           <div className="home_buttons">

@@ -1,4 +1,4 @@
 import Hero from './Hero';
-import Threads1 from './Threads1';
+import Threads from './Threads';
 
-export {Hero, Threads1 as Threads};
+export {Hero, Threads};

@@ -14,6 +14,19 @@
   --card-2-color: #d9e1ee;
   --tt: #475e74;
 }
+.home_shrink{
+  width: 100%;
+
+  top: 0;
+  left: 0;
+  z-index: 999;
+  transition: 300ms ease-in-out;
+}
+.nav_shrink {
+  position: sticky;
+  background-color: rgba(54, 56, 59, 0.8) !important;
+  transition: 300ms ease-in-out;
+}
 main.primary-color {
   background-color: var(--primary-color);
 }

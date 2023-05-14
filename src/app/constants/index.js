@@ -57,6 +57,10 @@ export const navbar_links = [
     name: 'Sobre',
     href: '/About',
   },
+  {
+    name: 'Threads',
+    href: '/Threads',
+  },
 ]
 
 export const packageList = [
@@ -164,18 +168,25 @@ export const developingList = {
 export const threadList = [
   {
     title: 'O que é um Thread',
-    description: 'Um thread é uma sequência de instruções que pode ser executada de forma independente dentro de um processo. Isso permite que várias tarefas sejam executadas simultaneamente dentro do mesmo programa.',
-    time: 0.25,
-  },
-  {
-    title: 'Multithreading',
-    description: 'Multithreading é o processo de usar vários threads para executar tarefas simultaneamente dentro de um programa. Isso pode melhorar o desempenho e a responsividade do programa.',
+    description: (
+      <>
+        Em português, Thread significa fio ou linha, porém na computação tem
+        outro significado, que é uma <u>sequencia de comandos que um processo ou programa executa</u>.
+        Basicamente é uma forma de um processo se autodividir em duas ou
+        mais tarefas que podem ser executadas concorrentemente'
+      </>
+    ),
     time: 0.5,
   },
   {
     title: 'Criação de Threads',
     description: 'Threads podem ser criados usando funções específicas da linguagem de programação ou do sistema operacional. Por exemplo, em Java, você pode criar um thread criando uma instância da classe `Thread` e fornecendo o código a ser executado pelo thread.',
     time: 0.75,
+  },
+  {
+    title: 'Multithreading',
+    description: 'Multithreading é uma técnica de programação que permite que um programa execute várias tarefas ao mesmo tempo, usando diferentes fluxos de execução chamados threads. Cada thread pode realizar uma parte da lógica do programa de forma independente e concorrente com as outras threads..',
+    time: 0.5,
   },
   {
     title: 'Sincronização de Threads',
@@ -185,6 +196,24 @@ export const threadList = [
   {
     title: 'Aplicação de Threads',
     description: 'Threads têm muitas aplicações práticas, como melhorar o desempenho e a responsividade de programas, permitir a execução simultânea de tarefas e simplificar o design de programas complexos.',
+    time: 1.25,
+  },
+  {
+    title: 'Exemplo de aplicação de Threads',
+    description: (
+      <>
+        Um exemplo de uso de thread em um programa é o de um editor de textos, como o <u> Microsoft Word</u>. Tem uma thread que fica esperando você digitar algumas teclas e exibir na tela. Outra thread que fica verificando a ortografia e gramática do texto. Outra thread que fica salvando o documento periodicamente. E assim por diante. Cada thread realiza uma tarefa específica e independente das outras, mas todas contribuem para o funcionamento do programa.',
+      </>
+    ),
+    time: 1.25,
+  },
+  {
+    title: 'Exemplo de aplicação de Threads',
+    description: (
+      <>
+        Outro exemplo simples de thread é o de um <u> relógio digital</u>. Imagine que você tem um relógio que mostra as horas, os minutos, os segundos e a data. Cada um desses elementos pode ser atualizado por uma thread diferente. Por exemplo, a thread dos segundos incrementa o valor dos segundos a cada segundo. A thread dos minutos incrementa o valor dos minutos a cada 60 segundos. A thread das horas incrementa o valor das horas a cada 60 minutos. E a thread da data verifica se é necessário mudar o dia, o mês ou o ano. Cada thread faz uma tarefa simples e independente das outras, mas todas contribuem para o funcionamento do relógio.',
+      </>
+    ),
     time: 1.25,
   },
 ]

@@ -12,7 +12,7 @@ function ImpedirArrastar(event) {
   event.preventDefault();
 }
 const Threads1 = () => (
-  <section className='paddings z-10 bg-slate-50'>
+  <section className='paddings z-10'>
     <motion.div
       variants={staggerContainer}
       initial="hidden"
@@ -33,7 +33,7 @@ const Threads1 = () => (
                   className="mb-1 mt-5"
                   key={thread.title}
                 >
-                  <div className="font-semibold underline hover:text-blue-600 transition-all z-50 font-mono text-2xl">{thread.title}</div>
+                  <div className=" transition-all z-50 font-mono text-2xl"><h4>{thread.title}</h4></div>
                   <p>&nbsp;{thread.description}</p>
                 </motion.div>
               ))}
@@ -81,7 +81,7 @@ const Threads1 = () => (
                   className="mb-1 mt-5"
                   key={thread.title}
                 >
-                  <div className="font-semibold underline hover:text-blue-600 transition-all font-mono text-2xl">{thread.title}</div>
+                 <div className=" transition-all z-50 font-mono text-2xl"><h4>{thread.title}</h4></div>
                   <p>&nbsp;{thread.description}</p>
                 </motion.div>
               ))}
