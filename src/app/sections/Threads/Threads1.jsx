@@ -81,7 +81,7 @@ const Threads1 = () => (
                   className="mb-1 mt-5"
                   key={thread.title}
                 >
-                 <div className=" transition-all z-50 font-mono text-2xl"><h4>{thread.title}</h4></div>
+                  <div className="font-semibold underline hover:text-blue-600 transition-all font-mono text-2xl">{thread.title}</div>
                   <p>&nbsp;{thread.description}</p>
                 </motion.div>
               ))}

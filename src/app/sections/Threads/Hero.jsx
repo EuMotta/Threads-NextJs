@@ -47,20 +47,17 @@ const Hero = () => (
       >
         <div className="mx-5">
           <h1 className="font-bold mb-5 font-mono text-blue-600 text-7xl leading-none">
-            Desenvolvimento do projeto
+            Threads
           </h1>
           <div className="text-4xl font-bold mb-2 leading-tight">
-            <h2>Confira quem desenvolveu e como foi o desenvolvimento do projeto</h2>
+            <h2>O que é um thread? Entenda como funciona e sua utilidade em um sistema operacional</h2>
             <div className="text-blue-600 my-5 text-5xl">
               <Typewriter
                 options={{
                   strings: [
-                    'Desenvolvedor',
-                    'Linguagem utilizada',
-                    'Imagens',
-                    'Cálculos',
-                    'Pacotes',
-                    'e mais!',
+                    'O que é?',
+                    'MultiThreading',
+                    'Exemplos',
                   ],
                   autoStart: true,
                   loop: true,

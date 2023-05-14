@@ -216,4 +216,13 @@ export const threadList = [
     ),
     time: 1.25,
   },
+  {
+    title: 'Cancelamento Threads',
+    description: (
+      <>
+        O cancelamento de threads corresponde à tarefa de terminar um thread antes que se complete. Por exemplo, se múltiplos threads estão pesquisando concorrentemente em um banco de dados e um thread retorna o resultado, os threads que ainda estão sendo executados podem ser cancelados. Uma outra situação pode ocorrer quando um usuário pressionar um botão em um navegador da Web. Com frequência, uma página da Web é carregada em um thread separado. Quando um usuário pressionar o botão stop, o thread que estava carregando a página é cancelado. Um thread que está para ser cancelado é frequêntemente denominado thread-alvo.',
+      </>
+    ),
+    time: 1.25,
+  },
 ]
