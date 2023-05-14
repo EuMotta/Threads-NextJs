@@ -162,16 +162,22 @@ const RocketLaunch2 = () => {
   const [direction, setDirection] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   const maxSpeed = 200;
-  const minSpeed = 0;
+  const maxDirection = 200;
 
   useEffect(() => {
     if (gameOver) return;
     const interval = setInterval(() => {
       let directionChange = Math.random() < 0.5 ? -50 : 50;
       if (isDirectionActive) {
-        setDirection(currentDirection => currentDirection + directionChange);
-      }if(!isDirectionActive) {
-        setDirection(0);
+        setDirection(currentDirection => {
+          if (
+            currentDirection >= maxDirection ||
+            currentDirection <= -maxDirection
+          ) {
+            return currentDirection;
+          }
+          return currentDirection + directionChange;
+        });
       }
       setSpeed(currentSpeed => {
         let newSpeed = currentSpeed;
@@ -206,7 +212,7 @@ const RocketLaunch2 = () => {
   }, [isThread1Active, isThread2Active, isDirectionActive]);
 
   return (
-    <div className="h-96 flex justify-center items-end">
+    <div className="h-[28rem] flex justify-center items-end">
       <div className="w-96">
         <div className="flex gap-1 justify-center items-center w-full">
           <p
@@ -276,9 +282,11 @@ const RocketLaunch2 = () => {
                 <button
                   onClick={() => {
                     setSpeed(0);
+                    setDirection(0);
                     setGameOver(false);
                     setIsThread1Active(false);
                     setIsThread2Active(false);
+                    setIsDirectionActive(false);
                   }}
                   className="border px-1 bg-green-300 rounded-e-xl border-slate-800 shadow-md shadow-slate-500"
                 >
@@ -290,6 +298,27 @@ const RocketLaunch2 = () => {
                 Ainda não atingiu o espaço.
               </p>
             )}
+            {direction === maxDirection ||
+              (direction <= -maxDirection && (
+                <div className="flex">
+                  <p className="text-center shadow-md rounded-s-xl shadow-slate-500 bg-green-200">
+                    Caiu!
+                  </p>
+                  <button
+                    onClick={() => {
+                      setSpeed(0);
+                      setDirection(0);
+                      setGameOver(false);
+                      setIsThread1Active(false);
+                      setIsThread2Active(false);
+                      setIsDirectionActive(false);
+                    }}
+                    className="border px-1 bg-green-300 rounded-e-xl border-slate-800 shadow-md shadow-slate-500"
+                  >
+                    Reiniciar
+                  </button>
+                </div>
+              ))}
           </div>
           <div className="flex gap-5 justify-center items-center">
             <button onClick={() => setIsThread1Active(isActive => !isActive)}>
@@ -317,6 +346,19 @@ const RocketLaunch2 = () => {
               )}
             </button>
           </div>
+          <button
+            onClick={() => {
+              setSpeed(0);
+              setDirection(0);
+              setGameOver(false);
+              setIsThread1Active(false);
+              setIsThread2Active(false);
+              setIsDirectionActive(false);
+            }}
+            className="border px-1 bg-green-300 rounded-xl mt-2 border-slate-800 shadow-md shadow-slate-500"
+          >
+            Reiniciar
+          </button>
         </div>
       </div>
     </div>
