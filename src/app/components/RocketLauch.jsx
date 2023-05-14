@@ -7,28 +7,31 @@ const RocketLaunch = () => {
   const [speed, setSpeed] = useState(0);
   const [isThread1Active, setIsThread1Active] = useState(false);
   const [isThread2Active, setIsThread2Active] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
   const maxSpeed = 200;
   const minSpeed = 0;
 
   useEffect(() => {
+    if (gameOver) return;
     const interval = setInterval(() => {
       setSpeed(currentSpeed => {
         let newSpeed = currentSpeed;
 
         if (isThread1Active) {
-          newSpeed += Math.random() * 10;
+          newSpeed += 10;
         }
 
         if (isThread2Active) {
-          newSpeed += Math.random() * 20;
+          newSpeed += 10;
         }
 
         if (!isThread1Active && !isThread2Active) {
-          newSpeed -= Math.random() * 5;
+          newSpeed -= 20;
         }
 
         if (newSpeed >= maxSpeed) {
           clearInterval(interval);
+          setGameOver(true);
           return maxSpeed;
         }
 
@@ -38,16 +41,15 @@ const RocketLaunch = () => {
 
         return newSpeed;
       });
-    }, 300);
+    }, 700);
 
     return () => clearInterval(interval);
   }, [isThread1Active, isThread2Active]);
 
   return (
     <div className="h-96 flex justify-center items-end">
-      
       <div className="w-96">
-      <div className="flex gap-1 justify-center items-center w-full">
+        <div className="flex gap-1 justify-center items-center w-full">
           <p
             className="relative"
             style={{
@@ -99,15 +101,28 @@ const RocketLaunch = () => {
           style={{
             bottom: speed,
           }}
-          className="relative flex justify-center items-center  text-5xl"
+          className="relative flex justify-center duration-700 items-center  text-5xl"
         >
           <AiTwotoneRocket />
         </div>
-        <div className="card_2 ">
+        <div className="card_2 flex flex-col justify-center items-center">
           <p className="text-center">Distância atual: {Math.floor(speed)}Km</p>
-          {speed === maxSpeed && <p className='text-center'>Atingiu o espaço!</p>}
+          {speed === maxSpeed && (
+            <div className="flex">
+              <p className="text-center">Atingiu o espaço!</p>
+              <button
+                onClick={() => {
+                  setSpeed(0), setGameOver(false), setIsThread1Active(false), setIsThread2Active(false);
+                }}
+                className="border px-1 bg-red-300 rounded-xl border-slate-800 shadow-md shadow-slate-500"
+              >
+                Reiniciar
+              </button>
+            </div>
+          )}
           <div className="flex gap-5 justify-center items-center">
             <button onClick={() => setIsThread1Active(isActive => !isActive)}>
+              <p className='text-center'>T1</p>
               {isThread1Active ? (
                 <FaStopCircle className="text-red-600 text-3xl hover:text-red-800 rounded-full hover:scale-105 hover:shadow-md transition-all active:text-red-600" />
               ) : (
@@ -115,6 +130,7 @@ const RocketLaunch = () => {
               )}
             </button>
             <button onClick={() => setIsThread2Active(isActive => !isActive)}>
+            <p className='text-center'>T2</p>
               {isThread2Active ? (
                 <FaStopCircle className="text-red-600 text-3xl hover:text-red-800 rounded-full hover:scale-105 hover:shadow-md transition-all active:text-red-600" />
               ) : (

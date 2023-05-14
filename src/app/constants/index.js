@@ -208,10 +208,19 @@ export const threadList = [
     time: 1.25,
   },
   {
-    title: 'Exemplo de aplicação de Threads',
+    title: 'Relógio digital',
     description: (
       <>
-        Outro exemplo simples de thread é o de um <u> relógio digital</u>. Imagine que você tem um relógio que mostra as horas, os minutos, os segundos e a data. Cada um desses elementos pode ser atualizado por uma thread diferente. Por exemplo, a thread dos segundos incrementa o valor dos segundos a cada segundo. A thread dos minutos incrementa o valor dos minutos a cada 60 segundos. A thread das horas incrementa o valor das horas a cada 60 minutos. E a thread da data verifica se é necessário mudar o dia, o mês ou o ano. Cada thread faz uma tarefa simples e independente das outras, mas todas contribuem para o funcionamento do relógio.',
+        Outro exemplo simples de thread é o de um <u> relógio digital</u>. Imagine que você tem um relógio que mostra as horas, os minutos e os segundos. Cada um desses elementos pode ser atualizado por uma thread diferente. Por exemplo, a thread dos segundos incrementa o valor dos segundos a cada segundo. A thread dos minutos incrementa o valor dos minutos a cada 60 segundos. A thread das horas incrementa o valor das horas a cada 60 minutos.,
+      </>
+    ),
+    time: 1.25,
+  },
+  {
+    title: 'Semáforo',
+    description: (
+      <>
+        Outro exemplo simples de thread é o de um <u> Semáforo </u>. Em um semáforo, os threads precisam se comunicar de forma sincronizada, para não interferir no acionamento da cor do sinal.',
       </>
     ),
     time: 1.25,

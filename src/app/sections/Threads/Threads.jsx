@@ -117,7 +117,7 @@ const Threads = () => (
         <div className="col-span-1">
           <div className="px-5">
             <div className="z-50">
-              {threadList.slice(3, 6).map(threads => (
+              {threadList.slice(6, 9).map(threads => (
                 <motion.div
                   variants={textVariant(`${threads.time}`)}
                   className="mb-1 mt-5"
