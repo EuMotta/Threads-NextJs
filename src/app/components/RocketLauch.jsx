@@ -170,14 +170,16 @@ const RocketLaunch2 = () => {
       let directionChange = Math.random() < 0.5 ? -50 : 50;
       if (isDirectionActive) {
         setDirection(currentDirection => {
-          if (
-            currentDirection >= maxDirection ||
-            currentDirection <= -maxDirection
-          ) {
-            return currentDirection;
+          let newDirection = currentDirection + directionChange;
+          if (newDirection >= maxDirection) {
+            clearInterval(interval);
+            setGameOver(true);
+            return maxDirection;
           }
-          return currentDirection + directionChange;
+          return newDirection;
         });
+      } else {
+        setDirection(0);
       }
       setSpeed(currentSpeed => {
         let newSpeed = currentSpeed;
@@ -298,27 +300,26 @@ const RocketLaunch2 = () => {
                 Ainda não atingiu o espaço.
               </p>
             )}
-            {direction === maxDirection ||
-              (direction <= -maxDirection && (
-                <div className="flex">
-                  <p className="text-center shadow-md rounded-s-xl shadow-slate-500 bg-green-200">
-                    Caiu!
-                  </p>
-                  <button
-                    onClick={() => {
-                      setSpeed(0);
-                      setDirection(0);
-                      setGameOver(false);
-                      setIsThread1Active(false);
-                      setIsThread2Active(false);
-                      setIsDirectionActive(false);
-                    }}
-                    className="border px-1 bg-green-300 rounded-e-xl border-slate-800 shadow-md shadow-slate-500"
-                  >
-                    Reiniciar
-                  </button>
-                </div>
-              ))}
+            {direction >= maxDirection || direction <= -maxDirection ? (
+              <div className="flex">
+                <p className="text-center shadow-md rounded-s-xl shadow-slate-500 bg-green-200">
+                  Caiu!
+                </p>
+                <button
+                  onClick={() => {
+                    setSpeed(0);
+                    setDirection(0);
+                    setGameOver(false);
+                    setIsThread1Active(false);
+                    setIsThread2Active(false);
+                    setIsDirectionActive(false);
+                  }}
+                  className="border px-1 bg-green-300 rounded-e-xl border-slate-800 shadow-md shadow-slate-500"
+                >
+                  Reiniciar
+                </button>
+              </div>
+            ) : null}
           </div>
           <div className="flex gap-5 justify-center items-center">
             <button onClick={() => setIsThread1Active(isActive => !isActive)}>
