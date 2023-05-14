@@ -10,7 +10,7 @@ import { fadeIn, staggerContainer, textVariant } from '../../../utils/motion';
 import { packageList, threadList } from '../../constants';
 import Clock from '../../components/Clock';
 import Semaphore from '../../components/Semaphore';
-import RocketLaunch from '../../components/RocketLauch';
+import {RocketLaunch,  RocketLaunch2 } from '../../components/RocketLauch';
 
 function ImpedirArrastar(event) {
   event.preventDefault();
@@ -183,13 +183,13 @@ const Threads = () => (
             <RocketLaunch />
           </motion.div>
           <p className="text-center">
-            MultiThreading desenvolvido no LucidChart
+            Lançamento de foguete simulando dois Threads.
           </p>
         </div>
         <div className="col-span-1">
           <div className="px-5">
             <div className="z-50">
-              {threadList.slice(3, 6).map(threads => (
+              {threadList.slice(9, 10).map(threads => (
                 <motion.div
                   variants={textVariant(`${threads.time}`)}
                   className="mb-1 mt-5"
@@ -204,6 +204,45 @@ const Threads = () => (
             </div>
           </div>
         </div>
+      </div>
+      <div className="grid mt-10 grid-cols-2">
+      <div className="col-span-1">
+          <div className="px-5">
+            <div className="z-50">
+              {threadList.slice(10, 11).map(threads => (
+                <motion.div
+                  variants={textVariant(`${threads.time}`)}
+                  className="mb-1 mt-5"
+                  key={threads.title}
+                >
+                  <div className="">
+                    <h4 className="font-bold">{threads.title}</h4>
+                  </div>
+                  <p>&nbsp;{threads.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="col-span-1 my-10">
+          <motion.div
+            variants={fadeIn('down', 'tween', 0, 1)}
+            className="flex justify-center z-10 card_1"
+            drag
+            dragConstraints={{
+              top: -0.2,
+              left: -0.2,
+              right: 0.2,
+              bottom: 0.2,
+            }}
+          >
+            <RocketLaunch2 />
+          </motion.div>
+          <p className="text-center">
+            Lançamento de foguete simulando dois Threads.
+          </p>
+        </div>
+
       </div>
     </motion.div>
   </section>

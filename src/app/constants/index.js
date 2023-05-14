@@ -1,3 +1,4 @@
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import horse1 from '../../images/horse1.svg';
 import horse2 from '../../images/horse2.svg';
 
@@ -230,6 +231,24 @@ export const threadList = [
     description: (
       <>
         O cancelamento de threads corresponde à tarefa de terminar um thread antes que se complete. Por exemplo, se múltiplos threads estão pesquisando concorrentemente em um banco de dados e um thread retorna o resultado, os threads que ainda estão sendo executados podem ser cancelados. Uma outra situação pode ocorrer quando um usuário pressionar um botão em um navegador da Web. Com frequência, uma página da Web é carregada em um thread separado. Quando um usuário pressionar o botão stop, o thread que estava carregando a página é cancelado. Um thread que está para ser cancelado é frequêntemente denominado thread-alvo.',
+      </>
+    ),
+    time: 1.25,
+  },
+  {
+    title: 'Foguete com dois threads',
+    description: (
+      <>
+        Quando mais de um thread é executado em cima de um ator, diminui a sobrecarga sobre os threads, dividindos em proporções iguais de potencia, porém dependendo da ação a ser realizada é estritamente essencial que a execução seja simultanea. No caso do foguete ao lado, o objetivo do thread é apenas impulsionar para cima, independente de qual thread vá fazer o impulsionamento no momento não haverá problemas se não for sincronizado. <br /> &nbsp; Caso o objetivo do thread fosse direcionar o foguete, é indispensavel a sincronização, pois sem a sincronização o foguete poderia facilmente sair de rota e até mesmo cair, pois não haveria como seguir uma direção.
+      </>
+    ),
+    time: 1.25,
+  },
+  {
+    title: 'Exemplo da falta de sincronização em um sistema critico',
+    description: (
+      <>
+        Utilizando o mesmo exemplo do foguete, mas acrescentando a direção sem sincronização, podemos ver que não há uma direção especifica para o foguete, pois os threads executam de forma "aleatoria" e isso pode ser um problema gigantesco em um sistema critico. <br/> &nbsp; Assim que os propulsores são acionados o foguete começa a subir, quando acionar a direção ele se direcionará para posições aleatorias exemplo: <span className='flex gap-2'><FaArrowLeft /><FaArrowRight /><FaArrowLeft /><FaArrowLeft /><FaArrowRight /><FaArrowLeft /><FaArrowLeft /><FaArrowLeft /><FaArrowRight />.</span> <br /> &nbsp; Agora imagine uma situação dessa em um sistema como <u>Controle de Tráfego Aéreo</u>, ou até mesmo <u>Sistemas Bancários</u>, quanto maior é o sistema, maior é a gravidade da falta de sincronização.
       </>
     ),
     time: 1.25,
