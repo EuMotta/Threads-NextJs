@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import KernelSpace from '../../../images/Threads/KernelSpace.svg';
-
+import Hibrid from '../../../images/Threads/Hibrid.svg';
 import { fadeIn, staggerContainer, textVariant } from '../../../utils/motion';
 import { threadList } from '../../constants';
 
@@ -17,6 +17,7 @@ const TypeThreads = () => (
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.1 }}
+      className="flex flex-col gap-20"
     >
       <div className="text-center mb-20">
         <h1>Tipos de threads</h1>
@@ -46,7 +47,10 @@ const TypeThreads = () => (
                   <h4 className="font-bold">Kernel-level</h4>
                 </div>
                 <p>
-                  &nbsp;São threads que são reconhecidas e escalonadas pelo núcleo do sistema. Elas podem fazer chamadas de sistema e bloquear sem afetar as outras threads do mesmo processo, mas são mais lentas na criação e na troca de contexto
+                  &nbsp;São threads que são reconhecidas e escalonadas pelo
+                  núcleo do sistema. Elas podem fazer chamadas de sistema e
+                  bloquear sem afetar as outras threads do mesmo processo, mas
+                  são mais lentas na criação e na troca de contexto
                 </p>
                 <br />
               </motion.div>
@@ -56,7 +60,7 @@ const TypeThreads = () => (
         <div className="col-span-1 card_1 ">
           <motion.div
             variants={fadeIn('down', 'tween', 0, 1)}
-            className="flex justify-center"
+            className="flex justify-center items-center"
             drag
             dragConstraints={{
               top: -0.2,
@@ -67,6 +71,30 @@ const TypeThreads = () => (
           >
             <Image
               src={KernelSpace}
+              width={450}
+              height={450}
+              unoptimized
+              alt="threadss"
+              onDragStart={ImpedirArrastar}
+            />
+          </motion.div>
+        </div>
+      </div>
+      <div className="grid grid-cols-2">
+        <div className="col-span-1 card_1 ">
+          <motion.div
+            variants={fadeIn('down', 'tween', 0, 1)}
+            className="flex justify-center items-center"
+            drag
+            dragConstraints={{
+              top: -0.2,
+              left: -0.2,
+              right: 0.2,
+              bottom: 0.2,
+            }}
+          >
+            <Image
+              src={Hibrid}
               width={550}
               height={550}
               unoptimized
@@ -74,6 +102,32 @@ const TypeThreads = () => (
               onDragStart={ImpedirArrastar}
             />
           </motion.div>
+        </div>
+        <div className="col-span-1">
+          <div className="px-5">
+            <div>
+              <motion.div variants={textVariant(1)} className="mb-1 mt-5">
+                <div>
+                  <h4 className="font-bold">Hibridos</h4>
+                </div>
+                <p>
+                  &nbsp;Threads híbridas são implementadas tanto no espaço do
+                  usuário quanto no núcleo do sistema operacional. O sistema
+                  operacional sabe das threads do usuário e faz o seu
+                  gerenciamento.
+                </p>
+                <p>
+                  &nbsp;A vantagem das threads híbridas é a flexibilidade em
+                  função das duas implementações. Elas são implementadas tanto
+                  no espaço do usuário quanto no núcleo do sistema operacional.
+                  O sistema operacional sabe das threads do usuário e faz o seu
+                  gerenciamento . Isso permite que o sistema operacional
+                  gerencie as threads de maneira mais eficiente e flexível.
+                </p>
+                <br />
+              </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </motion.div>
