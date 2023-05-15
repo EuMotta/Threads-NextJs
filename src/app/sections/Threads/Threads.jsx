@@ -21,8 +21,8 @@ const Threads = () => (
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.25 }}
-      className="container mx-auto"
+      viewport={{ once: true, amount: 0.1 }}
+      className="container flex flex-col gap-20 mx-auto"
     >
       <div className="grid grid-cols-2">
         <div className="col-span-1">
@@ -44,7 +44,7 @@ const Threads = () => (
             </div>
           </div>
         </div>
-        <div className="col-span-1 my-10">
+        <div className="col-span-1 ">
           <motion.div
             variants={fadeIn('down', 'tween', 0, 1)}
             className="flex justify-center"
@@ -68,7 +68,7 @@ const Threads = () => (
         </div>
       </div>
       <div className="grid mt-10 grid-cols-2">
-        <div className="col-span-1 my-10">
+        <div className="col-span-1 ">
           <motion.div
             variants={fadeIn('down', 'tween', 0, 1)}
             className="flex justify-center z-10 card_1"
@@ -132,7 +132,7 @@ const Threads = () => (
             </div>
           </div>
         </div>
-        <div className="col-span-1 flex flex-col gap-14 my-10">
+        <div className="col-span-1 flex flex-col justify-center gap-14 ">
           <div className="">
             <motion.div
               variants={fadeIn('down', 'tween', 0, 1)}
@@ -168,7 +168,7 @@ const Threads = () => (
         </div>
       </div>
       <div className="grid mt-10 grid-cols-2">
-        <div className="col-span-1 my-10">
+        <div className="col-span-1 ">
           <motion.div
             variants={fadeIn('down', 'tween', 0, 1)}
             className="flex justify-center z-10 card_1"
@@ -224,7 +224,7 @@ const Threads = () => (
             </div>
           </div>
         </div>
-        <div className="col-span-1 my-10">
+        <div className="col-span-1 ">
           <motion.div
             variants={fadeIn('down', 'tween', 0, 1)}
             className="flex justify-center z-10 card_1"
