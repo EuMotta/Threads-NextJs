@@ -40,7 +40,7 @@ const Hero = () => (
             </div>
           </div>
           <div className="font-mono text-xl">
-           <h4> Inicie seu atendimento!</h4>
+            <h4> Inicie seu atendimento!</h4>
           </div>
         </div>
       </motion.div>

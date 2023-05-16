@@ -26,7 +26,7 @@ const Packages = () => (
           <div className="px-5">
             <h1 className="mb-5">Bibliotecas</h1>
             <div>
-              {packageList.slice(0, 3).map(library => (
+              {packageList.slice(0, 3).map((library) => (
                 <motion.div
                   variants={textVariant(`${library.time}`)}
                   className="mb-1 mt-5"
@@ -94,7 +94,7 @@ const Packages = () => (
         <div className="col-span-1">
           <div className="px-5">
             <div className="z-50">
-              {packageList.slice(3, 6).map(library => (
+              {packageList.slice(3, 6).map((library) => (
                 <motion.div
                   variants={textVariant(`${library.time}`)}
                   className="mb-1 mt-5"

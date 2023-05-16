@@ -1,4 +1,3 @@
-
 import {
   PieChart,
   Pie,
@@ -51,9 +50,9 @@ const Graph3 = ({
           bottom: 5,
         }}
       >
-        <CartesianGrid strokeDasharray="3 3"  stroke="#2B71C5"/>
-        <XAxis dataKey="name" tick={{ fill: '#0086ea' }}/>
-        <YAxis tick={{ fill: '#0086ea' }}/>
+        <CartesianGrid strokeDasharray="3 3" stroke="#2B71C5" />
+        <XAxis dataKey="name" tick={{ fill: '#0086ea' }} />
+        <YAxis tick={{ fill: '#0086ea' }} />
         <Tooltip />
         <Legend />
         <Bar dataKey="eficiencia" fill="#8884d8" />
@@ -94,9 +93,9 @@ const Graph2 = ({
           bottom: 5,
         }}
       >
-        <CartesianGrid strokeDasharray="3 3" stroke="#2B71C5"/>
-        <XAxis dataKey="name" tick={{ fill: '#0086ea' }}/>
-        <YAxis tick={{ fill: '#0086ea' }}/>
+        <CartesianGrid strokeDasharray="3 3" stroke="#2B71C5" />
+        <XAxis dataKey="name" tick={{ fill: '#0086ea' }} />
+        <YAxis tick={{ fill: '#0086ea' }} />
         <Tooltip />
         <Legend />
         <Bar dataKey="atraso" fill="#8884d8" />
@@ -148,24 +147,11 @@ const Graph1 = ({ victoryHorse1, victoryHorse2, draw }) => {
 /* Horse End */
 
 /* CallCenter */
-const CustomTooltip = ({ active, payload }) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="custom-tooltip">
-        <p>{payload[0].value}</p>
-      </div>
-    );
-  }
-
-  return null;
-};
-const Graph1CallCenter = ({ stat, attendantStats }) => {
+const Graph1CallCenter = ({ attendantStats }) => {
   const data = attendantStats.map((stat, index) => ({
     name: `At ${index + 1}`,
     value: stat,
   }));
-
-  const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
 
   return (
     <ResponsiveContainer width="100%" height={300}>
@@ -181,7 +167,6 @@ const Graph1CallCenter = ({ stat, attendantStats }) => {
           bottom: 0,
         }}
         backgroundColor="#0086ea"
-        
       >
         <CartesianGrid strokeDasharray="3 3" stroke="#2B71C5" />
         <XAxis dataKey="name" tick={{ fill: '#0086ea' }} />
@@ -355,56 +340,57 @@ const HowToGraph4 = () => {
       name: 'Atendente 1',
       atendimentos: 21,
       velocidadeMédia: 15,
-      solucionados:21,
+      solucionados: 21,
     },
     {
       name: 'Atendente 2',
       atendimentos: 20,
       velocidadeMédia: 15,
-      solucionados:19,
+      solucionados: 19,
     },
     {
       name: 'Atendente 3',
       atendimentos: 19,
       velocidadeMédia: 15,
-      solucionados:18,
+      solucionados: 18,
     },
     {
       name: 'Atendente 4',
       atendimentos: 21,
       velocidadeMédia: 15,
-      solucionados:20,
+      solucionados: 20,
     },
     {
       name: 'Atendente 5',
       atendimentos: 20,
       velocidadeMédia: 15,
-      solucionados:17,
+      solucionados: 17,
     },
     {
       name: 'Atendente 6',
       atendimentos: 20,
       velocidadeMédia: 15,
-      solucionados:17,
+      solucionados: 17,
     },
     {
       name: 'Atendente 7',
       atendimentos: 21,
       velocidadeMédia: 15,
-      solucionados:17,
+      solucionados: 17,
     },
     {
       name: 'Atendente 8',
       atendimentos: 21,
       velocidadeMédia: 15,
-      solucionados:16,
+      solucionados: 16,
     },
   ];
 
   return (
     <ResponsiveContainer width="100%" height={300}>
       <ComposedChart
-        width={200} height={200}
+        width={200}
+        height={200}
         data={data}
         margin={{
           top: 20,
@@ -422,7 +408,12 @@ const HowToGraph4 = () => {
         <YAxis label={{ value: 'Index', angle: -90, position: 'insideLeft' }} />
         <Tooltip />
         <Legend />
-        <Area type="monotone" dataKey="atendimentos" fill="#8884d8" stroke="#8884d8" />
+        <Area
+          type="monotone"
+          dataKey="atendimentos"
+          fill="#8884d8"
+          stroke="#8884d8"
+        />
         <Bar dataKey="velocidadeMédia" barSize={20} fill="#413ea0" />
         <Line type="monotone" dataKey="solucionados" stroke="#ff7300" />
       </ComposedChart>
@@ -438,5 +429,5 @@ export {
   HowToGraph2,
   HowToGraph3,
   Graph1CallCenter,
-  HowToGraph4
+  HowToGraph4,
 };

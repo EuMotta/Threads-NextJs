@@ -8,8 +8,8 @@ const Semaphore = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimeLeft(time => time - 1);
-      setTimeLeft2(time => time - 1);
+      setTimeLeft((time) => time - 1);
+      setTimeLeft2((time) => time - 1);
     }, 1000);
 
     if (timeLeft === 0) {

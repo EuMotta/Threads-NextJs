@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { AiTwotoneRocket } from 'react-icons/ai';
-import { BsCircleFill } from 'react-icons/bs';
 import { FaPlayCircle, FaStopCircle } from 'react-icons/fa';
 
 const RocketLaunch = () => {
@@ -9,12 +8,11 @@ const RocketLaunch = () => {
   const [isThread2Active, setIsThread2Active] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const maxSpeed = 200;
-  const minSpeed = 0;
 
   useEffect(() => {
     if (gameOver) return;
     const interval = setInterval(() => {
-      setSpeed(currentSpeed => {
+      setSpeed((currentSpeed) => {
         let newSpeed = currentSpeed;
 
         if (isThread1Active) {
@@ -114,6 +112,7 @@ const RocketLaunch = () => {
                   Atingiu o espaço!
                 </p>
                 <button
+                  type="button"
                   onClick={() => {
                     setSpeed(0);
                     setGameOver(false);
@@ -132,7 +131,10 @@ const RocketLaunch = () => {
             )}
           </div>
           <div className="flex gap-5 justify-center items-center">
-            <button onClick={() => setIsThread1Active(isActive => !isActive)}>
+            <button
+              type="button"
+              onClick={() => setIsThread1Active((isActive) => !isActive)}
+            >
               <p className="text-center">T1</p>
               {isThread1Active ? (
                 <FaStopCircle className="text-red-600 text-3xl hover:text-red-800 rounded-full hover:scale-105 hover:shadow-md transition-all active:text-red-600" />
@@ -140,7 +142,10 @@ const RocketLaunch = () => {
                 <FaPlayCircle className='text-green-600 text-3xl hover:text-green-800 rounded-full hover:scale-105 hover:shadow-md transition-all active:text-red-600" />' />
               )}
             </button>
-            <button onClick={() => setIsThread2Active(isActive => !isActive)}>
+            <button
+              type="button"
+              onClick={() => setIsThread2Active((isActive) => !isActive)}
+            >
               <p className="text-center">T2</p>
               {isThread2Active ? (
                 <FaStopCircle className="text-red-600 text-3xl hover:text-red-800 rounded-full hover:scale-105 hover:shadow-md transition-all active:text-red-600" />
@@ -167,10 +172,10 @@ const RocketLaunch2 = () => {
   useEffect(() => {
     if (gameOver) return;
     const interval = setInterval(() => {
-      let directionChange = Math.random() < 0.5 ? -50 : 50;
+      const directionChange = Math.random() < 0.5 ? -50 : 50;
       if (isDirectionActive) {
-        setDirection(currentDirection => {
-          let newDirection = currentDirection + directionChange;
+        setDirection((currentDirection) => {
+          const newDirection = currentDirection + directionChange;
           if (newDirection >= maxDirection) {
             clearInterval(interval);
             setGameOver(true);
@@ -181,7 +186,7 @@ const RocketLaunch2 = () => {
       } else {
         setDirection(0);
       }
-      setSpeed(currentSpeed => {
+      setSpeed((currentSpeed) => {
         let newSpeed = currentSpeed;
 
         if (isThread1Active) {
@@ -282,6 +287,7 @@ const RocketLaunch2 = () => {
                   Atingiu o espaço!
                 </p>
                 <button
+                  type="button"
                   onClick={() => {
                     setSpeed(0);
                     setDirection(0);
@@ -306,6 +312,7 @@ const RocketLaunch2 = () => {
                   Caiu!
                 </p>
                 <button
+                  type="button"
                   onClick={() => {
                     setSpeed(0);
                     setDirection(0);
@@ -322,7 +329,10 @@ const RocketLaunch2 = () => {
             ) : null}
           </div>
           <div className="flex gap-5 justify-center items-center">
-            <button onClick={() => setIsThread1Active(isActive => !isActive)}>
+            <button
+              type="button"
+              onClick={() => setIsThread1Active((isActive) => !isActive)}
+            >
               <p className="text-center">T1</p>
               {isThread1Active ? (
                 <FaStopCircle className="text-red-600 text-3xl hover:text-red-800 rounded-full hover:scale-105 hover:shadow-md transition-all active:text-red-600" />
@@ -330,7 +340,10 @@ const RocketLaunch2 = () => {
                 <FaPlayCircle className='text-green-600 text-3xl hover:text-green-800 rounded-full hover:scale-105 hover:shadow-md transition-all active:text-red-600" />' />
               )}
             </button>
-            <button onClick={() => setIsDirectionActive(isActive => !isActive)}>
+            <button
+              type="button"
+              onClick={() => setIsDirectionActive((isActive) => !isActive)}
+            >
               <p className="text-center">D</p>
               {isDirectionActive ? (
                 <FaStopCircle className="text-red-600 text-3xl hover:text-red-800 rounded-full hover:scale-105 hover:shadow-md transition-all active:text-red-600" />
@@ -338,7 +351,10 @@ const RocketLaunch2 = () => {
                 <FaPlayCircle className='text-green-600 text-3xl hover:text-green-800 rounded-full hover:scale-105 hover:shadow-md transition-all active:text-red-600" />' />
               )}
             </button>
-            <button onClick={() => setIsThread2Active(isActive => !isActive)}>
+            <button
+              type="button"
+              onClick={() => setIsThread2Active((isActive) => !isActive)}
+            >
               <p className="text-center">T2</p>
               {isThread2Active ? (
                 <FaStopCircle className="text-red-600 text-3xl hover:text-red-800 rounded-full hover:scale-105 hover:shadow-md transition-all active:text-red-600" />
@@ -348,6 +364,7 @@ const RocketLaunch2 = () => {
             </button>
           </div>
           <button
+            type="button"
             onClick={() => {
               setSpeed(0);
               setDirection(0);

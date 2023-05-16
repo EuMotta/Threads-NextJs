@@ -1,16 +1,19 @@
+/* eslint-disable import/no-cycle */
+/* eslint-disable no-shadow */
 import Image from 'next/image';
 import { useState } from 'react';
 import '../../../styles/Horse.css';
-import { horses } from '../../constants';
 import { AiOutlineBorderRight } from 'react-icons/ai';
 import { MdSocialDistance } from 'react-icons/md';
 import { GiStarsStack } from 'react-icons/gi';
 import { FaFlagCheckered } from 'react-icons/fa';
 import { GrPowerReset } from 'react-icons/gr';
+import { horses } from '../../constants';
 
-import {Explication} from './';
+import { Explication } from '.';
 import { Graph1, Graph2, Graph3 } from '../../components/Charts';
 
+// eslint-disable-next-line react/function-component-definition
 export default function Horse() {
   const [position1, setPosition1] = useState(0);
   const [position2, setPosition2] = useState(0);
@@ -34,10 +37,10 @@ export default function Horse() {
   const [speedInterval, setSpeedInterval] = useState(400);
   const maxPosition = 1400;
   const handleShowBorder = () => {
-    setShowBorder(prevShowBorder => !prevShowBorder);
+    setShowBorder((prevShowBorder) => !prevShowBorder);
   };
   const handleShowDistance = () => {
-    setShowDistance(prevShowDistance => !prevShowDistance);
+    setShowDistance((prevShowDistance) => !prevShowDistance);
   };
 
   const handleUndo = () => {
@@ -65,15 +68,6 @@ export default function Horse() {
     setHistory([]);
     setDisplayText('Inicio');
     setGameOver(false);
-  };
-
-  const startRace = () => {
-    const intervalId = setInterval(() => {
-      handleHorse1();
-      if (currentPosition1 >= maxPosition || currentPosition2 >= maxPosition) {
-        clearInterval(intervalId);
-      }
-    }, speedInterval);
   };
 
   let currentPosition1 = position1;
@@ -130,21 +124,33 @@ export default function Horse() {
       setDisplayText('Empate');
     }
   };
+  const startRace = () => {
+    const intervalId = setInterval(() => {
+      handleHorse1();
+      if (currentPosition1 >= maxPosition || currentPosition2 >= maxPosition) {
+        clearInterval(intervalId);
+      }
+    }, speedInterval);
+  };
 
   return (
     <main className="container mx-auto">
       <div className="">
         <div className="card_2 p-5 rounded-lg shadow-md shadow-slate-500">
-          {horses.map(item => (
+          {horses.map((item) => (
             <div className="bg-road">
               <div className="relative">
                 <div className="absolute right-0 top-3 text-3xl flex items-end">
-                  <h3><FaFlagCheckered /></h3>
+                  <h3>
+                    <FaFlagCheckered />
+                  </h3>
                 </div>
                 <div className="absolute right-10 top-3">
-                  {item.position === 'position1'
-                    ? <p> {leftPosition1}</p>
-                    : <p> {leftPosition2}</p>}
+                  {item.position === 'position1' ? (
+                    <p> {leftPosition1}</p>
+                  ) : (
+                    <p> {leftPosition2}</p>
+                  )}
                 </div>
               </div>
               <div
@@ -157,25 +163,29 @@ export default function Horse() {
                 <div className="text-center absolute">
                   {showDistance && (
                     <div className="absolute -left-8 top-2">
-                      {item.position === 'position1' ? <p>{position1}</p> : <p>{position2}</p>}
+                      {item.position === 'position1' ? (
+                        <p>{position1}</p>
+                      ) : (
+                        <p>{position2}</p>
+                      )}
                     </div>
                   )}
                 </div>
-                {showStar &&
-                item.position === 'position1' &&
-                displayText === 'Mario venceu!' ? (
+                {showStar
+                && item.position === 'position1'
+                && displayText === 'Mario venceu!' ? (
                   <div className="absolute left-14 ">
                     <GiStarsStack className="text-yellow-300 text-xl" />
                   </div>
-                ) : null}
+                  ) : null}
 
-                {showStar &&
-                item.position === 'position2' &&
-                displayText === 'Josivaldo venceu!' ? (
+                {showStar
+                && item.position === 'position2'
+                && displayText === 'Josivaldo venceu!' ? (
                   <div className="absolute left-14 ">
                     <GiStarsStack className="text-yellow-300 text-xl" />
                   </div>
-                ) : null}
+                  ) : null}
                 <Image
                   className="scale-x-[-1]"
                   src={item.image}
@@ -193,44 +203,48 @@ export default function Horse() {
                 <div className="flex">
                   <div className=" w-5/6">
                     <div className="text-lg font-semibold mb-2">
-                     <h4>{displayText}</h4> 
+                      <h4>{displayText}</h4>
                     </div>
                     <div className="border p-2 rounded-lg mb-2">
-                    <h4> {position1}</h4> 
+                      <h4> {position1}</h4>
                     </div>
                     <div className="border p-2 rounded-lg mb-4">
-                    <h4> {position2}</h4> 
+                      <h4> {position2}</h4>
                     </div>
                   </div>
                   <div className="w-1/6 p-2 flex flex-col justify-center items-center">
-                    <button onClick={handleShowBorder}>
+                    <button type="button" onClick={handleShowBorder}>
                       <AiOutlineBorderRight className="text-2xl" />
                     </button>
-                    <button onClick={handleShowDistance}>
+                    <button type="button" onClick={handleShowDistance}>
                       <MdSocialDistance className="text-2xl" />
                     </button>
                   </div>
                 </div>
                 <div className="flex gap-4 flex-wrap">
                   <button
+                    type="button"
                     className=" bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded"
                     onClick={handleUndo}
                   >
                     Voltar
                   </button>
                   <button
+                    type="button"
                     className=" bg-green-500 hover:bg-green-700 text-white text-sm font-bold py-2 px-4 rounded"
                     onClick={handleHorse1}
                   >
                     Avançar
                   </button>
                   <button
+                    type="button"
                     className=" bg-red-500 hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded"
                     onClick={resetPosition}
                   >
                     Resetar
                   </button>
                   <button
+                    type="button"
                     className=" bg-violet-500 hover:bg-violet-700 text-white text-sm font-bold py-2 px-4 rounded"
                     onClick={startRace}
                   >
@@ -247,8 +261,8 @@ export default function Horse() {
                     value={speed}
                     min={13}
                     max={600}
-                    onChange={e => {
-                      const value = e.target.value;
+                    onChange={(e) => {
+                      const { value } = e.target;
                       if (value >= 13 && value <= 600) {
                         setSpeed(value);
                       }
@@ -256,23 +270,24 @@ export default function Horse() {
                     className="shadow-sm shadow-slate-500 rounded-md p-2 w-2/5"
                   />
                   <div className="text-lg font-bold flex  justify-center items-center ml-2">
-                  <p>Velocidade</p>  
+                    <p>Velocidade</p>
                   </div>
                 </div>
                 <div className="flex flex-wrap items-center justify-center">
                   <input
                     type="number"
                     value={speedInterval}
-                    onChange={e => setSpeedInterval(e.target.value)}
+                    onChange={(e) => setSpeedInterval(e.target.value)}
                     className="shadow-sm shadow-slate-500 rounded-md p-2 w-2/5"
                   />
                   <div className="text-lg font-bold flex justify-center items-center ml-2">
-                  <p>  Intervalo</p>
+                    <p> Intervalo</p>
                   </div>
                 </div>
               </div>
               <div className="p-2  flex flex-col justify-center items-center">
                 <button
+                  type="button"
                   className="hover:scale-110 transition-all text-2xl"
                   onClick={() => {
                     setSpeed(30);
@@ -286,42 +301,91 @@ export default function Horse() {
             <table className="card_2 font-semibold rounded-md shadow-sm shadow-slate-300 p-5 text-xl">
               <tbody className="text-center">
                 <tr>
-                  <td><h5>Atrasos do cavalo 1:</h5></td>
-                  <td><h4>{positionMedia1}</h4></td>
+                  <td>
+                    <h5>Atrasos do cavalo 1:</h5>
+                  </td>
+                  <td>
+                    <h4>{positionMedia1}</h4>
+                  </td>
                 </tr>
                 <tr>
-                  <td><h5>Atrasos do cavalo 2:</h5></td>
-                  <td><h4>{positionMedia2}</h4></td>
+                  <td>
+                    <h5>Atrasos do cavalo 2:</h5>
+                  </td>
+                  <td>
+                    <h4>{positionMedia2}</h4>
+                  </td>
                 </tr>
                 <tr>
-                  <td><h5>Média do cavalo 1:</h5></td>
-                  <td><h4>{isNaN(Math.floor(positionMedia1 / raceResults.length)) ? 0 : Math.floor(positionMedia1 / raceResults.length)}</h4></td>
+                  <td>
+                    <h5>Média do cavalo 1:</h5>
+                  </td>
+                  <td>
+                    <h4>
+                      {Number.isNaN(Math.floor(positionMedia1 / raceResults.length))
+                        ? 0
+                        : Math.floor(positionMedia1 / raceResults.length)}
+                    </h4>
+                  </td>
                 </tr>
                 <tr>
-                  <td><h5>Média do cavalo 2:</h5></td>
-                  <td><h4>{isNaN(Math.floor(positionMedia2 / raceResults.length)) ? 0 : Math.floor(positionMedia2 / raceResults.length)}</h4></td>
+                  <td>
+                    <h5>Média do cavalo 2:</h5>
+                  </td>
+                  <td>
+                    <h4>
+                      {Number.isNaN(Math.floor(positionMedia2 / raceResults.length))
+                        ? 0
+                        : Math.floor(positionMedia2 / raceResults.length)}
+                    </h4>
+                  </td>
                 </tr>
                 <tr>
-                  <td><h5>Eficiência do cavalo 1:</h5></td>
-                  <td><h4>{horseEfficiency1}</h4></td>
+                  <td>
+                    <h5>Eficiência do cavalo 1:</h5>
+                  </td>
+                  <td>
+                    <h4>{horseEfficiency1}</h4>
+                  </td>
                 </tr>
                 <tr>
-                  <td><h5>Eficiência do cavalo 2:</h5></td>
-                  <td><h4>{horseEfficiency2}</h4></td>
+                  <td>
+                    <h5>Eficiência do cavalo 2:</h5>
+                  </td>
+                  <td>
+                    <h4>{horseEfficiency2}</h4>
+                  </td>
                 </tr>
                 <tr>
-                  <td><h5>Média de eficiência do cavalo 1:</h5></td>
-                  <td><h4>{isNaN(Math.floor(horseEfficiency1 / raceResults.length)) ? 0 : Math.floor(horseEfficiency1 / raceResults.length)}</h4></td>
+                  <td>
+                    <h5>Média de eficiência do cavalo 1:</h5>
+                  </td>
+                  <td>
+                    <h4>
+                      {Number.isNaN(Math.floor(horseEfficiency1 / raceResults.length))
+                        ? 0
+                        : Math.floor(horseEfficiency1 / raceResults.length)}
+                    </h4>
+                  </td>
                 </tr>
                 <tr>
-                  <td><h5>Média de eficiência do cavalo 2:</h5></td>
-                  <td><h4>{isNaN(Math.floor(horseEfficiency2 / raceResults.length)) ? 0 : Math.floor(horseEfficiency2 / raceResults.length)}</h4></td>
+                  <td>
+                    <h5>Média de eficiência do cavalo 2:</h5>
+                  </td>
+                  <td>
+                    <h4>
+                      {Number.isNaN(Math.floor(horseEfficiency2 / raceResults.length))
+                        ? 0
+                        : Math.floor(horseEfficiency2 / raceResults.length)}
+                    </h4>
+                  </td>
                 </tr>
               </tbody>
             </table>
 
             <div className="">
               <button
+                type="button"
                 className="bg-red-500 w-full hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded"
                 onClick={() => {
                   setRaceResults([]);
@@ -339,15 +403,23 @@ export default function Horse() {
               <table className="table-auto w-full mb-4 text-center card_2 rounded-md shadow-sm shadow-slate-300">
                 <thead>
                   <tr>
-                    <th className="px-4 py-2"><p className="text-center">Corrida</p></th>
-                    <th className="px-4 py-2"><p className="text-center">Resultado</p></th>
+                    <th className="px-4 py-2">
+                      <p className="text-center">Corrida</p>
+                    </th>
+                    <th className="px-4 py-2">
+                      <p className="text-center">Resultado</p>
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   {raceResults.map((result, index) => (
                     <tr key={index}>
-                      <td><p>{index + 1}</p></td>
-                      <td><p>{result}</p></td>
+                      <td>
+                        <p>{index + 1}</p>
+                      </td>
+                      <td>
+                        <p>{result}</p>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -389,8 +461,12 @@ export default function Horse() {
                   <Graph3
                     horseEfficiency1={horseEfficiency1}
                     horseEfficiency2={horseEfficiency2}
-                    horseEfficiencyCalc1={Math.floor(horseEfficiency1 / raceResults.length)}
-                    horseEfficiencyCalc2={Math.floor(horseEfficiency2 / raceResults.length)}
+                    horseEfficiencyCalc1={Math.floor(
+                      horseEfficiency1 / raceResults.length,
+                    )}
+                    horseEfficiencyCalc2={Math.floor(
+                      horseEfficiency2 / raceResults.length,
+                    )}
                   />
                 </div>
               </div>

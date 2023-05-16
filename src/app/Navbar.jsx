@@ -1,24 +1,20 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { GoCode } from 'react-icons/go';
 import { FcUp } from 'react-icons/fc';
 import { useState, useEffect, useRef } from 'react';
-import Logo2 from '../images/Logo.svg';
-import { navbar_links } from './constants';
-import { IoIosColorPalette, IoIosMoon, IoIosSunny } from 'react-icons/io';
+import { IoIosMoon, IoIosSunny } from 'react-icons/io';
+import { navbarlinks } from './constants';
 
 const Navbar = () => {
-  const [isSticky, setIsSticky] = useState(false);
-
   const homeRef = useRef(null);
   const navRef = useRef(null);
   const rocketRef = useRef(null);
   const homeFunc = () => {
     if (
-      document.body.scrollTop > 80 ||
-      document.documentElement.scrollTop > 80
+      document.body.scrollTop > 80
+      || document.documentElement.scrollTop > 80
     ) {
       homeRef.current.classList.add('home_shrink');
       navRef.current.classList.add('nav_shrink');
@@ -85,7 +81,7 @@ const Navbar = () => {
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
-                  {navbar_links.map(item => (
+                  {navbarlinks.map((item) => (
                     <Link href={item.href} key={item.name}>
                       <span className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                         {item.name}
@@ -98,6 +94,7 @@ const Navbar = () => {
             <div className="flex justify-center items-center">
               <h4 className="text-white">Tema: </h4>
               <button
+                type="button"
                 onClick={() => {
                   handleChange();
                   handleClick();
@@ -112,6 +109,7 @@ const Navbar = () => {
           </div>
         </div>
         <button
+          type="button"
           ref={rocketRef}
           onClick={() => {
             window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });

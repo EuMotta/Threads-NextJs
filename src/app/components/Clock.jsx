@@ -31,23 +31,23 @@ const Clock = () => {
             <p>Hora: Thread 1</p>
           </th>
           <th className="border border-slate-600 px-4 py-2 text-center">
-          <p>Minuto: Thread 2</p>
+            <p>Minuto: Thread 2</p>
           </th>
           <th className="border border-slate-600 px-4 py-2 text-center">
-          <p>Segundo: Thread 3</p>
+            <p>Segundo: Thread 3</p>
           </th>
         </tr>
       </thead>
       <tbody>
-        <tr className='text-5xl'>
+        <tr className="text-5xl">
           <td className="border border-slate-600 px-4 py-2 text-center">
-          <h1>{dateTime.hours}</h1>
+            <h1>{dateTime.hours}</h1>
           </td>
           <td className="border border-slate-600 px-4 py-2 text-center">
-          <h1>{dateTime.minutes}</h1>
+            <h1>{dateTime.minutes}</h1>
           </td>
           <td className="border border-slate-600 px-4 py-2 text-center">
-          <h1>{dateTime.seconds}</h1>
+            <h1>{dateTime.seconds}</h1>
           </td>
         </tr>
       </tbody>

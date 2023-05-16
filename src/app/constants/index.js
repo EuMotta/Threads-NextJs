@@ -12,8 +12,8 @@ export const horses = [
     name: 'Josivaldo',
     image: horse2,
     position: 'position2',
-  }
-]
+  },
+];
 
 export const explication = {
 
@@ -21,27 +21,27 @@ export const explication = {
     {
       value: 20,
       formula: 'Math.random() * (20 - 10) + 20',
-      description: 'Valor entre 10 e 20'
+      description: 'Valor entre 10 e 20',
     },
     {
       value: 30,
       formula: 'Math.random() * (30 - 10) + 30',
-      description: 'Valor entre 20 e 30'
+      description: 'Valor entre 20 e 30',
     },
     {
       value: 40,
       formula: 'Math.random() * (40 - 10) + 40',
-      description: 'Valor entre 30 e 40'
+      description: 'Valor entre 30 e 40',
     },
     {
       value: 50,
       formula: 'Math.random() * (50 - 10) + 50',
-      description: 'Valor entre 40 e 50'
-    }
-  ]
-}
+      description: 'Valor entre 40 e 50',
+    },
+  ],
+};
 
-export const navbar_links = [
+export const navbarlinks = [
   {
     name: 'Inicio',
     href: '/',
@@ -62,7 +62,7 @@ export const navbar_links = [
     name: 'Threads',
     href: '/Threads',
   },
-]
+];
 
 export const packageList = [
   {
@@ -101,7 +101,7 @@ export const packageList = [
     href: 'https://eslint.org/',
     description: 'ESLint é uma ferramenta de análise de código estática para identificar padrões problemáticos encontrados no código JavaScript. Ele foi projetado para ajudar a escrever código mais limpo e consistente, e para evitar erros comuns.',
     time: 1.50,
-  }
+  },
 ];
 
 export const developingList = {
@@ -128,7 +128,7 @@ export const developingList = {
       title: 'Como foi a construção?',
       description: (
         <>
-          &nbsp; Comecei a desenvolver a ideia dos cavalos e, para isso, precisei encontrar uma maneira de armazenar o estado e os valores de cada cavalo a cada frame. Decidi usar o <span className='constant'>useState</span> do React para armazenar não apenas o estado dos cavalos, mas também o histórico de corridas e todas as outras variáveis que utilizei.
+          &nbsp; Comecei a desenvolver a ideia dos cavalos e, para isso, precisei encontrar uma maneira de armazenar o estado e os valores de cada cavalo a cada frame. Decidi usar o <span className="constant">useState</span> do React para armazenar não apenas o estado dos cavalos, mas também o histórico de corridas e todas as outras variáveis que utilizei.
         </>
       ),
       time: 0.25,
@@ -137,11 +137,11 @@ export const developingList = {
       title: 'Como funciona o useState?',
       description: (
         <>
-          O <span className='constant'>useState</span> é um Hook do React que permite adicionar estado ao componente criado. Ele retorna um par de valores: o valor atual do estado e uma função para atualizá-lo, como se fosse um get e set em Java. Quando a função de atualização é chamada com um novo valor, o componente é renderizado novamente com o novo estado.
+          O <span className="constant">useState</span> é um Hook do React que permite adicionar estado ao componente criado. Ele retorna um par de valores: o valor atual do estado e uma função para atualizá-lo, como se fosse um get e set em Java. Quando a função de atualização é chamada com um novo valor, o componente é renderizado novamente com o novo estado.
         </>
       ),
       time: 0.5,
-    }
+    },
 
   ],
   resultCalc: [
@@ -149,7 +149,7 @@ export const developingList = {
       title: 'Valor aleatório',
       description: (
         <>
-          Para representar um thread em uma linguagem web é um pouco complicado, e para facilitar eu utilizei um valor aleatório gerado em um intervalo, pela formula: <span className='constant'>(Math.random() * (valorInserido - 10) + valorInserido)</span>, ao inserir, por exemplo 30, o cálculo seria 30-10, assim a velocidade varia de 20 a 30.
+          Para representar um thread em uma linguagem web é um pouco complicado, e para facilitar eu utilizei um valor aleatório gerado em um intervalo, pela formula: <span className="constant">(Math.random() * (valorInserido - 10) + valorInserido)</span>, ao inserir, por exemplo 30, o cálculo seria 30-10, assim a velocidade varia de 20 a 30.
         </>
       ),
       time: 0.5,
@@ -162,10 +162,10 @@ export const developingList = {
         </>
       ),
       time: 0.5,
-    }
-  ]
+    },
+  ],
 
-}
+};
 export const threadList = [
   {
     title: 'O que é um Thread',
@@ -248,9 +248,9 @@ export const threadList = [
     title: 'Exemplo da falta de sincronização em um sistema critico',
     description: (
       <>
-        Utilizando o mesmo exemplo do foguete, mas acrescentando a direção sem sincronização, podemos ver que não há uma direção especifica para o foguete, pois os threads executam de forma "aleatoria" e isso pode ser um problema gigantesco em um sistema critico. <br/> &nbsp; Assim que os propulsores são acionados o foguete começa a subir, quando acionar a direção ele se direcionará para posições aleatorias exemplo: <span className='flex gap-2'><FaArrowLeft /><FaArrowRight /><FaArrowLeft /><FaArrowLeft /><FaArrowRight /><FaArrowLeft /><FaArrowLeft /><FaArrowLeft /><FaArrowRight />.</span> <br /> &nbsp; Agora imagine uma situação dessa em um sistema como <u>Controle de Tráfego Aéreo</u>, ou até mesmo <u>Sistemas Bancários</u>, quanto maior é o sistema, maior é a gravidade da falta de sincronização.
+        Utilizando o mesmo exemplo do foguete, mas acrescentando a direção sem sincronização, podemos ver que não há uma direção especifica para o foguete, pois os threads executam de forma "aleatoria" e isso pode ser um problema gigantesco em um sistema critico. <br /> &nbsp; Assim que os propulsores são acionados o foguete começa a subir, quando acionar a direção ele se direcionará para posições aleatorias exemplo: <span className="flex gap-2"><FaArrowLeft /><FaArrowRight /><FaArrowLeft /><FaArrowLeft /><FaArrowRight /><FaArrowLeft /><FaArrowLeft /><FaArrowLeft /><FaArrowRight />.</span> <br /> &nbsp; Agora imagine uma situação dessa em um sistema como <u>Controle de Tráfego Aéreo</u>, ou até mesmo <u>Sistemas Bancários</u>, quanto maior é o sistema, maior é a gravidade da falta de sincronização.
       </>
     ),
     time: 1.25,
   },
-]
+];
