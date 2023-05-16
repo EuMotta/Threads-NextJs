@@ -1,11 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
-import {CallCenter, Hero} from '../sections/CallCenter';
+import React from 'react';
+import { CallCenter, Hero } from '../sections/CallCenter';
 
 export default function page() {
   return (
-    <main className=''>
+    <main>
       <Hero />
       <CallCenter />
     </main>

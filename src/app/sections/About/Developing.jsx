@@ -5,7 +5,7 @@ import Image from 'next/image';
 import LibrarySvg1 from '../../../images/About/Developing2.svg';
 
 import { fadeIn, staggerContainer, textVariant } from '../../../utils/motion';
-import { developingList, packageList } from '../../constants';
+import { developingList } from '../../constants';
 
 function ImpedirArrastar(event) {
   event.preventDefault();
@@ -24,7 +24,7 @@ const Developing = () => (
           <div className="px-5">
             <h1 className="font-bold mb-5 font-mono">Desenvolvimento</h1>
             <div>
-              {developingList.idea.slice(0, 3).map(item => (
+              {developingList.idea.slice(0, 3).map((item) => (
                 <motion.div
                   variants={textVariant(`${item.time}`)}
                   className="mb-1 mt-5"
@@ -98,7 +98,7 @@ const Developing = () => (
           <div className="px-5">
             <h1 className="font-bold mb-5 font-mono">Construção</h1>
             <div>
-              {developingList.construction.slice(0, 3).map(item => (
+              {developingList.construction.slice(0, 3).map((item) => (
                 <motion.div
                   variants={textVariant(`${item.time}`)}
                   className="mb-1 mt-5"
@@ -122,7 +122,7 @@ const Developing = () => (
           <div className="px-5">
             <h1 className="font-bold mb-5 font-mono">Cálculo de resultado</h1>
             <div>
-              {developingList.resultCalc.slice(0, 3).map(item => (
+              {developingList.resultCalc.slice(0, 3).map((item) => (
                 <motion.div
                   variants={textVariant(`${item.time}`)}
                   className="mb-1 mt-5"

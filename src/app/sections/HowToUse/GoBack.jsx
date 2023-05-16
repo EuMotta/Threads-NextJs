@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { fadeIn, staggerContainer } from '../../../utils/motion';
 import HorseImage from '../../../images/HeroHorse.svg';
-import CallCenterImage from '../../../images/CallCenter/Hero.svg'
+import CallCenterImage from '../../../images/CallCenter/Hero.svg';
 
 function ImpedirArrastar(event) {
   event.preventDefault();
@@ -39,10 +39,18 @@ const GoBack = () => (
             Os botões são representados por:{' '}
           </p>
           <div className="flex gap-5 pt-5">
-            <button className="button-go">Avançar</button>
-            <button className="button-back">Voltar</button>
-            <button className="button-reset">Resetar</button>
-            <button className="button-auto">auto</button>
+            <button type="button" className="button-go">
+              Avançar
+            </button>
+            <button type="button" className="button-back">
+              Voltar
+            </button>
+            <button type="button" className="button-reset">
+              Resetar
+            </button>
+            <button type="button" className="button-auto">
+              auto
+            </button>
           </div>
         </div>
       </motion.div>
@@ -128,8 +136,12 @@ const GoBack = () => (
             Os botões são representados por:{' '}
           </p>
           <div className="flex gap-5 pt-5">
-            <button className="goback_button-go">Iniciar</button>
-            <button className="button-reset">Resetar</button>
+            <button type="button" className="goback_button-go">
+              Iniciar
+            </button>
+            <button type="button" className="button-reset">
+              Resetar
+            </button>
           </div>
         </div>
       </motion.div>

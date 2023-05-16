@@ -1,4 +1,4 @@
-import CallCenter from "./CallCenter";
-import Hero from './Hero'
+import CallCenter from './CallCenter';
+import Hero from './Hero';
 
-export {CallCenter, Hero};
+export { CallCenter, Hero };

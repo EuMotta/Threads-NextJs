@@ -5,7 +5,6 @@ import Image from 'next/image';
 import KernelSpace from '../../../images/Threads/KernelSpace.svg';
 import Hibrid from '../../../images/Threads/Hibrid.svg';
 import { fadeIn, staggerContainer, textVariant } from '../../../utils/motion';
-import { threadList } from '../../constants';
 
 function ImpedirArrastar(event) {
   event.preventDefault();

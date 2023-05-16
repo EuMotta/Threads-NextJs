@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import styles from '../../../styles';
 import { fadeIn, staggerContainer } from '../../../utils/motion';
 import GoBackImage from '../../../images/HowToUse/GoBack.svg';
 

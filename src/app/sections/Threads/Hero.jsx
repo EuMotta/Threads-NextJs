@@ -11,7 +11,7 @@ function ImpedirArrastar(event) {
 }
 
 const Hero = () => (
-  <section className='z-10 container mx-auto paddings'>
+  <section className="z-10 container mx-auto paddings">
     <motion.div
       variants={staggerContainer}
       initial="hidden"
@@ -50,21 +50,20 @@ const Hero = () => (
             Threads
           </h1>
           <div className="text-4xl font-bold mb-2 leading-tight">
-            <h2>O que é um thread? Entenda como funciona e sua utilidade em um sistema operacional</h2>
+            <h2>
+              O que é um thread? Entenda como funciona e sua utilidade em um
+              sistema operacional
+            </h2>
             <div className="text-blue-600 my-5 text-5xl">
               <Typewriter
                 options={{
-                  strings: [
-                    'O que é?',
-                    'MultiThreading',
-                    'Exemplos',
-                  ],
+                  strings: ['O que é?', 'MultiThreading', 'Exemplos'],
                   autoStart: true,
                   loop: true,
                 }}
               />
             </div>
-          </div> 
+          </div>
         </div>
       </motion.div>
     </motion.div>

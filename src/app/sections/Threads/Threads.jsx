@@ -2,15 +2,15 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
+
 import threadsSvg1 from '../../../images/Threads/cartoon-animated.gif';
 import threadsSvg2 from '../../../images/Threads/MultiThreading.svg';
 
 import { fadeIn, staggerContainer, textVariant } from '../../../utils/motion';
-import { packageList, threadList } from '../../constants';
+import { threadList } from '../../constants';
 import Clock from '../../components/Clock';
 import Semaphore from '../../components/Semaphore';
-import {RocketLaunch,  RocketLaunch2 } from '../../components/RocketLauch';
+import { RocketLaunch, RocketLaunch2 } from '../../components/RocketLauch';
 
 function ImpedirArrastar(event) {
   event.preventDefault();
@@ -29,7 +29,7 @@ const Threads = () => (
           <div className="px-5">
             <h1 className="mb-5">Threads</h1>
             <div>
-              {threadList.slice(0, 3).map(threads => (
+              {threadList.slice(0, 3).map((threads) => (
                 <motion.div
                   variants={textVariant(`${threads.time}`)}
                   className="mb-1 mt-5"
@@ -97,7 +97,7 @@ const Threads = () => (
         <div className="col-span-1">
           <div className="px-5">
             <div className="z-50">
-              {threadList.slice(3, 6).map(threads => (
+              {threadList.slice(3, 6).map((threads) => (
                 <motion.div
                   variants={textVariant(`${threads.time}`)}
                   className="mb-1 mt-5"
@@ -117,7 +117,7 @@ const Threads = () => (
         <div className="col-span-1">
           <div className="px-5">
             <div className="z-50">
-              {threadList.slice(6, 9).map(threads => (
+              {threadList.slice(6, 9).map((threads) => (
                 <motion.div
                   variants={textVariant(`${threads.time}`)}
                   className="mb-1 mt-5"
@@ -189,7 +189,7 @@ const Threads = () => (
         <div className="col-span-1">
           <div className="px-5">
             <div className="z-50">
-              {threadList.slice(9, 10).map(threads => (
+              {threadList.slice(9, 10).map((threads) => (
                 <motion.div
                   variants={textVariant(`${threads.time}`)}
                   className="mb-1 mt-5"
@@ -206,10 +206,10 @@ const Threads = () => (
         </div>
       </div>
       <div className="grid mt-10 grid-cols-2">
-      <div className="col-span-1">
+        <div className="col-span-1">
           <div className="px-5">
             <div className="z-50">
-              {threadList.slice(10, 11).map(threads => (
+              {threadList.slice(10, 11).map((threads) => (
                 <motion.div
                   variants={textVariant(`${threads.time}`)}
                   className="mb-1 mt-5"
@@ -242,7 +242,6 @@ const Threads = () => (
             Lançamento de foguete simulando dois Threads.
           </p>
         </div>
-
       </div>
     </motion.div>
   </section>
