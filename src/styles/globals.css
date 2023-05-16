@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.bg-rain {
+  background-image: url(../images/BackgroundRain.svg);
+}
 :root {
   --primary-color: #f0f8ff;
   --text-h1-color: #0F172A;
@@ -12,7 +15,7 @@
   --text-p-color: #0F172A;
   --card-color: #cbd5e1;
   --card-2-color: #d9e1ee;
-  --tt: #475e74;
+  --tt: aliceblue;
 }
 .home_shrink{
   width: 100%;

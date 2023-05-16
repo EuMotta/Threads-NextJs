@@ -1,3 +1,4 @@
+
 import {
   PieChart,
   Pie,
@@ -50,9 +51,9 @@ const Graph3 = ({
           bottom: 5,
         }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
+        <CartesianGrid strokeDasharray="3 3"  stroke="#2B71C5"/>
+        <XAxis dataKey="name" tick={{ fill: '#0086ea' }}/>
+        <YAxis tick={{ fill: '#0086ea' }}/>
         <Tooltip />
         <Legend />
         <Bar dataKey="eficiencia" fill="#8884d8" />
@@ -93,9 +94,9 @@ const Graph2 = ({
           bottom: 5,
         }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
+        <CartesianGrid strokeDasharray="3 3" stroke="#2B71C5"/>
+        <XAxis dataKey="name" tick={{ fill: '#0086ea' }}/>
+        <YAxis tick={{ fill: '#0086ea' }}/>
         <Tooltip />
         <Legend />
         <Bar dataKey="atraso" fill="#8884d8" />
@@ -160,7 +161,7 @@ const CustomTooltip = ({ active, payload }) => {
 };
 const Graph1CallCenter = ({ stat, attendantStats }) => {
   const data = attendantStats.map((stat, index) => ({
-    name: `Atendente ${index + 1}`,
+    name: `At ${index + 1}`,
     value: stat,
   }));
 
@@ -179,12 +180,14 @@ const Graph1CallCenter = ({ stat, attendantStats }) => {
           left: 0,
           bottom: 0,
         }}
+        backgroundColor="#0086ea"
+        
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
+        <CartesianGrid strokeDasharray="3 3" stroke="#2B71C5" />
+        <XAxis dataKey="name" tick={{ fill: '#0086ea' }} />
+        <YAxis tick={{ fill: '#0086ea' }} />
         <Tooltip />
-        <Line type="monotone" dataKey="value" stroke="#82ca9d" fill="#82ca9d" />
+        <Line type="monotone" dataKey="value" stroke="#0086ea" fill="#0086ea" />
         <Brush />
       </LineChart>
     </ResponsiveContainer>

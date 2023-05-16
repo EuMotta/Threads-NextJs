@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <header>
+        <header className='pb-16'>
           <Navbar />
         </header>
         <main className='primary-color'>{children}</main>

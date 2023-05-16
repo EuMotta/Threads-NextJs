@@ -139,12 +139,12 @@ export default function Horse() {
             <div className="bg-road">
               <div className="relative">
                 <div className="absolute right-0 top-3 text-3xl flex items-end">
-                  <FaFlagCheckered />
+                  <h3><FaFlagCheckered /></h3>
                 </div>
                 <div className="absolute right-10 top-3">
                   {item.position === 'position1'
-                    ? leftPosition1
-                    : leftPosition2}
+                    ? <p> {leftPosition1}</p>
+                    : <p> {leftPosition2}</p>}
                 </div>
               </div>
               <div
@@ -157,7 +157,7 @@ export default function Horse() {
                 <div className="text-center absolute">
                   {showDistance && (
                     <div className="absolute -left-8 top-2">
-                      {item.position === 'position1' ? position1 : position2}
+                      {item.position === 'position1' ? <p>{position1}</p> : <p>{position2}</p>}
                     </div>
                   )}
                 </div>
@@ -295,11 +295,11 @@ export default function Horse() {
                 </tr>
                 <tr>
                   <td><h5>Média do cavalo 1:</h5></td>
-                  <td><h4>{Math.floor(positionMedia1 / raceResults.length)}</h4></td>
+                  <td><h4>{isNaN(Math.floor(positionMedia1 / raceResults.length)) ? 0 : Math.floor(positionMedia1 / raceResults.length)}</h4></td>
                 </tr>
                 <tr>
                   <td><h5>Média do cavalo 2:</h5></td>
-                  <td><h4>{Math.floor(positionMedia2 / raceResults.length)}</h4></td>
+                  <td><h4>{isNaN(Math.floor(positionMedia2 / raceResults.length)) ? 0 : Math.floor(positionMedia2 / raceResults.length)}</h4></td>
                 </tr>
                 <tr>
                   <td><h5>Eficiência do cavalo 1:</h5></td>
@@ -311,11 +311,11 @@ export default function Horse() {
                 </tr>
                 <tr>
                   <td><h5>Média de eficiência do cavalo 1:</h5></td>
-                  <td><h4>{Math.floor(horseEfficiency1 / raceResults.length)}</h4></td>
+                  <td><h4>{isNaN(Math.floor(horseEfficiency1 / raceResults.length)) ? 0 : Math.floor(horseEfficiency1 / raceResults.length)}</h4></td>
                 </tr>
                 <tr>
                   <td><h5>Média de eficiência do cavalo 2:</h5></td>
-                  <td><h4>{Math.floor(horseEfficiency2 / raceResults.length)}</h4></td>
+                  <td><h4>{isNaN(Math.floor(horseEfficiency2 / raceResults.length)) ? 0 : Math.floor(horseEfficiency2 / raceResults.length)}</h4></td>
                 </tr>
               </tbody>
             </table>

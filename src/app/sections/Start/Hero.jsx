@@ -6,32 +6,36 @@ import Link from 'next/link';
 
 const Hero = () => {
   return (
-    <div className="container mx-auto">
-      <div className="text-center pt-10 text-6xl text-slate-50 font-mono">
-        Simuladores disponíveis
-      </div>
-      <div className="h-screen flex justify-center items-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-16 md:gap-x-16">
-          <Link href='/Horse'>
-          <div className="image-container">
-            <Image
-              src={Horse}
-              width={650}
-              height={500}
-              className="rounded-xl shadow-3xl shadow-slate-400"
-            />
-            <div className="image-text">Corrida de cavalos</div>
-          </div></Link>
-          <Link href='/CallCenter'>
-          <div className="image-container">
-            <Image
-              src={CallCenter}
-              width={650}
-              height={500}
-              className="rounded-xl shadow-3xl shadow-slate-400"
-            />
-            <div className="image-text">Call Center</div>
-          </div></Link>
+    <div className="container pt-20 mx-auto">
+      <div className="flex flex-col my-auto justify-center items-center">
+        <div className="h-screen flex flex-col justify-center items-center">
+        <div className="text-center mb-20 text-6xl text-slate-50 font-mono">
+          Simuladores disponíveis
+        </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-16 md:gap-x-16">
+            <Link href="/Horse">
+              <div className="image-container">
+                <Image
+                  src={Horse}
+                  width={650}
+                  height={500}
+                  className="rounded-xl shadow-3xl shadow-slate-400"
+                />
+                <div className="image-text">Corrida de cavalos</div>
+              </div>
+            </Link>
+            <Link href="/CallCenter">
+              <div className="image-container">
+                <Image
+                  src={CallCenter}
+                  width={650}
+                  height={500}
+                  className="rounded-xl shadow-3xl shadow-slate-400"
+                />
+                <div className="image-text">Call Center</div>
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
