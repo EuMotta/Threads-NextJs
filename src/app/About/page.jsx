@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Developing,
+  Feedback,
   Hero,
   Language,
   Me,
@@ -12,11 +13,13 @@ import '../../styles/About.css';
 const page = () => (
   <div>
     <Hero />
+
     <Me />
     <Language />
     <Packages />
     <Separator />
     <Developing />
+    <Feedback />
   </div>
 );
 
