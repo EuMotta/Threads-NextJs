@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable import/no-cycle */
 /* eslint-disable no-shadow */
 import Image from 'next/image';
@@ -8,6 +9,8 @@ import { MdSocialDistance } from 'react-icons/md';
 import { GiStarsStack } from 'react-icons/gi';
 import { FaFlagCheckered } from 'react-icons/fa';
 import { GrPowerReset } from 'react-icons/gr';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { horses } from '../../constants';
 
 import { Explication } from '.';
@@ -101,6 +104,16 @@ export default function Horse() {
       setDisplayText('Empate!');
       setRaceResults([...raceResults, 'Empate']);
       setDraw(draw + 1);
+      toast('🐎 Empate!', {
+        position: 'bottom-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
       setGameOver(true);
     } else if (newPosition1 >= maxPosition) {
       setDisplayText('Mario venceu!');
@@ -108,9 +121,29 @@ export default function Horse() {
       setVictoryHorse1(victoryHorse1 + 1);
       setPositionMedia2(positionMedia2 + leftPosition2);
       setShowStar(true);
+      toast('🐎 Mario venceu!', {
+        position: 'bottom-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
       setGameOver(true);
     } else if (newPosition2 >= maxPosition) {
       setDisplayText('Josivaldo venceu!');
+      toast('🐎 Josivaldo venceu!', {
+        position: 'bottom-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
       setRaceResults([...raceResults, 'Josivaldo']);
       setVictoryHorse2(victoryHorse2 + 1);
       setPositionMedia1(positionMedia1 + leftPosition1);
@@ -135,6 +168,20 @@ export default function Horse() {
 
   return (
     <main className="container mx-auto">
+      <h4 className=" text-center">
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
+      </h4>
       <div className="">
         <div className="card_2 p-5 rounded-lg shadow-md shadow-slate-500">
           {horses.map((item) => (
@@ -322,7 +369,9 @@ export default function Horse() {
                   </td>
                   <td>
                     <h4>
-                      {Number.isNaN(Math.floor(positionMedia1 / raceResults.length))
+                      {Number.isNaN(
+                        Math.floor(positionMedia1 / raceResults.length),
+                      )
                         ? 0
                         : Math.floor(positionMedia1 / raceResults.length)}
                     </h4>
@@ -334,7 +383,9 @@ export default function Horse() {
                   </td>
                   <td>
                     <h4>
-                      {Number.isNaN(Math.floor(positionMedia2 / raceResults.length))
+                      {Number.isNaN(
+                        Math.floor(positionMedia2 / raceResults.length),
+                      )
                         ? 0
                         : Math.floor(positionMedia2 / raceResults.length)}
                     </h4>
@@ -362,7 +413,9 @@ export default function Horse() {
                   </td>
                   <td>
                     <h4>
-                      {Number.isNaN(Math.floor(horseEfficiency1 / raceResults.length))
+                      {Number.isNaN(
+                        Math.floor(horseEfficiency1 / raceResults.length),
+                      )
                         ? 0
                         : Math.floor(horseEfficiency1 / raceResults.length)}
                     </h4>
@@ -374,7 +427,9 @@ export default function Horse() {
                   </td>
                   <td>
                     <h4>
-                      {Number.isNaN(Math.floor(horseEfficiency2 / raceResults.length))
+                      {Number.isNaN(
+                        Math.floor(horseEfficiency2 / raceResults.length),
+                      )
                         ? 0
                         : Math.floor(horseEfficiency2 / raceResults.length)}
                     </h4>

@@ -1,4 +1,5 @@
-module.exports = {
+
+const data = {
   feedbacks: [
     {
       rating: 5,
@@ -61,4 +62,23 @@ module.exports = {
       test: 'backup commentary',
     },
   ],
+  horse: [
+    {
+      name: 'Mario',
+      horseNumber: 1,
+      delay: 1,
+      mediaDelay: 2,
+      efficiency: 3,
+      mediaEfficiency: 4,
+    },
+    {
+      name: 'Josivaldo',
+      horseNumber: 2,
+      delay: 2,
+      mediaDelay: 3,
+      efficiency: 4,
+      mediaEfficiency: 5,
+    },
+  ],
 };
+export default data;
