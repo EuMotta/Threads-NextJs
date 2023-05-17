@@ -258,9 +258,9 @@ const HowToGraph2 = () => {
           bottom: 5,
         }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
+        <CartesianGrid strokeDasharray="3 3" stroke="#2B71C5" />
+        <XAxis dataKey="name" tick={{ fill: '#0086ea' }} />
+        <YAxis tick={{ fill: '#0086ea' }} />
         <Tooltip />
         <Legend />
         <Bar dataKey="atraso" fill="#8884d8" />
@@ -319,9 +319,9 @@ const HowToGraph3 = () => {
           bottom: 0,
         }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis domain={[18, 22]} />
+        <CartesianGrid strokeDasharray="3 3" stroke="#2B71C5" />
+        <XAxis dataKey="name" tick={{ fill: '#0086ea' }} />
+        <YAxis domain={[18, 22]} tick={{ fill: '#0086ea' }} />
         <Tooltip />
         <Line
           type="monotone"
@@ -399,13 +399,14 @@ const HowToGraph4 = () => {
           left: 20,
         }}
       >
-        <CartesianGrid stroke="#f5f5f5" />
+        <CartesianGrid stroke="#2B71C5" />
         <XAxis
           dataKey="name"
           label={{ value: 'Pages', position: 'insideBottomRight', offset: 0 }}
           scale="band"
+          tick={{ fill: '#0086ea' }}
         />
-        <YAxis label={{ value: 'Index', angle: -90, position: 'insideLeft' }} />
+        <YAxis label={{ value: 'Index', angle: -90, position: 'insideLeft' }} tick={{ fill: '#0086ea' }} />
         <Tooltip />
         <Legend />
         <Area

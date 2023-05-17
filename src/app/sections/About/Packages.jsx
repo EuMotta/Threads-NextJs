@@ -36,7 +36,9 @@ const Packages = () => (
                     href={library.href}
                     className="font-semibold hover:text-blue-600 transition-all z-50 font-mono text-2xl"
                   >
-                    <h4>{library.title}</h4>
+                    <div>
+                      <h4 className="font-bold">{library.title}</h4>
+                    </div>
                   </Link>
                   <p>&nbsp;{library.description}</p>
                 </motion.div>
@@ -102,9 +104,11 @@ const Packages = () => (
                 >
                   <Link
                     href={library.href}
-                    className="font-semibold underline hover:text-blue-600 transition-all font-mono text-2xl"
+                    className="font-semibold  transition-all font-mono"
                   >
-                    <h4>{library.title}</h4>
+                    <div>
+                      <h4 className="font-bold">{library.title}</h4>
+                    </div>
                   </Link>
                   <p>&nbsp;{library.description}</p>
                 </motion.div>

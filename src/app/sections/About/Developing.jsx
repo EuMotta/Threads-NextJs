@@ -30,8 +30,8 @@ const Developing = () => (
                   className="mb-1 mt-5"
                   key={item.title}
                 >
-                  <div className="font-semibold  transition-all z-50 font-mono text-xl">
-                    <h4> {item.title}</h4>
+                  <div>
+                    <h4 className="font-bold">{item.title}</h4>
                   </div>
                   <p className="text-justify font-mono">
                     &nbsp;{item.description}
@@ -104,8 +104,8 @@ const Developing = () => (
                   className="mb-1 mt-5"
                   key={item.title}
                 >
-                  <div className="font-semibold hover:text-blue-600 transition-all z-50 font-mono text-xl">
-                    <h4>{item.title}</h4>
+                  <div>
+                    <h4 className="font-bold">{item.title}</h4>
                   </div>
                   <p className="text-justify font-mono">
                     &nbsp;{item.description}
@@ -128,8 +128,8 @@ const Developing = () => (
                   className="mb-1 mt-5"
                   key={item.title}
                 >
-                  <div className="font-semibold transition-all z-50">
-                    <h4> {item.title}</h4>
+                  <div>
+                    <h4 className="font-bold">{item.title}</h4>
                   </div>
                   <p className="text-justify font-mono">
                     &nbsp;{item.description}

@@ -27,11 +27,11 @@ const GoBack = () => (
           <h3>Como utilizar a Corrida de Cavalos</h3>
           <p className="">
             &nbsp; Para visualizar o funcionamento de um thread quadro a quadro,
-            você pode usar os botões de `avançar` e `voltar` para percorrer cada
+            você pode usar os botões de <span className="constant">avançar</span> e <span className="constant">voltar</span> para percorrer cada
             quadro individualmente. Além disso, você pode utilizar a opção
-            `auto` para percorrer uma corrida automaticamente. Com essa opção, o
+            <span className="constant">auto</span> para percorrer uma corrida automaticamente. Com essa opção, o
             thread vai rodar até atingir a chegada. Depois disso, será
-            necessário pressionar o botão `Resetar` para iniciar uma nova
+            necessário pressionar o botão <span className="constant">Resetar</span> para iniciar uma nova
             corrida.
           </p>
           <br />

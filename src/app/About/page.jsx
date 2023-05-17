@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Database,
   Developing,
   Feedback,
   Hero,
@@ -16,6 +17,7 @@ const page = () => (
 
     <Me />
     <Language />
+    <Database />
     <Packages />
     <Separator />
     <Developing />

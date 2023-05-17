@@ -7,7 +7,7 @@ const Separator = () => (
         href="/Start"
         className="px-16 text-4xl font-bold font-mono text-center"
       >
-        Como foi o desenvolvimento?
+        <h1>Como foi o desenvolvimento?</h1>
       </div>
     </div>
   </section>

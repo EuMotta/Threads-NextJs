@@ -254,3 +254,50 @@ export const threadList = [
     time: 1.25,
   },
 ];
+export const mongoDBList = [
+  {
+    title: 'MongoDB',
+    description: (
+      <>
+        &nbsp; MongoDB é um banco de dados de documentos de código aberto, projetado para facilitar o desenvolvimento de aplicativos e a escalabilidade. Ele usa documentos flexíveis em vez de tabelas e linhas para processar e armazenar vários tipos de dados. Isso permite que os desenvolvedores trabalhem com dados de maneira mais natural e intuitiva. MongoDB é conhecido por sua capacidade de escalonamento horizontal e balanceamento de carga, oferecendo aos desenvolvedores um alto nível de flexibilidade e escalabilidade.
+      </>
+    ),
+    time: 0.25,
+  },
+  {
+    title: 'Não relacional',
+    description: (
+      <>
+        &nbsp; O MongoDB é um banco de dados não relacional, o que permite desenvolvedores trabalharem com dados de maneira mais intuitiva e natural, oferecendo mais flexibilidade na modelagem de dados.
+      </>
+    ),
+    time: 0.25,
+  },
+  {
+    title: 'Enviando para o modelo',
+    description: (
+      <>
+        &nbsp; Quando um comentário é enviado através do formulário, a função handleSubmit é chamada. Essa função envia os dados do formulário para a API em formato JSON usando uma requisição POST. Os dados são armazenados no MongoDB de acordo com o modelo definido. Após o envio dos dados, a página é atualizada para exibir as alterações.
+      </>
+    ),
+    time: 0.25,
+  },
+  {
+    title: 'Estrutura do Modelo',
+    description: (
+      <>
+        &nbsp; A estrutura do modelo é simples e facil de interpretar, no modelo de feedback ao lado foram utilizados os campos <span className="constant">name</span>, <span className="constant">rating</span>, <span className="constant">comment</span> e <span className="constant">test</span>(somente para comentários de backup). <br /> &nbsp; Todos os campos do modelo precisam de um tipo de variável e de um required. O required vai indicar se aquele campo é necessário ou não para o comentário ser enviado, caso não tenha, é retornado um erro.
+      </>
+    ),
+    time: 0.25,
+  },
+  {
+    title: 'Por que eu utilizei?',
+    description: (
+      <>
+        &nbsp; Foi o primeiro banco de dados que eu tive experiência, e pelo fato de ser não relacional acabou facilitando o trabalho, ainda mais por ser um projeto que não necessita de uma alta complexidade no banco de dados.
+      </>
+    ),
+    time: 0.25,
+  },
+];

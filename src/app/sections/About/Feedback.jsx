@@ -3,14 +3,16 @@
 import React, { useEffect, useState } from 'react';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { FaUserCircle } from 'react-icons/fa';
+import Typewriter from 'typewriter-effect';
 import { motion } from 'framer-motion';
-import { staggerContainer } from '../../../utils/motion';
+import Image from 'next/image';
+import { fadeIn, staggerContainer } from '../../../utils/motion';
+import feedbackImage from '../../../images/About/Feedback.svg';
 
 const Fdbs = (props) => {
   const { rating } = props;
   const filledStars = Math.floor(rating);
   const emptyStars = 5 - filledStars;
-
   return (
     <div className="flex">
       {Array.from({ length: filledStars }).map((_, index) => (
@@ -23,6 +25,9 @@ const Fdbs = (props) => {
     </div>
   );
 };
+function ImpedirArrastar(event) {
+  event.preventDefault();
+}
 const Feedback = () => {
   const [feedbacks, setFeedbacks] = useState([]);
   const [name, setName] = useState('');
@@ -100,7 +105,7 @@ const Feedback = () => {
             </ul>
           ))}
         </ul>
-        <div className="grid mt-5 grid-cols-2">
+        <div className="grid mt-5 gap-5 grid-cols-2">
           <form className="card_1 p-5 rounded-lg" onSubmit={handleSubmit}>
             <div className="mb-5 grid grid-cols-2 gap-x-10">
               <div>
@@ -170,6 +175,39 @@ const Feedback = () => {
               Enviar
             </button>
           </form>
+          <div className="text-center">
+            <h2>Faça seu comentário</h2>
+            <h3 className="text-3xl">
+              <Typewriter
+                options={{
+                  strings: [
+                    'Deixe seu comentário sobre o projeto',
+                    'Agradeço desde já!!',
+                  ],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </h3>
+            <motion.div
+              variants={fadeIn('up', 'tween', 0, 1)}
+              drag
+              dragConstraints={{
+                top: -0.2,
+                left: -0.2,
+                right: 0.2,
+                bottom: 0.2,
+              }}
+              className="flex justify-center items-center"
+            >
+              <Image
+                src={feedbackImage}
+                width={300}
+                height={300}
+                onDragStart={ImpedirArrastar}
+              />
+            </motion.div>
+          </div>
         </div>
       </motion.div>
     </section>
