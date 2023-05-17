@@ -48,6 +48,7 @@ const Feedback = () => {
     });
     const result = await response.json();
     console.log(result);
+    window.location.reload();
   };
   return (
     <section id="feedback" className="paddings relative z-10 ">
@@ -57,44 +58,50 @@ const Feedback = () => {
         whileInView="show"
         className="max-w-screen-xl mx-auto"
       >
-        <ul className="grid overflow-scroll card_1 shadow-md shadow-slate-600 p-5 h-96 rounded-xl lg:grid-cols-3 w-full md:grid-cols-2 sm:grid-cols-1 sm:gap-y-5 md:gap-y-5 gap-x-5 ">
+        <ul className="grid overflow-scroll card_1 shadow-md shadow-slate-600 p-5 h-[30rem] rounded-xl lg:grid-cols-3 w-full md:grid-cols-2 sm:grid-cols-1 sm:gap-y-5 md:gap-y-5 gap-x-5 ">
           {feedbacks.map((feedback) => (
             <ul
               key={feedback._id}
-              className=" p-5 card_2 rounded-xl shadow-lg "
+              className="p-5 card_2 rounded-xl shadow-lg my-4"
             >
+              <div className="text-center">
+                <h2 className="text-2xl font-bold ">Comentário</h2>
+                <span className="text-sm  text-red-400">{feedback.test}</span>
+              </div>
               <li>
                 <div className="flex justify-center">
                   <div className="grid gap-y-3">
-                    <div className="flex justify-center text-4xl">
-                      <FaUserCircle />
-                    </div>
-                    <div className="text-md text-center">
-                      <span className="text-[8px] text-red-400">
-                        {feedback.test}
-                      </span>
-                      <h2>{feedback.name}</h2>
+                    <div className="flex justify-center  text-gray-600">
+                      <h1 className="text-7xl">
+                        <FaUserCircle />
+                      </h1>
                     </div>
                   </div>
                 </div>
-                <div className="text-center border px-1 pt-1 text-sm border-slate-700 rounded-md overflow-scroll h-24">
-                  <p className="font-mono">{feedback.comment}</p>
+                <div className="text-md text-center">
+                  <h2 className="text-lg font-semibold text-gray-800">
+                    {feedback.name}
+                  </h2>
                 </div>
-                <div className="flex items-center pt-2">
-                  <p><Fdbs rating={feedback.rating} />{' '}</p>
-                  <p className="  font-mono">
-                    {feedback.rating}
+                <div className="border rounded-xl bg-gray-100 border-gray-300 p-4 my-4">
+                  <div className="text-center text-sm p-2 rounded-md h-32">
+                    <p className="font-mono text-gray-600 ">
+                      {feedback.comment}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center pt-2 justify-center space-x-2">
+                  <p>
+                    <Fdbs rating={feedback.rating} />{' '}
                   </p>
+                  <p className="font-mono text-gray-600">{feedback.rating}</p>
                 </div>
               </li>
             </ul>
           ))}
         </ul>
         <div className="grid mt-5 grid-cols-2">
-          <form
-            className="card_1 p-5 rounded-lg"
-            onSubmit={handleSubmit}
-          >
+          <form className="card_1 p-5 rounded-lg" onSubmit={handleSubmit}>
             <div className="mb-5 grid grid-cols-2 gap-x-10">
               <div>
                 <label
@@ -150,10 +157,10 @@ const Feedback = () => {
                 required
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
-                maxLength="500"
+                maxLength="100"
               />
               <div className="text-gray-400 text-xs">
-                <p>{500 - comment.length} caracteres restantes</p>
+                <p>{100 - comment.length} caracteres restantes</p>
               </div>
             </div>
             <button
