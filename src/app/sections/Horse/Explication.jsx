@@ -36,7 +36,9 @@ const Explication = () => {
             >
               <div className="  p-2">
                 <div className="text-sm mb-2 text-gray-700">
-                  <h4><strong>Nome:</strong> {result.horse1.name}</h4>
+                  <h4>
+                    <strong>Nome:</strong> {result.horse1.name}
+                  </h4>
                 </div>
                 <div className="grid grid-cols-2">
                   <div>
@@ -61,7 +63,9 @@ const Explication = () => {
               </div>
               <div className="border p-2">
                 <div className="text-sm mb-2 text-gray-700">
-                  <h4><strong>Nome:</strong> {result.horse2.name}</h4>
+                  <h4>
+                    <strong>Nome:</strong> {result.horse2.name}
+                  </h4>
                 </div>
                 <div className="grid grid-cols-2">
                   <di>
@@ -86,16 +90,154 @@ const Explication = () => {
               </div>
               <div className=" p-2">
                 <div className="font-medium mb-2">
-                  <h4><strong>Corrida: {result.race.raceNumber}</strong></h4>
+                  <h4>
+                    <strong>Corrida: {result.race.raceNumber}</strong>
+                  </h4>
                 </div>
                 <div className="text-sm text-gray-700">
-                  <h4 className="">
-                    Ganhador: {result.race.raceResult}
-                  </h4>
+                  <h5 className="">Ganhador: {result.race.raceResult}</h5>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+        <h1 className="text-center">Resultados</h1>
+        <div className="grid grid-cols-2">
+          <table className="card_2 font-semibold rounded-md shadow-sm shadow-slate-300 p-5 text-xl">
+            <tbody className="text-center">
+              <tr>
+                <td>
+                  <h5>Atrasos do cavalo 1:</h5>
+                </td>
+                <td>
+                  {results.length > 0 && (
+                    <h5 className="">
+                      {results[results.length - 1].horse1.delay}
+                    </h5>
+                  )}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h5>Atrasos do cavalo 2:</h5>
+                </td>
+                <td>
+                  {results.length > 0 && (
+                    <h5 className="">
+                      {results[results.length - 1].horse2.delay}
+                    </h5>
+                  )}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h5>Média do cavalo 1:</h5>
+                </td>
+                <td>
+                  {results.length > 0 && (
+                    <h5 className="">
+                      {Math.floor(
+                        results[results.length - 1].horse1.mediaDelay,
+                      )}
+                    </h5>
+                  )}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h5>Média do cavalo 2:</h5>
+                </td>
+                <td>
+                  {results.length > 0 && (
+                    <h5 className="">
+                      {Math.floor(
+                        results[results.length - 1].horse2.mediaDelay,
+                      )}
+                    </h5>
+                  )}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h5>Eficiência do cavalo 1:</h5>
+                </td>
+                <td>
+                  {results.length > 0 && (
+                    <h5 className="">
+                      {results[results.length - 1].horse1.efficiency}
+                    </h5>
+                  )}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h5>Eficiência do cavalo 2:</h5>
+                </td>
+                <td>
+                  {results.length > 0 && (
+                    <h5 className="">
+                      {results[results.length - 1].horse2.efficiency}
+                    </h5>
+                  )}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h5>Média de eficiência do cavalo 1:</h5>
+                </td>
+                <td>
+                  {results.length > 0 && (
+                    <h5 className="">
+                      {Math.floor(
+                        results[results.length - 1].horse1.mediaEfficiency,
+                      )}
+                    </h5>
+                  )}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h5>Média de eficiência do cavalo 2:</h5>
+                </td>
+                <td>
+                  {results.length > 0 && (
+                    <h5 className="">
+                      {Math.floor(
+                        results[results.length - 1].horse2.mediaEfficiency,
+                      )}
+                    </h5>
+                  )}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div className="flex flex-col justify-center items-center">
+            <h2 className="text-center">Quem é mais eficiente?</h2>
+            {results.length > 0 && (
+              <div className="">
+                {results[results.length - 1].horse1.mediaEfficiency
+                > results[results.length - 1].horse2.mediaEfficiency ? (
+                  <div className="text-center">
+                    <h2>
+                      {Math.floor(
+                        results[results.length - 1].horse1.mediaEfficiency,
+                      )}
+                    </h2>
+                    <h3>O primeiro cavalo é mais eficiente!</h3>
+                  </div>
+                  ) : (
+                    <div className="text-center">
+                      <h2>
+                        {Math.floor(
+                          results[results.length - 1].horse2.mediaEfficiency,
+                        )}
+                      </h2>
+                      <h3>O segundo cavalo é mais eficiente!</h3>
+                    </div>
+                  )}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
