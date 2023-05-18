@@ -38,6 +38,7 @@ export default function Horse() {
   const [showStar, setShowStar] = useState(false);
   const [speed, setSpeed] = useState(30);
   const [speedInterval, setSpeedInterval] = useState(400);
+  const [winner, setWinner] = useState('');
   const maxPosition = 1400;
   const handleShowBorder = () => {
     setShowBorder((prevShowBorder) => !prevShowBorder);
@@ -75,7 +76,6 @@ export default function Horse() {
 
   let currentPosition1 = position1;
   let currentPosition2 = position2;
-
   const handleHorse1 = () => {
     if (gameOver) return;
 
@@ -114,6 +114,7 @@ export default function Horse() {
         progress: undefined,
         theme: 'light',
       });
+      setWinner('Empate');
       setGameOver(true);
     } else if (newPosition1 >= maxPosition) {
       setDisplayText('Mario venceu!');
@@ -131,6 +132,7 @@ export default function Horse() {
         progress: undefined,
         theme: 'light',
       });
+      setWinner('Mario');
       setGameOver(true);
     } else if (newPosition2 >= maxPosition) {
       setDisplayText('Josivaldo venceu!');
@@ -144,6 +146,7 @@ export default function Horse() {
         progress: undefined,
         theme: 'light',
       });
+      setWinner('Josivaldo');
       setRaceResults([...raceResults, 'Josivaldo']);
       setVictoryHorse2(victoryHorse2 + 1);
       setPositionMedia1(positionMedia1 + leftPosition1);
@@ -164,6 +167,43 @@ export default function Horse() {
         clearInterval(intervalId);
       }
     }, speedInterval);
+  };
+
+  /* test */
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const data = {
+      horse1: {
+        name: position1,
+        delay: positionMedia1,
+        mediaDelay: positionMedia1 / raceResults.length,
+        efficiency: horseEfficiency1,
+        mediaEfficiency: horseEfficiency1 / raceResults.length,
+      },
+      horse2: {
+        name: position2,
+        delay: positionMedia2,
+        mediaDelay: positionMedia2 / raceResults.length,
+        efficiency: horseEfficiency2, // Corrigido para horseEfficiency2
+        mediaEfficiency: horseEfficiency2 / raceResults.length, // Corrigido para horseEfficiency2
+      },
+      race: {
+        raceNumber: raceResults.length,
+        raceResult: winner,
+      },
+    };
+
+    const response = await fetch(`/api/HistoryHorse/${e}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+    console.log(result);
   };
 
   return (
@@ -454,6 +494,13 @@ export default function Horse() {
                 }}
               >
                 resetar
+              </button>
+              <button
+                type="button"
+                className="bg-red-500 w-full hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded"
+                onClick={handleSubmit}
+              >
+                resetar2
               </button>
               <table className="table-auto w-full mb-4 text-center card_2 rounded-md shadow-sm shadow-slate-300">
                 <thead>

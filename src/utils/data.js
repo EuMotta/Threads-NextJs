@@ -80,5 +80,25 @@ const data = {
       mediaEfficiency: 5,
     },
   ],
+  historyHorses: {
+    horse1: {
+      name: 'aaa',
+      delay: 1,
+      mediaDelay: 2,
+      efficiency: 3,
+      mediaEfficiency: 4,
+    },
+    horse2: {
+      name: 'aaa2',
+      delay: 2,
+      mediaDelay: 3,
+      efficiency: 4,
+      mediaEfficiency: 6,
+    },
+    race: {
+      raceNumber: 1,
+      raceResult: 'Mario',
+    },
+  },
 };
 export default data;
