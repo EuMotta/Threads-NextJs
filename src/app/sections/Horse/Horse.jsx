@@ -39,6 +39,7 @@ export default function Horse() {
   const [speed, setSpeed] = useState(30);
   const [speedInterval, setSpeedInterval] = useState(400);
   const [winner, setWinner] = useState('');
+  const [isRaceStarted, setIsRaceStarted] = useState(false);
   const maxPosition = 1400;
   const handleShowBorder = () => {
     setShowBorder((prevShowBorder) => !prevShowBorder);
@@ -65,6 +66,7 @@ export default function Horse() {
     }
   };
   const resetPosition = () => {
+    setIsRaceStarted(false);
     setPosition1(0);
     setPosition2(0);
     setLeftPosition1(1400);
@@ -76,6 +78,42 @@ export default function Horse() {
 
   let currentPosition1 = position1;
   let currentPosition2 = position2;
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const data = {
+      horse1: {
+        name: 'Mario',
+        delay: positionMedia1,
+        mediaDelay: positionMedia1 / raceResults.length,
+        efficiency: horseEfficiency1,
+        mediaEfficiency: horseEfficiency1 / raceResults.length,
+      },
+      horse2: {
+        name: 'Josivaldo',
+        delay: positionMedia2,
+        mediaDelay: positionMedia2 / raceResults.length,
+        efficiency: horseEfficiency2,
+        mediaEfficiency: horseEfficiency2 / raceResults.length,
+      },
+      race: {
+        raceNumber: raceResults.length,
+        raceResult: winner,
+      },
+    };
+
+    const response = await fetch(`/api/HistoryHorse/${e}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+    console.log(result);
+  };
   const handleHorse1 = () => {
     if (gameOver) return;
 
@@ -114,6 +152,7 @@ export default function Horse() {
         progress: undefined,
         theme: 'light',
       });
+      handleSubmit(new Event('submit'));
       setWinner('Empate');
       setGameOver(true);
     } else if (newPosition1 >= maxPosition) {
@@ -132,6 +171,7 @@ export default function Horse() {
         progress: undefined,
         theme: 'light',
       });
+      handleSubmit(new Event('submit'));
       setWinner('Mario');
       setGameOver(true);
     } else if (newPosition2 >= maxPosition) {
@@ -151,6 +191,7 @@ export default function Horse() {
       setVictoryHorse2(victoryHorse2 + 1);
       setPositionMedia1(positionMedia1 + leftPosition1);
       setShowStar(true);
+      handleSubmit(new Event('submit'));
       setGameOver(true);
     } else if (newPosition1 > newPosition2) {
       setDisplayText('Mario está na frente!');
@@ -161,50 +202,17 @@ export default function Horse() {
     }
   };
   const startRace = () => {
+    setIsRaceStarted(true);
     const intervalId = setInterval(() => {
       handleHorse1();
       if (currentPosition1 >= maxPosition || currentPosition2 >= maxPosition) {
         clearInterval(intervalId);
       }
     }, speedInterval);
+    setIsRaceStarted(false);
   };
 
   /* test */
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const data = {
-      horse1: {
-        name: position1,
-        delay: positionMedia1,
-        mediaDelay: positionMedia1 / raceResults.length,
-        efficiency: horseEfficiency1,
-        mediaEfficiency: horseEfficiency1 / raceResults.length,
-      },
-      horse2: {
-        name: position2,
-        delay: positionMedia2,
-        mediaDelay: positionMedia2 / raceResults.length,
-        efficiency: horseEfficiency2, // Corrigido para horseEfficiency2
-        mediaEfficiency: horseEfficiency2 / raceResults.length, // Corrigido para horseEfficiency2
-      },
-      race: {
-        raceNumber: raceResults.length,
-        raceResult: winner,
-      },
-    };
-
-    const response = await fetch(`/api/HistoryHorse/${e}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-
-    const result = await response.json();
-    console.log(result);
-  };
 
   return (
     <main className="container mx-auto">
@@ -313,6 +321,7 @@ export default function Horse() {
                     type="button"
                     className=" bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded"
                     onClick={handleUndo}
+                    disabled={isRaceStarted}
                   >
                     Voltar
                   </button>
@@ -320,6 +329,7 @@ export default function Horse() {
                     type="button"
                     className=" bg-green-500 hover:bg-green-700 text-white text-sm font-bold py-2 px-4 rounded"
                     onClick={handleHorse1}
+                    disabled={isRaceStarted}
                   >
                     Avançar
                   </button>
@@ -327,13 +337,15 @@ export default function Horse() {
                     type="button"
                     className=" bg-red-500 hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded"
                     onClick={resetPosition}
+                    disabled={!isRaceStarted}
                   >
                     Resetar
                   </button>
                   <button
                     type="button"
-                    className=" bg-violet-500 hover:bg-violet-700 text-white text-sm font-bold py-2 px-4 rounded"
-                    onClick={startRace}
+                    className="bg-violet-500 hover:bg-violet-700 text-white text-sm font-bold py-2 px-4 rounded"
+                    onClick={() => { startRace(); setIsRaceStarted(true); }}
+                    disabled={isRaceStarted}
                   >
                     auto
                   </button>
@@ -497,10 +509,10 @@ export default function Horse() {
               </button>
               <button
                 type="button"
-                className="bg-red-500 w-full hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded"
+                className="bg-green-500 w-full hover:bg-green-700 text-white text-sm font-bold py-2 px-4 rounded"
                 onClick={handleSubmit}
               >
-                resetar2
+                Teste MongoDB
               </button>
               <table className="table-auto w-full mb-4 text-center card_2 rounded-md shadow-sm shadow-slate-300">
                 <thead>

@@ -1,5 +1,7 @@
 import React from 'react';
 
-export const RaceResults = () => (
+const RaceResults = () => (
   <div>RaceResults</div>
 );
+
+export default RaceResults;
