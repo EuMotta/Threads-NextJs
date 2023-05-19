@@ -14,6 +14,74 @@ export const horses = [
     position: 'position2',
   },
 ];
+export const exploreWorlds = [
+  {
+    id: 'world-1',
+    description: (
+      <>
+        <p>
+          &nbsp;Threads híbridas são implementadas tanto no espaço do
+          usuário quanto no núcleo do sistema operacional. O sistema
+          operacional sabe das threads do usuário e faz o seu
+          gerenciamento.
+        </p>
+        <br />
+        <p>
+          &nbsp;A vantagem das threads híbridas é a flexibilidade em
+          função das duas implementações. Elas são implementadas tanto
+          no espaço do usuário quanto no núcleo do sistema operacional.
+          O sistema operacional sabe das threads do usuário e faz o seu
+          gerenciamento . Isso permite que o sistema operacional
+          gerencie as threads de maneira mais eficiente e flexível.
+        </p>
+      </>
+    ),
+    title: (
+      <div>
+        <h4 className="font-bold">Hibridos</h4>
+      </div>
+    ),
+    imgUrl: 'texto aqui',
+  },
+  {
+    id: 'world-2',
+    description: (
+      <p>
+        &nbsp;Os threads em nível de usuário são criados e gerenciados
+        por uma biblioteca na aplicação, sem a intervenção do núcleo
+        do sistema. Esses threads têm a vantagem de serem rápidos na
+        criação e na troca de contexto, mas podem enfrentar
+        dificuldades com operações de entrada/saída ou de paginação
+        que bloqueiam todo o processo . Além disso, eles possibilitam
+        que cada processo escolha o algoritmo de escalonamento mais
+        adequado para os seus threads.
+      </p>
+    ),
+    title: (
+      <div>
+        <h4 className="font-bold">User-level</h4>
+      </div>
+    ),
+    imgUrl: 'texto aqui',
+  },
+  {
+    id: 'world-3',
+    description: (
+      <p>
+        &nbsp;São threads que são reconhecidas e escalonadas pelo
+        núcleo do sistema. Elas podem fazer chamadas de sistema e
+        bloquear sem afetar as outras threads do mesmo processo, mas
+        são mais lentas na criação e na troca de contexto
+      </p>
+    ),
+    title: (
+      <div>
+        <h4 className="font-bold">Kernel-level</h4>
+      </div>
+    ),
+    imgUrl: 'texto aqui',
+  },
+];
 export const resultsListDb = [
   {
     label: 'Atrasos do cavalo 1',

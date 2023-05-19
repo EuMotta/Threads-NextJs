@@ -54,7 +54,7 @@ const Explication = () => {
                   </div>
                   <div>
                     <p className="!text-sm">
-                      Med. Atraso: {result.horse1.mediaDelay}
+                      Med. Atraso: {Math.floor(result.horse1.mediaDelay)}
                     </p>
                   </div>
                   <div>
@@ -64,7 +64,7 @@ const Explication = () => {
                   </div>
                   <div>
                     <p className="!text-sm">
-                      Med. Eficiência: {result.horse1.mediaEfficiency}
+                      Med. Eficiência: {Math.floor(result.horse1.mediaEfficiency)}
                     </p>
                   </div>
                 </div>
@@ -81,7 +81,7 @@ const Explication = () => {
                   </di>
                   <div>
                     <p className="!text-sm">
-                      Med. Atraso: {result.horse2.mediaDelay}
+                      Med. Atraso: {Math.floor(result.horse2.mediaDelay)}
                     </p>
                   </div>
                   <div>
@@ -91,7 +91,7 @@ const Explication = () => {
                   </div>
                   <div>
                     <p className="!text-sm">
-                      Med. Eficiência: {result.horse2.mediaEfficiency}
+                      Med. Eficiência: {Math.floor(result.horse2.mediaEfficiency)}
                     </p>
                   </div>
                 </div>

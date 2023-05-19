@@ -215,7 +215,11 @@ export default function Horse() {
   };
 
   /* test */
+  const [isFixed, setIsFixed] = useState(false);
 
+  const handleButtonClick = () => {
+    setIsFixed((prevIsFixed) => !prevIsFixed);
+  };
   return (
     <main className="container mx-auto">
       <h4 className=" text-center">
@@ -233,7 +237,7 @@ export default function Horse() {
         />
       </h4>
       <div className="">
-        <div className="card_2 p-5 rounded-lg shadow-md shadow-slate-500">
+        <div className={`card_2 ${isFixed ? 'fixed w-[1550px] opacity-80 z-50 bottom-64' : ''} duration-500 p-5 rounded-lg shadow-md shadow-slate-500`}>
           {horses.map((item) => (
             <div className="bg-road">
               <div className="relative">
@@ -296,7 +300,7 @@ export default function Horse() {
         <div className="grid font-mono grid-cols-4 gap-5">
           <div className="col-span-1 flex flex-col gap-5">
             <div className="">
-              <div className="p-5 mt-5 card_2  rounded-lg shadow-md">
+              <div className={`p-5 mt-5 card_2 ${isFixed ? 'fixed z-50 opacity-90 bottom-0' : ''} duration-500 rounded-lg shadow-md`}>
                 <div className="flex">
                   <div className=" w-5/6">
                     <div className="text-lg font-semibold mb-2">
@@ -365,6 +369,14 @@ export default function Horse() {
                     disabled={isRaceStarted}
                   >
                     auto
+                  </button>
+                  <button
+                    type="button"
+                    className="bg-violet-500 hover:bg-violet-700 text-white text-sm font-bold py-2 px-4 rounded"
+                    onClick={handleButtonClick}
+                    disabled={isRaceStarted}
+                  >
+                    {isFixed ? 'Desfixar' : 'Fixar'}
                   </button>
                 </div>
               </div>
