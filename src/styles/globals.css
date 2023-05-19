@@ -13,8 +13,9 @@
   --text-h4-color: #0F172A;
   --text-h5-color: #0F172A;
   --text-p-color: #0F172A;
-  --card-color: #cbd5e1;
-  --card-2-color: #d9e1ee;
+  --card-color: #caddfa;
+  --card-2-color: #e5efff;
+  --card-3-color: #dde9ff;
   --tt: aliceblue;
 }
 .home_shrink{
@@ -83,6 +84,10 @@ p {
 .card_2{
   @apply p-5 shadow shadow-slate-600 rounded-xl;
   background-color: var(--card-2-color);
+}
+.card_3{
+  @apply p-1 shadow shadow-slate-600 rounded-xl;
+  background-color: var(--card-3-color);
 }
 .scroll-top {
   width: 40px;

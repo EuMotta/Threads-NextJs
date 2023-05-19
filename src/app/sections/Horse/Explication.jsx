@@ -1,6 +1,11 @@
+/* eslint-disable react/jsx-no-bind */
+
 'use client';
 
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import horseWin from '../../../images/horseWin.svg';
 
 const Explication = () => {
   const [results, setResults] = useState([]);
@@ -12,6 +17,9 @@ const Explication = () => {
     };
     fetchData();
   }, []);
+  function ImpedirArrastar(event) {
+    event.preventDefault();
+  }
   return (
     <div className="flex flex-col">
       <div className="min-w-full divide-y  divide-gray-200 rounded-lg shadow overflow-hidden">
@@ -32,9 +40,9 @@ const Explication = () => {
           {results.map((result, index) => (
             <div
               key={index}
-              className="grid rounded-xl bg-slate-100 hover:bg-indigo-100 duration-200 hover:shadow-md hover:shadow-slate-500 hover:-translate-y-1 grid-cols-3"
+              className="grid rounded-xl m-2 card_3 shadow-sm shadow-slate-400  duration-200 hover:shadow-md hover:shadow-slate-500 hover:-translate-y-1 grid-cols-3"
             >
-              <div className="  p-2">
+              <div className="border rounded-xl  p-2">
                 <div className="text-sm mb-2 text-gray-700">
                   <h4>
                     <strong>Nome:</strong> {result.horse1.name}
@@ -46,7 +54,7 @@ const Explication = () => {
                   </div>
                   <div>
                     <p className="!text-sm">
-                      Media Atraso: {result.horse1.mediaDelay}
+                      Med. Atraso: {result.horse1.mediaDelay}
                     </p>
                   </div>
                   <div>
@@ -56,12 +64,12 @@ const Explication = () => {
                   </div>
                   <div>
                     <p className="!text-sm">
-                      Media Eficiência: {result.horse1.mediaEfficiency}
+                      Med. Eficiência: {result.horse1.mediaEfficiency}
                     </p>
                   </div>
                 </div>
               </div>
-              <div className="border p-2">
+              <div className="border rounded-xl p-2">
                 <div className="text-sm mb-2 text-gray-700">
                   <h4>
                     <strong>Nome:</strong> {result.horse2.name}
@@ -73,7 +81,7 @@ const Explication = () => {
                   </di>
                   <div>
                     <p className="!text-sm">
-                      Media Atraso: {result.horse2.mediaDelay}
+                      Med. Atraso: {result.horse2.mediaDelay}
                     </p>
                   </div>
                   <div>
@@ -83,12 +91,12 @@ const Explication = () => {
                   </div>
                   <div>
                     <p className="!text-sm">
-                      Media Eficiência: {result.horse2.mediaEfficiency}
+                      Med. Eficiência: {result.horse2.mediaEfficiency}
                     </p>
                   </div>
                 </div>
               </div>
-              <div className=" p-2">
+              <div className="border rounded-xl p-2">
                 <div className="font-medium mb-2">
                   <h4>
                     <strong>Corrida: {result.race.raceNumber}</strong>
@@ -103,7 +111,7 @@ const Explication = () => {
         </div>
         <h1 className="text-center">Resultados</h1>
         <div className="grid grid-cols-2">
-          <table className="card_2 font-semibold rounded-md shadow-sm shadow-slate-300 p-5 text-xl">
+          <table className="card_1 font-semibold rounded-md shadow-sm shadow-slate-300 p-5 text-xl">
             <tbody className="text-center">
               <tr>
                 <td>
@@ -211,8 +219,7 @@ const Explication = () => {
               </tr>
             </tbody>
           </table>
-          <div className="flex flex-col justify-center items-center">
-            <h2 className="text-center">Quem é mais eficiente?</h2>
+          <motion.div className="flex flex-col justify-center items-center">
             {results.length > 0 && (
               <div className="">
                 {results[results.length - 1].horse1.mediaEfficiency
@@ -224,20 +231,54 @@ const Explication = () => {
                       )}
                     </h2>
                     <h3>O primeiro cavalo é mais eficiente!</h3>
+                    <motion.div
+                      drag
+                      dragConstraints={{
+                        top: -0.2,
+                        left: -0.2,
+                        right: 0.2,
+                        bottom: 0.2,
+                      }}
+                      className="p-4 flex justify-center items-center"
+                    >
+                      <Image
+                        src={horseWin}
+                        onDragStart={ImpedirArrastar}
+                        width={250}
+                        height={250}
+                      />
+                    </motion.div>
                   </div>
                   ) : (
-                    <div className="text-center">
+                    <div className="text-center flex flex-col justify-center items-center">
                       <h2>
                         {Math.floor(
                           results[results.length - 1].horse2.mediaEfficiency,
                         )}
                       </h2>
                       <h3>O segundo cavalo é mais eficiente!</h3>
+                      <motion.div
+                        drag
+                        dragConstraints={{
+                          top: -0.2,
+                          left: -0.2,
+                          right: 0.2,
+                          bottom: 0.2,
+                        }}
+                        className="p-4 flex justify-center items-center"
+                      >
+                        <Image
+                          src={horseWin}
+                          onDragStart={ImpedirArrastar}
+                          width={250}
+                          height={250}
+                        />
+                      </motion.div>
                     </div>
                   )}
               </div>
             )}
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

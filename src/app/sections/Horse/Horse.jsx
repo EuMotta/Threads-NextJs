@@ -173,6 +173,7 @@ export default function Horse() {
       });
       handleSubmit(new Event('submit'));
       setWinner('Mario');
+      setIsRaceStarted(true);
       setGameOver(true);
     } else if (newPosition2 >= maxPosition) {
       setDisplayText('Josivaldo venceu!');
@@ -192,6 +193,7 @@ export default function Horse() {
       setPositionMedia1(positionMedia1 + leftPosition1);
       setShowStar(true);
       handleSubmit(new Event('submit'));
+      setIsRaceStarted(true);
       setGameOver(true);
     } else if (newPosition1 > newPosition2) {
       setDisplayText('Mario está na frente!');
@@ -336,15 +338,30 @@ export default function Horse() {
                   <button
                     type="button"
                     className=" bg-red-500 hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded"
-                    onClick={resetPosition}
+                    onClick={() => {
+                      resetPosition();
+                      toast.success('Corrida Reiniciada!', {
+                        position: 'bottom-center',
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: 'light',
+                      });
+                    }}
                     disabled={!isRaceStarted}
                   >
-                    Resetar
+                    Reiniciar
                   </button>
                   <button
                     type="button"
                     className="bg-violet-500 hover:bg-violet-700 text-white text-sm font-bold py-2 px-4 rounded"
-                    onClick={() => { startRace(); setIsRaceStarted(true); }}
+                    onClick={() => {
+                      startRace();
+                      setIsRaceStarted(true);
+                    }}
                     disabled={isRaceStarted}
                   >
                     auto
@@ -503,16 +520,19 @@ export default function Horse() {
                   setPositionMedia2(0);
                   setHorseEfficiency1(0);
                   setHorseEfficiency2(0);
+                  toast.success('🐎 Resetado!', {
+                    position: 'bottom-center',
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'light',
+                  });
                 }}
               >
                 resetar
-              </button>
-              <button
-                type="button"
-                className="bg-green-500 w-full hover:bg-green-700 text-white text-sm font-bold py-2 px-4 rounded"
-                onClick={handleSubmit}
-              >
-                Teste MongoDB
               </button>
               <table className="table-auto w-full mb-4 text-center card_2 rounded-md shadow-sm shadow-slate-300">
                 <thead>

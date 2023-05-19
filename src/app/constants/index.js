@@ -14,7 +14,48 @@ export const horses = [
     position: 'position2',
   },
 ];
-
+export const resultsListDb = [
+  {
+    label: 'Atrasos do cavalo 1',
+    key: 'horse1.delay',
+    title: 'Atrasos do cavalo 1:',
+  },
+  {
+    label: 'Atrasos do cavalo 2',
+    key: 'horse2.delay',
+    title: 'Atrasos do cavalo 2:',
+  },
+  {
+    label: 'Média do cavalo 1',
+    key: 'horse1.mediaDelay',
+    title: 'Média do cavalo 1:',
+  },
+  {
+    label: 'Média do cavalo 2',
+    key: 'horse2.mediaDelay',
+    title: 'Média do cavalo 2:',
+  },
+  {
+    label: 'Eficiência do cavalo 1',
+    key: 'horse1.efficiency',
+    title: 'Eficiência do cavalo 1:',
+  },
+  {
+    label: 'Eficiência do cavalo 2',
+    key: 'horse2.efficiency',
+    title: 'Eficiência do cavalo 2:',
+  },
+  {
+    label: 'Média de eficiência do cavalo 1',
+    key: 'horse1.mediaEfficiency',
+    title: 'Média de eficiência do cavalo 1:',
+  },
+  {
+    label: 'Média de eficiência do cavalo 2',
+    key: 'horse2.mediaEfficiency',
+    title: 'Média de eficiência do cavalo 2:',
+  },
+];
 export const explication = {
 
   textExample: [

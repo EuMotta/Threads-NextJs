@@ -106,20 +106,32 @@ const Graph2 = ({
 };
 
 const Graph1 = ({ victoryHorse1, victoryHorse2, draw }) => {
-  const data = [
-    {
-      name: 'Cavalo 1',
-      value: victoryHorse1,
-    },
-    {
-      name: 'Cavalo 2',
-      value: victoryHorse2,
-    },
-    {
-      name: 'Empate',
-      value: draw,
-    },
-  ];
+  let data;
+
+  if (!victoryHorse1 && !victoryHorse2 && !draw) {
+    data = [
+      {
+        name: 'Não há corridas',
+        value: 1,
+      },
+    ];
+  } else {
+    data = [
+      {
+        name: 'Cavalo 1',
+        value: victoryHorse1,
+      },
+      {
+        name: 'Cavalo 2',
+        value: victoryHorse2,
+      },
+      {
+        name: 'Empate',
+        value: draw,
+      },
+    ];
+  }
+
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
 
   return (
@@ -144,6 +156,7 @@ const Graph1 = ({ victoryHorse1, victoryHorse2, draw }) => {
     </ResponsiveContainer>
   );
 };
+
 /* Horse End */
 
 /* CallCenter */
