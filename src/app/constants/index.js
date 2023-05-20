@@ -150,28 +150,36 @@ export const explication = {
   ],
 };
 
-export const navbarlinks = [
-  {
-    name: 'Inicio',
-    href: '/',
-  },
-  {
-    name: 'Como usar',
-    href: '/HowToUse',
-  },
-  {
-    name: 'Simular',
-    href: '/Start',
-  },
-  {
-    name: 'Sobre',
-    href: '/About',
-  },
-  {
-    name: 'Threads',
-    href: '/Threads',
-  },
-];
+export const navbarlinks = {
+  main: [
+    {
+      name: 'Inicio',
+      href: '/',
+    },
+    {
+      name: 'Como usar',
+      href: '/HowToUse',
+    },
+    {
+      name: 'Simular',
+      href: '/Start',
+    },
+    {
+      name: 'Threads',
+      href: '/Threads',
+    },
+  ],
+  dropdown: [
+    {
+      name: 'Projeto',
+      href: '/About',
+    },
+    {
+      name: 'Desenvolvedor',
+      href: '/Me',
+    },
+  ],
+};
 
 export const packageList = [
   {

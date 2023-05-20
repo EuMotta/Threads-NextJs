@@ -31,6 +31,13 @@
   background-color: rgba(54, 56, 59, 0.8) !important;
   transition: 300ms ease-in-out;
 }
+.glassmorphism-2 {
+  background: rgba(0, 0, 0, 0.65);
+  box-shadow: 0 8px 8px 0 rgba(54, 54, 54, 0.705);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
 main.primary-color {
   background-color: var(--primary-color);
 }

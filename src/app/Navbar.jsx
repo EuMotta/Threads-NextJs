@@ -5,12 +5,15 @@ import { GoCode } from 'react-icons/go';
 import { FcUp } from 'react-icons/fc';
 import { useState, useEffect, useRef } from 'react';
 import { IoIosMoon, IoIosSunny } from 'react-icons/io';
+import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import { navbarlinks } from './constants';
 
 const Navbar = () => {
   const homeRef = useRef(null);
   const navRef = useRef(null);
   const rocketRef = useRef(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   const homeFunc = () => {
     if (
       document.body.scrollTop > 80
@@ -25,6 +28,7 @@ const Navbar = () => {
       rocketRef.current.classList.remove('open');
     }
   };
+
   useEffect(() => {
     window.addEventListener('scroll', homeFunc);
 
@@ -44,7 +48,7 @@ const Navbar = () => {
       root.style.setProperty('--text-h4-color', '#0F172A');
       root.style.setProperty('--text-h5-color', '#0F172A');
       root.style.setProperty('--text-p-color', '#0F172A');
-      root.style.setProperty('--card-color', '#cbd5e1');
+      root.style.setProperty('--card-color', '#caddfa');
       root.style.setProperty('--card-2-color', '#e5e7eb');
       root.style.setProperty('--card-3-color', '#dde9ff');
     } else {
@@ -60,18 +64,24 @@ const Navbar = () => {
       root.style.setProperty('--card-3-color', '#6b80a5');
     }
   };
+
   const [icon, setIcon] = useState('sun');
 
   const handleChange = () => {
     setIcon(icon === 'sun' ? 'moon' : 'sun');
   };
+
+  const handleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <header ref={homeRef} className="fixed w-full">
-      <nav ref={navRef} className="bg-gray-800 ">
+      <nav ref={navRef} className="bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
-              <div className="flex-shrink-0 hover:cursor-pointer ">
+              <div className="flex-shrink-0 hover:cursor-pointer">
                 <Link href="/">
                   <div className="flex justify-center text-white items-center gap-x-2">
                     <span className="text-3xl">
@@ -82,14 +92,41 @@ const Navbar = () => {
                 </Link>
               </div>
               <div className="hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-4">
-                  {navbarlinks.map((item) => (
+                <div className="ml-10 flex  items-baseline space-x-4">
+                  {navbarlinks.main.map((item) => (
                     <Link href={item.href} key={item.name}>
                       <span className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                         {item.name}
                       </span>
                     </Link>
                   ))}
+                  <div className="relative">
+                    <button
+                      type="button"
+                      onClick={handleDropdown}
+                      className="text-gray-300 flex gap-2 items-center hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium focus:outline-none"
+                    >
+                      Sobre
+                      {isDropdownOpen ? (
+                        <FaAngleUp className="text-xl" />
+                      ) : (
+                        <FaAngleDown className="text-xl" />
+                      )}
+                    </button>
+                    {isDropdownOpen && (
+                      <div className="absolute z-40 right-0 mt-2 w-48 bg-white rounded-md shadow-lg">
+                        <div className="py-1">
+                          {navbarlinks.dropdown.map((item) => (
+                            <Link href={item.href} key={item.name}>
+                              <span className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
+                                {item.name}
+                              </span>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
@@ -116,7 +153,7 @@ const Navbar = () => {
           onClick={() => {
             window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
           }}
-          className=" scroll-top flex justify-center items-center !bg-indigo-100 hover:!bg-slate-200  scroll-to-target open"
+          className="scroll-top flex justify-center items-center !bg-indigo-100 hover:!bg-slate-200 scroll-to-target open"
         >
           <FcUp className="text-white" />
         </button>
