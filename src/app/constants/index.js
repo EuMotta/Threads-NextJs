@@ -418,3 +418,26 @@ export const mongoDBList = [
     time: 0.25,
   },
 ];
+
+export const threadsBarrier = {
+  part1: [
+    {
+      title: 'O que é o sistema de barreiras?',
+      description: (
+        <>
+          &nbsp; Um sistema de barreiras em threads é um método de sincronização voltado à cooperação entre entidades de processamento. Ele permite a criação de uma “barreira” de sincronização, na qual todos os membros de um grupo de threads precisam chegar e esperar pela chegada de todos para poder prosseguir. Esse método é muito utilizado no processamento numérico de alto desempenho. Resumindo, em um sistema de barreiras, se houver 5 threads executando um processo, todos devem chegar ao mesmo estado para poderem prosseguir. <br /> &nbsp; &nbsp; A representação desse sistema pode ser feita de varias formas, nesse caso eu utilizei uma corrida de carros com parada obrigatória.
+        </>
+      ),
+      time: 0.25,
+    },
+    {
+      title: 'Sua importância',
+      description: (
+        <>
+          &nbsp; A barreira é uma ferramenta importantíssima para garantir que todas as threads de um grupo estejam sincronizadas e preparadas para a proxima etapa do processamento. É muito util em aplicações que envolvem cálculos complexos que necessitam de varias threads executando simultaneamente para a sua conclusão. <br /> &nbsp; &nbsp; Imagine que um programa está calculando o clima em diferentes partes do mundo, cada thread pode ser responsavel por calcular o clima em uma região especifica, porém para ter um cálculo preciso, as threads precisam coletar as informações mais recentes. Nesse caso, uma barreira é essencial para não haver erros ou atrasos na coleta de dados. <br /> &nbsp; &nbsp; Ao lado, você pode acompanhar ao vivo o clima no mundo de acordo com o site <strong><u>ClimaTempo</u></strong>, mostrando como funcionaria essa sincronização. Você pode interagir e navegar pelo clima em todo o planeta.
+        </>
+      ),
+      time: 0.25,
+    },
+  ],
+};

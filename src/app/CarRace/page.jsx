@@ -1,10 +1,12 @@
 import React from 'react';
-import CarRace from '../sections/CarRace';
+import { CarRace, Explication, Hero } from '../sections/CarRace';
 
 export default function page() {
   return (
     <main>
+      <Hero />
       <CarRace />
+      <Explication />
     </main>
   );
 }
