@@ -1,3 +1,4 @@
 import Barbearia from './Barbearia';
+import Hero from './Hero.jsx';
 
-export default Barbearia;
+export { Barbearia, Hero };
