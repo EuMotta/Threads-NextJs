@@ -79,7 +79,7 @@ const CarRace = () => {
     <div className="container yPaddings mx-auto">
       <div className="">
         <div className="grid grid-cols-8 gap-5">
-          <div className="col-span-2">
+          <div className="col-span-2 flex flex-col gap-5">
             <div className="card_1">
               <div className="flex flex-col">
                 <h3 className="text-center">Posições</h3>
@@ -137,6 +137,7 @@ const CarRace = () => {
                   type="button"
                   className="px-4 py-2 bg-blue-500 text-white rounded"
                   onClick={handleAddCar}
+
                 >
                   Adicionar
                 </button>
@@ -144,6 +145,7 @@ const CarRace = () => {
                   type="button"
                   className="px-4 py-2 bg-blue-500 text-white rounded"
                   onClick={handleAdvance}
+                  disabled={carCount === 0}
                 >
                   Avançar
                 </button>
@@ -155,10 +157,35 @@ const CarRace = () => {
                   Resetar
                 </button>
               </div>
+              <p>Quantidade: {carCount}</p>
+            </div>
+            <div className="card_1">
+              <h3 className="text-center">Explicação</h3>
+              <p className="!text-left">
+                &nbsp; Os carros só avançam se estiverem na posição definida, no
+                momento só vão avançar se estiverem na posição{' '}
+                <strong>
+                  <u>
+                    {gameOver
+                      ? carCount === 0
+                        ? '( Não há carros, adicione um carro para visualizar )'
+                        : '(Corrida finalizada)'
+                      : carCount > 0
+                        ? newMaxPosition
+                        : '( Não há carros, adicione um carro para visualizar )'}
+                  </u>
+                </strong>
+                .
+              </p>
+              <p className="!text-left">
+                &nbsp; O sistema de barreira diz que, os threads precisam estar
+                na mesma posição para continuarem seu processo, até o proximo
+                ponto definido.
+              </p>
             </div>
           </div>
 
-          <div className="col-span-6 h-[30rem] overflow-scroll">
+          <div className="col-span-6 h-[40rem] card_1 overflow-scroll">
             {[...Array(carCount)].map((_, index) => (
               <div className="raceRoad flex">
                 <div
@@ -167,7 +194,7 @@ const CarRace = () => {
                     left: `${newMaxPosition + 80}px`,
                   }}
                 >
-                  {newMaxPosition}
+                  <p>{newMaxPosition}</p>
                 </div>
                 <div
                   className="w-1 h-5 relative bg-red-600"
