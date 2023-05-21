@@ -59,33 +59,7 @@ const CarRace = () => {
     <div className="flex flex-col items-center space-y-4">
       <div className="grid grid-cols-5">
         <div className="">
-          {[...Array(carCount)].map((_, index) => (
-            <div
-              key={index}
-              className="transition-transform duration-500 transform hover:translate-x-4"
-              style={{
-                transform: `translateX(${positions[index]}px)`,
-              }}
-            >
-              <FaCar size={24} />
-            </div>
-          ))}
-        </div>
-        <div className="">
-          <button
-            type="button"
-            className="px-4 py-2 bg-blue-500 text-white rounded"
-            onClick={handleAddCar}
-          >
-            Adicionar
-          </button>
-          <button
-            type="button"
-            className="px-4 py-2 bg-blue-500 text-white rounded"
-            onClick={handleAdvance}
-          >
-            Avançar
-          </button>
+
           <div className="flex flex-col space-y-2">
             <label className="flex flex-row items-center space-x-2">
               <span>Position 1:</span>
@@ -133,9 +107,32 @@ const CarRace = () => {
               />
             </label>
           </div>
+          <button
+            type="button"
+            className="px-4 py-2 bg-blue-500 text-white rounded"
+            onClick={handleAddCar}
+          >
+            Adicionar
+          </button>
+          <button
+            type="button"
+            className="px-4 py-2 bg-blue-500 text-white rounded"
+            onClick={handleAdvance}
+          >
+            Avançar
+          </button>
+        </div>
+        <div className="">
           {[...Array(carCount)].map((_, index) => (
-            <div key={index} className="">
-              <p>{positions[index]}px</p>
+            <div
+              key={index}
+              className="transition-transform flex gap-2 duration-500 transform hover:translate-x-4"
+              style={{
+                transform: `translateX(${positions[index]}px)`,
+              }}
+            >
+              <p>{positions[index]}m</p>
+              <FaCar size={24} />
             </div>
           ))}
         </div>

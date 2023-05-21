@@ -1,0 +1,6 @@
+.raceRoad{
+  background-image: url(../images/CarRace/Road.jpg);
+  background-size: 100% 25%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
