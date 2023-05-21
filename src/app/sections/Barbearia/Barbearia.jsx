@@ -16,7 +16,6 @@ const Barbearia = () => {
   const [queueStatus, setQueueStatus] = useState(false);
   const [speedStatus, setSpeedStatus] = useState(false);
   const [endService, setEndService] = useState([]);
-
   useEffect(() => {
     if (queue > 0) {
       const timer = setTimeout(() => {
@@ -41,26 +40,66 @@ const Barbearia = () => {
 
   const HandleEndDay = () => {
     if (queue > 0) {
-      toast('Espere a fila acabar!', {
-        position: 'bottom-center',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'light',
-      });
+      toast(
+        <div>
+          <h4 className="text-center">Espere a fila acabar!</h4>
+        </div>,
+        {
+          position: 'bottom-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+        },
+      );
+    } else if (atendido === 0) {
+      toast(
+        <div>
+          <h4 className="text-center">Você não trabalhou hoje!</h4>
+        </div>,
+        {
+          position: 'bottom-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+        },
+      );
     } else {
       const day = endService.length + 1;
       setEndService([...endService, { day, attended: atendido }]);
       console.log(endService);
+      setQueue(0);
+      setAtendido(0);
+      toast(
+        <div>
+          <h4 className="text-center">Dia finalizado!</h4>
+          <p className="text-center">Clientes atendidos: {atendido}</p>
+        </div>,
+        {
+          position: 'bottom-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+        },
+      );
     }
   };
 
   const handleReset = () => {
     setQueue(0);
     setAtendido(0);
+    setEndService([]);
   };
 
   return (
@@ -127,6 +166,14 @@ const Barbearia = () => {
                   className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
                 >
                   Remover cliente
+                </button>
+                <button
+                  type="button"
+                  onClick={() => { setQueue(0); }}
+                  disabled={queueStatus}
+                  className="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded"
+                >
+                  Dispensar fila
                 </button>
               </div>
             </div>
@@ -202,6 +249,30 @@ const Barbearia = () => {
               )}
             </div>
           )}
+        </div>
+        <div className="card_1 col-span-1">
+          <table className="table-auto w-full border-collapse border border-gray-300">
+            <thead>
+              <tr>
+                <th className="border card_2 border-gray-500 !rounded-none !px-4  !py-2"><p>Dia</p></th>
+                <th className="border card_2 border-gray-500 !rounded-none !px-4  !py-2">
+                  <p>Clientes atendidos</p>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {endService.map((service) => (
+                <tr key={service.day}>
+                  <td className="border border-gray-500 px-4 py-2">
+                    <p>{service.day}</p>
+                  </td>
+                  <td className="border border-gray-500 px-4 py-2">
+                    <p>{service.attended}</p>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
