@@ -14,12 +14,15 @@ const CarRace = () => {
   const [position4, setPosition4] = useState(600);
   const [position5, setPosition5] = useState(800);
   const [newMaxPosition, setNewMaxPosition] = useState(100);
+  const [gameOver, setGameOver] = useState(false);
   const handleAddCar = () => {
     setCarCount(carCount + 1);
     setPositions([...positions, 0]);
   };
 
+  let maxPosition;
   const handleAdvance = () => {
+    if (gameOver) return;
     const allCarsAtPosition1 = positions.every(
       (position) => position >= position1,
     );
@@ -36,9 +39,8 @@ const CarRace = () => {
       (position) => position >= position5,
     );
 
-    let maxPosition;
     if (allCarsAtPosition5) {
-      maxPosition = position5 + 200;
+      maxPosition = position5;
     } else if (allCarsAtPosition4) {
       maxPosition = position5;
     } else if (allCarsAtPosition3) {
@@ -50,13 +52,27 @@ const CarRace = () => {
     } else {
       maxPosition = position1;
     }
+    if (allCarsAtPosition5) {
+      setGameOver(true);
+    }
     setNewMaxPosition(maxPosition);
 
     const updatedPositions = positions.map((position) => {
-      const newPosition = position + Math.floor(Math.random() * 30);
+      const newPosition = position + Math.floor(Math.random() * 60);
       return newPosition >= maxPosition ? maxPosition : newPosition;
     });
     setPositions(updatedPositions);
+  };
+  const handleReset = () => {
+    setCarCount(0);
+    setPositions([]);
+    setPosition1(100);
+    setPosition2(200);
+    setPosition3(400);
+    setPosition4(600);
+    setPosition5(800);
+    setNewMaxPosition(100);
+    setGameOver(false);
   };
 
   return (
@@ -109,30 +125,40 @@ const CarRace = () => {
                     <input
                       type="number"
                       value={position5}
+                      max={1000}
                       onChange={(event) => setPosition5(Number(event.target.value))}
                       className="border border-gray-300 rounded px-2 py-1 w-20"
                     />
                   </label>
                 </div>
               </div>
-              <button
-                type="button"
-                className="px-4 py-2 bg-blue-500 text-white rounded"
-                onClick={handleAddCar}
-              >
-                Adicionar
-              </button>
-              <button
-                type="button"
-                className="px-4 py-2 bg-blue-500 text-white rounded"
-                onClick={handleAdvance}
-              >
-                Avançar
-              </button>
+              <div className="flex mt-5 flex-wrap gap-3">
+                <button
+                  type="button"
+                  className="px-4 py-2 bg-blue-500 text-white rounded"
+                  onClick={handleAddCar}
+                >
+                  Adicionar
+                </button>
+                <button
+                  type="button"
+                  className="px-4 py-2 bg-blue-500 text-white rounded"
+                  onClick={handleAdvance}
+                >
+                  Avançar
+                </button>
+                <button
+                  type="button"
+                  className="px-4 py-2 bg-red-500 text-white rounded"
+                  onClick={handleReset}
+                >
+                  Resetar
+                </button>
+              </div>
             </div>
           </div>
 
-          <div className="col-span-6">
+          <div className="col-span-6 h-[30rem] overflow-scroll">
             {[...Array(carCount)].map((_, index) => (
               <div className="raceRoad flex">
                 <div
