@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Horse from '../../../images/Start/Home.jpg';
 import CallCenter from '../../../images/Start/CallCenter.jpg';
 import Barbearia from '../../../images/Barber.jpg';
+import CarRace from '../../../images/Start/Cars.jpg';
 
 const Hero = () => (
   <div className="container paddings pt-20 mx-auto">
@@ -13,8 +14,8 @@ const Hero = () => (
           Simuladores disponíveis
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-16 md:gap-x-16">
-          <Link href="/Horse">
-            <div className="image-container">
+          <Link href="/Horse" className="rounded-xl overflow-hidden ">
+            <div className="image-container duration-300 hover:scale-105">
               <Image
                 src={Horse}
                 width={650}
@@ -24,8 +25,8 @@ const Hero = () => (
               <div className="image-text">Corrida de cavalos</div>
             </div>
           </Link>
-          <Link href="/CallCenter">
-            <div className="image-container">
+          <Link href="/CallCenter" className="rounded-xl overflow-hidden ">
+            <div className="image-container duration-300 hover:scale-105">
               <Image
                 src={CallCenter}
                 width={650}
@@ -35,15 +36,35 @@ const Hero = () => (
               <div className="image-text">Call Center</div>
             </div>
           </Link>
-          <Link href="/Barbearia">
-            <div className="image-container">
+          <Link href="/Barbearia" className="rounded-xl overflow-hidden ">
+            <div className="image-container duration-300 hover:scale-105">
               <Image
                 src={Barbearia}
                 width={650}
                 height={500}
                 className="rounded-xl shadow-3xl shadow-slate-400"
               />
-              <div className="image-text">Barbearia</div>
+              <div className="image-text">
+                Barbearia{' '}
+                <p className="text-white text-center">Barbeiro sonolento</p>
+              </div>
+            </div>
+          </Link>
+          <Link
+            href="/CarRace"
+            className="rounded-xl overflow-hidden "
+          >
+            <div className="image-container duration-300 hover:scale-105">
+              <Image
+                src={CarRace}
+                width={650}
+                height={500}
+                className="rounded-xl shadow-3xl shadow-slate-400"
+              />
+              <div className="image-text">
+                Corrida de carros{' '}
+                <p className="text-white text-center">Barreira</p>
+              </div>
             </div>
           </Link>
         </div>

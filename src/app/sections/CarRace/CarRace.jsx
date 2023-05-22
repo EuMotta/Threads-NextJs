@@ -3,7 +3,9 @@
 import { useState } from 'react';
 import '../../../styles/CarRace.css';
 import Image from 'next/image';
+import { ToastContainer, toast } from 'react-toastify';
 import Car from '../../../images/CarRace/car-svgrepo-com.svg';
+import demon from '../../../images/CarRace/devil-svgrepo-com.svg';
 
 const CarRace = () => {
   const [carCount, setCarCount] = useState(0);
@@ -14,7 +16,9 @@ const CarRace = () => {
   const [position4, setPosition4] = useState(600);
   const [position5, setPosition5] = useState(800);
   const [newMaxPosition, setNewMaxPosition] = useState(100);
+  const [speed, setSpeed] = useState(30);
   const [gameOver, setGameOver] = useState(false);
+
   const handleAddCar = () => {
     setCarCount(carCount + 1);
     setPositions([...positions, 0]);
@@ -58,7 +62,7 @@ const CarRace = () => {
     setNewMaxPosition(maxPosition);
 
     const updatedPositions = positions.map((position) => {
-      const newPosition = position + Math.floor(Math.random() * 60);
+      const newPosition = position + Math.floor(Math.random() * speed);
       return newPosition >= maxPosition ? maxPosition : newPosition;
     });
     setPositions(updatedPositions);
@@ -74,14 +78,52 @@ const CarRace = () => {
     setNewMaxPosition(100);
     setGameOver(false);
   };
-
+  const handleToast = () => {
+    toast('Três vezes o número do mal, três vezes a marca do Senhor das Trevas. O que é isso? Digite em uma das posições.', {
+      position: 'bottom-center',
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
+  };
+  const handleClick = () => {
+    const root = document.querySelector(':root');
+    const currentColor = getComputedStyle(root)
+      .getPropertyValue('--primary-color')
+      .trim();
+    if (currentColor === '#0F172A') {
+      root.style.setProperty('--primary-color', 'aliceblue');
+      root.style.setProperty('--card-color', '#334454');
+    } else {
+      root.style.setProperty('--text-h1-color', 'aliceblue');
+      root.style.setProperty('--text-h2-color', 'aliceblue');
+      root.style.setProperty('--text-h3-color', 'aliceblue');
+      root.style.setProperty('--text-h4-color', 'aliceblue');
+      root.style.setProperty('--text-h5-color', 'aliceblue');
+      root.style.setProperty('--text-p-color', 'aliceblue');
+      root.style.setProperty('--primary-color', '#9c1c1c');
+      root.style.setProperty('--card-color', '#9c1c5d');
+    }
+  };
   return (
     <div className="container yPaddings mx-auto">
       <div className="">
+        {newMaxPosition === 666 ? handleClick() : null}
+        <ToastContainer />
         <div className="grid grid-cols-8 gap-5">
           <div className="col-span-2 flex flex-col gap-5">
             <div className="card_1">
               <div className="flex flex-col">
+                <button
+                  type="button"
+                  onClick={handleToast}
+                >
+                  <Image src={demon} width={50} height={50} />
+                </button>
                 <h3 className="text-center">Posições</h3>
                 <div className="grid grid-cols-2 gap-5">
                   <label className="flex flex-row items-center space-x-2">
@@ -131,13 +173,22 @@ const CarRace = () => {
                     />
                   </label>
                 </div>
+                <label className="flex flex-row items-center space-x-2">
+                  <p>Velocidade:</p>
+                  <input
+                    type="number"
+                    value={speed}
+                    max={100}
+                    onChange={(event) => setSpeed(Number(event.target.value))}
+                    className="border border-gray-300 rounded px-2 py-1 w-20"
+                  />
+                </label>
               </div>
               <div className="flex mt-5 flex-wrap gap-3">
                 <button
                   type="button"
                   className="px-4 py-2 bg-blue-500 text-white rounded"
                   onClick={handleAddCar}
-
                 >
                   Adicionar
                 </button>
