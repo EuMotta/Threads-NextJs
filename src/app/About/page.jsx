@@ -4,6 +4,7 @@ import {
   Developing,
   Feedback,
   Hero,
+  Horse,
   Language,
   Packages,
   Separator,
@@ -18,6 +19,7 @@ const page = () => (
     <Packages />
     <Separator />
     <Developing />
+    <Horse />
     <Feedback />
   </div>
 );

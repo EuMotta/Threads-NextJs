@@ -17,7 +17,7 @@ const Hero = () => (
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
-      className="grid grid-cols-2"
+      className="grid md:grid-cols-2"
     >
       <div className="col-span-1">
         <motion.div
@@ -56,7 +56,7 @@ const Hero = () => (
         variants={fadeIn('left', 'tween', 0, 1)}
         className="col-span-1"
       >
-        <div className="hero_text">
+        <div className="hero_text text-center md:text-start">
           <h1>Como utilizar</h1>
           <div>
             <h2>Confira todos os recursos como: &nbsp;</h2>

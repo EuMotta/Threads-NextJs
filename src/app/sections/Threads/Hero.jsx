@@ -17,7 +17,7 @@ const Hero = () => (
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
-      className="grid grid-cols-2 paddings"
+      className="grid lg:grid-cols-2 paddings"
     >
       <div className="col-span-1">
         <motion.div
@@ -46,10 +46,10 @@ const Hero = () => (
         className="col-span-1"
       >
         <div className="mx-5">
-          <h1 className="font-bold mb-5 font-mono text-blue-600 text-7xl leading-none">
+          <h1 className="font-bold mb-5 text-center lg:text-start font-mono text-blue-600 text-7xl leading-none">
             Threads
           </h1>
-          <div className="text-4xl font-bold mb-2 leading-tight">
+          <div className="text-4xl text-center lg:text-start font-bold mb-2 leading-tight">
             <h2>
               O que é um thread? Entenda como funciona e sua utilidade em um
               sistema operacional

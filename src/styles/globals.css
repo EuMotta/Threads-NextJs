@@ -116,10 +116,14 @@ p {
 .scroll-top.open {
   bottom: 15%;
 }
+::-webkit-scrollbar-track {
+  background: url('../images/pexels-anni-roenkae-2832432.jpg') repeat;
+}
 
 /* ScrollBar */
 ::-webkit-scrollbar-thumb {
-  background: #291874;
+  background: url('../images/pexels-anni-roenkae-2832432.jpg') repeat;
+  background-size: cover;
   border-radius: 5px;
 }
 

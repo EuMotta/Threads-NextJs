@@ -24,7 +24,7 @@ const Threads = () => (
       viewport={{ once: true, amount: 0.1 }}
       className="container flex flex-col gap-20 mx-auto"
     >
-      <div className="grid grid-cols-2">
+      <div className="grid lg:grid-cols-2">
         <div className="col-span-1">
           <div className="px-5">
             <h1 className="mb-5">Threads</h1>
@@ -67,7 +67,7 @@ const Threads = () => (
           </motion.div>
         </div>
       </div>
-      <div className="grid mt-10 grid-cols-2">
+      <div className="grid mt-10 lg:grid-cols-2">
         <div className="col-span-1 ">
           <motion.div
             variants={fadeIn('down', 'tween', 0, 1)}
@@ -113,7 +113,7 @@ const Threads = () => (
           </div>
         </div>
       </div>
-      <div className="grid mt-10 grid-cols-2">
+      <div className="grid mt-10 lg:grid-cols-2">
         <div className="col-span-1">
           <div className="px-5">
             <div className="z-50">
@@ -167,7 +167,7 @@ const Threads = () => (
           </div>
         </div>
       </div>
-      <div className="grid mt-10 grid-cols-2">
+      <div className="grid mt-10 lg:grid-cols-2">
         <div className="col-span-1 ">
           <motion.div
             variants={fadeIn('down', 'tween', 0, 1)}
@@ -205,7 +205,7 @@ const Threads = () => (
           </div>
         </div>
       </div>
-      <div className="grid mt-10 grid-cols-2">
+      <div className="grid mt-10 lg:grid-cols-2">
         <div className="col-span-1">
           <div className="px-5">
             <div className="z-50">

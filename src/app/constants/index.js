@@ -236,7 +236,7 @@ export const developingList = {
     },
     {
       title: 'Quanto tempo demorou?',
-      description: 'Projetos experimentais não têm um prazo de desenvolvimento definido, pois sempre há algo a ser adicionado ou ajustado. Até agora, este projeto levou cerca de 7 dias para ser desenvolvido.',
+      description: (<>Projetos experimentais não têm um prazo de desenvolvimento definido, pois sempre há algo a ser adicionado ou ajustado. Até agora, este projeto levou cerca de 20 dias para ser desenvolvido.</>),
       time: 0.25,
     },
   ],
@@ -276,6 +276,22 @@ export const developingList = {
       description: (
         <>
           Para simular um thread de maneira eficiente, implementei um sistema automatizado que permite ao usuário ajustar a velocidade da simulação em milissegundos. Isso oferece flexibilidade para realizar a simulação de várias maneiras diferentes, desde processos lentos até processos rápidos.
+        </>
+      ),
+      time: 0.5,
+    },
+  ],
+  horse: [
+    {
+      title: 'Corrida de Cavalos',
+      description: (
+        <>
+          <p>
+          &nbsp;&nbsp; Uma das formas mais simples de ilustrar a <strong><u>concorrência de threads</u></strong> é através de uma corrida, onde cada competidor representa um thread trabalhando para chegar à linha de chegada. Imagine uma corrida de cavalos, onde cada cavalo representa um thread executando suas operações independentemente do resultado de seus concorrentes. Assim como na corrida, os threads competem entre si para concluir suas tarefas e alcançar seus objetivos. É uma analogia perfeita para entender como a concorrência de threads funciona.
+          </p>
+          <p>
+          &nbsp;&nbsp; Assim, tive a ideia de desenvolver uma corrida de cavalos para representar a concorrência de threads de maneira simples e eficaz. Cada thread tem sua velocidade, que varia dentro de um intervalo determinado. Por exemplo, se a velocidade escolhida for 50, ela pode variar entre 40 e 50. Da mesma forma que os cavalos em uma corrida, os threads não têm uma velocidade de processamento constante. Isso significa que o resultado da corrida pode mudar a cada vez que é reiniciada, assim como o desempenho dos threads pode variar.
+          </p>
         </>
       ),
       time: 0.5,

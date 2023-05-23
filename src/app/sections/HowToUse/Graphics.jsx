@@ -15,10 +15,7 @@ function ImpedirArrastar(event) {
   event.preventDefault();
 }
 const Graphics = () => (
-  <section
-    id="graphics"
-    className="graphics_section"
-  >
+  <section id="graphics" className="graphics_section">
     <motion.div
       variants={staggerContainer}
       initial="hidden"
@@ -61,9 +58,7 @@ const Graphics = () => (
       >
         <div className="graphics_text_text">
           <h1>Gráficos</h1>
-          <h3>
-            Dados dos Gráficos
-          </h3>
+          <h3>Dados dos Gráficos</h3>
           <p>
             &nbsp; Os gráficos apresentam informações importantes sobre os
             resultados da corrida. Eles mostram a quantidade de vitórias de cada
@@ -77,7 +72,7 @@ const Graphics = () => (
     </motion.div>
     <div className="graphics_graphics">
       <h2 className="text-3xl mb-10">Exemplos</h2>
-      <div className="grid grid-cols-3 gap-5 p-2">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-5 p-2">
         <div className="graphics_graphics_graphic card_1">
           <h3>Vitórias dos cavalos</h3>
           <HowToGraph1 />
@@ -86,7 +81,7 @@ const Graphics = () => (
           <h3>Média dos cavalos</h3>
           <HowToGraph2 />
         </div>
-        <div className="col-span-3 flex flex-col gap-5">
+        <div className="md:col-span-2 flex flex-col gap-5">
           <div className="graphics_graphics_graphic card_1">
             <h3>Atendimentos realizados</h3>
             <HowToGraph3 />

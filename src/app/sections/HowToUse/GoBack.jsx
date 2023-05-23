@@ -16,7 +16,7 @@ const GoBack = () => (
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
-      className="grid lg:grid-cols-2 lg:gap-5 gap-20 mx-5"
+      className="grid lg:grid-cols-2 sm:grid-cols-1 lg:gap-5 sm:gap-5 gap-20 mx-5"
     >
       <motion.div
         variants={fadeIn('down', 'tween', 0, 1)}
@@ -25,7 +25,7 @@ const GoBack = () => (
         <div className="px-5">
           <h1>Botões</h1>
           <h3>Como utilizar a Corrida de Cavalos</h3>
-          <p className="">
+          <p className="!text-start md:!text-justify">
             &nbsp; Para visualizar o funcionamento de um thread quadro a quadro,
             você pode usar os botões de <span className="constant">avançar</span> e <span className="constant">voltar</span> para percorrer cada
             quadro individualmente. Além disso, você pode utilizar a opção
@@ -38,7 +38,7 @@ const GoBack = () => (
           <p className="font-mono text-lg font-bold">
             Os botões são representados por:{' '}
           </p>
-          <div className="flex gap-5 pt-5">
+          <div className="flex flex-wrap gap-5 pt-5">
             <button type="button" className="button-go">
               Avançar
             </button>

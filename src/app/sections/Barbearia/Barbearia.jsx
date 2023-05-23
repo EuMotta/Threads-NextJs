@@ -16,6 +16,7 @@ const Barbearia = () => {
   const [queueStatus, setQueueStatus] = useState(false);
   const [speedStatus, setSpeedStatus] = useState(false);
   const [endService, setEndService] = useState([]);
+
   useEffect(() => {
     if (queue > 0) {
       const timer = setTimeout(() => {

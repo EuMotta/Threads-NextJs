@@ -22,7 +22,7 @@ const TypeThreads = () => (
         <h1>Tipos de threads</h1>
         <h4>User-level, Kernel-level e Híbridos</h4>
       </div>
-      <div className="grid grid-cols-2">
+      <div className="grid lg:grid-cols-2">
         <div className="col-span-1">
           <div className="px-5">
             <h1 className="mb-5">Threads</h1>
@@ -79,7 +79,7 @@ const TypeThreads = () => (
           </motion.div>
         </div>
       </div>
-      <div className="grid grid-cols-2">
+      <div className="grid lg:grid-cols-2">
         <div className="col-span-1 card_1 ">
           <motion.div
             variants={fadeIn('down', 'tween', 0, 1)}

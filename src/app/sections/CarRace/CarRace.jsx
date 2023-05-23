@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import '../../../styles/CarRace.css';
 import Image from 'next/image';
-import { ToastContainer, toast } from 'react-toastify';
+import Typewriter from 'typewriter-effect';
 import Car from '../../../images/CarRace/car-svgrepo-com.svg';
 import demon from '../../../images/CarRace/devil-svgrepo-com.svg';
 
@@ -16,6 +16,7 @@ const CarRace = () => {
   const [position4, setPosition4] = useState(600);
   const [position5, setPosition5] = useState(800);
   const [newMaxPosition, setNewMaxPosition] = useState(100);
+  const [easterEgg, setEasterEgg] = useState(false);
   const [speed, setSpeed] = useState(30);
   const [gameOver, setGameOver] = useState(false);
 
@@ -79,16 +80,7 @@ const CarRace = () => {
     setGameOver(false);
   };
   const handleToast = () => {
-    toast('Três vezes o número do mal, três vezes a marca do Senhor das Trevas. O que é isso? Digite em uma das posições.', {
-      position: 'bottom-center',
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: 'light',
-    });
+    setEasterEgg(true);
   };
   const handleClick = () => {
     const root = document.querySelector(':root');
@@ -113,7 +105,6 @@ const CarRace = () => {
     <div className="container yPaddings mx-auto">
       <div className="">
         {newMaxPosition === 666 ? handleClick() : null}
-        <ToastContainer />
         <div className="grid grid-cols-8 gap-5">
           <div className="col-span-2 flex flex-col gap-5">
             <div className="card_1">
@@ -121,8 +112,23 @@ const CarRace = () => {
                 <button
                   type="button"
                   onClick={handleToast}
+                  className="flex items-center"
                 >
                   <Image src={demon} width={50} height={50} />
+                  {easterEgg ? (
+                    <Typewriter
+                      options={{
+                        strings: [
+                          'Três vezes o numero da besta',
+                          'Insira em qualquer input',
+                        ],
+                        autoStart: true,
+                        loop: true,
+                      }}
+                    />
+                  ) : (
+                    ''
+                  )}
                 </button>
                 <h3 className="text-center">Posições</h3>
                 <div className="grid grid-cols-2 gap-5">

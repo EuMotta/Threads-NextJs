@@ -7,5 +7,6 @@ import Developing from './Developing';
 import TypeThreads from '../Threads/TypeThreads';
 import Feedback from './Feedback.jsx';
 import Database from './Database.jsx';
+import Horse from './Horse';
 
-export { Hero, Me, Language, Packages, Separator, Developing, TypeThreads as Threads, Feedback, Database };
+export { Hero, Me, Language, Packages, Separator, Developing, TypeThreads as Threads, Feedback, Database, Horse };
