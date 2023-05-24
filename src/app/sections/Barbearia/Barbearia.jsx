@@ -28,7 +28,26 @@ const Barbearia = () => {
   }, [queue]);
 
   const handleAddCliente = () => {
-    setQueue(queue + 1);
+    if (queue <= 30) {
+      setQueue(queue + 1);
+    } else {
+      toast(
+        <div>
+          <h4 className="text-center">Você tem muitos clientes!</h4>
+        </div>,
+        {
+          position: 'bottom-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+        },
+      );
+    }
+
     setQueueStatus(false);
   };
 

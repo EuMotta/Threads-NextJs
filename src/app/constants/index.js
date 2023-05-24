@@ -297,6 +297,38 @@ export const developingList = {
       time: 0.5,
     },
   ],
+  CallCenter: [
+    {
+      title: 'Central de Atendimento',
+      description: (
+        <>
+          <p>
+          &nbsp;&nbsp; Para representar a concorrência de varios threads, criei um simulador de CallCenter. Neste simulador de CallCenter, cada thread representa um atendente que pode atender a uma chamada de cada vez. Quando uma chamada é recebida, ela é atribuída a um atendente disponível. Se todos os atendentes estiverem ocupados, a chamada é colocada em espera até que um atendente esteja disponível. Isso permite simular a concorrência de várias threads em um ambiente de CallCenter.
+          </p>
+          <p>
+          &nbsp;&nbsp; Um simulador de CallCenter é uma ótima maneira de representar a concorrência de várias threads porque é um ambiente em que várias tarefas são executadas simultaneamente. Em um CallCenter real, vários atendentes atendem chamadas ao mesmo tempo, e cada chamada é uma tarefa separada que pode ser atribuída a um atendente. Ao simular esse ambiente com threads, é possível testar como diferentes cenários afetam o desempenho do sistema e como ele lida com a concorrência de várias tarefas.
+          </p>
+        </>
+      ),
+      time: 0.5,
+    },
+  ],
+  Barber: [
+    {
+      title: 'Barbeiro sonolento',
+      description: (
+        <>
+          <p>
+          &nbsp;&nbsp; O problema do barbeiro sonolento é um exemplo clássico de sincronização de threads. Ele representa uma situação em que várias threads (clientes) competem pelo acesso a um recurso compartilhado (o barbeiro). O barbeiro só pode atender a um cliente de cada vez, então os clientes devem esperar sua vez. Se não houver clientes, o barbeiro adormece até que um novo cliente chegue. Esse problema é usado para ilustrar como a sincronização de threads pode ser usada para garantir que os recursos compartilhados sejam acessados de maneira ordenada e sem conflitos.
+          </p>
+          <p>
+          &nbsp;&nbsp; Para implementar o problema do barbeiro sonolento, é necessário usar mecanismos de sincronização de threads, como semáforos ou monitores. Esses mecanismos permitem que as threads se comuniquem e coordenem suas ações para garantir que o acesso ao recurso compartilhado (o barbeiro) seja feito de maneira ordenada. O barbeiro tem um limite de clientes que ele pode atender, quando é atingido, ele não pode receber mais até a fila diminuir.
+          </p>
+        </>
+      ),
+      time: 0.5,
+    },
+  ],
 
 };
 export const threadList = [

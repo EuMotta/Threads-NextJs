@@ -15,11 +15,11 @@
 }
 
 .home_text h1 {
-  @apply text-7xl font-bold mb-2;
+  @apply lg:text-7xl font-bold mb-2 md:!text-6xl;
 }
 
 .home_text h3 {
-  @apply text-4xl font-semibold mb-4;
+  @apply lg:text-4xl font-semibold mb-4;
 }
 
 .home_text p {
@@ -27,14 +27,14 @@
 }
 
 .home_buttons{
-  @apply duration-700 flex gap-5;
+  @apply duration-700 transition-all flex gap-5;
 }
 
 .home_buttons .button_howtouse{
-  @apply rounded-xl px-10 bg-slate-600  text-lg font-bold text-white py-4 hover:bg-slate-700 hover:shadow-lg hover:-translate-y-1 transition duration-500;
+  @apply rounded-xl lg:px-10 px-5 !text-sm bg-slate-600   lg:text-lg font-bold text-white py-4 hover:bg-slate-700 hover:shadow-lg hover:-translate-y-1 transition duration-500;
 }
 
 .button_start {
-  @apply rounded-xl px-10 bg-blue-600  text-lg font-bold text-white py-4 hover:bg-slate-700 hover:shadow-lg hover:-translate-y-1 transition duration-500;
+  @apply rounded-xl lg:px-10 px-5 !text-sm bg-blue-600  lg:text-lg font-bold text-white py-4 hover:bg-slate-700 hover:shadow-lg hover:-translate-y-1 transition duration-500;
 }
 

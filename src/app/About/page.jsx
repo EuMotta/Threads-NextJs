@@ -1,5 +1,8 @@
 import React from 'react';
 import {
+  Barber,
+  CallCenter,
+  CarRace,
   Database,
   Developing,
   Feedback,
@@ -20,6 +23,9 @@ const page = () => (
     <Separator />
     <Developing />
     <Horse />
+    <CallCenter />
+    <Barber />
+    <CarRace />
     <Feedback />
   </div>
 );
