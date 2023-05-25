@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from 'react';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
-import { FaUserCircle } from 'react-icons/fa';
 import Typewriter from 'typewriter-effect';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -61,45 +60,35 @@ const Feedback = () => {
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
-        className="max-w-screen-xl mx-auto"
+        className="container mx-auto"
       >
-        <ul className="grid overflow-scroll card_1 shadow-md shadow-slate-600 p-5 h-[30rem] rounded-xl lg:grid-cols-3 w-full md:grid-cols-2 sm:grid-cols-1 sm:gap-y-5 md:gap-y-5 gap-x-5 ">
+        <ul className=" overflow-scroll card_1 shadow-md shadow-slate-600 p-5 h-[50rem] rounded-xl">
           {feedbacks.map((feedback) => (
             <ul
               key={feedback._id}
-              className="p-5 card_2 rounded-xl shadow-lg my-4"
+              className="rounded-xl shadow-lg my-4"
             >
-              <div className="text-center">
-                <h2 className="text-2xl font-bold ">Comentário</h2>
-                <span className="text-sm  text-red-400">{feedback.test}</span>
-              </div>
               <li>
-                <div className="flex justify-center">
-                  <div className="grid gap-y-3">
-                    <div className="flex justify-center  text-gray-600">
-                      <h1 className="text-7xl">
-                        <FaUserCircle />
-                      </h1>
-                    </div>
-                  </div>
-                </div>
-                <div className="text-md text-center">
-                  <h2 className="text-lg font-semibold text-gray-800">
-                    {feedback.name}
-                  </h2>
-                </div>
-                <div className="border rounded-xl bg-gray-100 border-gray-300 p-4 my-4">
-                  <div className="text-center text-sm p-2 rounded-md h-32">
-                    <p className="font-mono text-gray-600 ">
+                <div className="border rounded-xl bg-gradient-to-r from-indigo-500 to-cyan-400 border-gray-300 p-4 my-4">
+                  <div className="text-center text-sm p-2 rounded-md">
+                    <p className="!text-xl text-white font-semibold">
                       {feedback.comment}
                     </p>
                   </div>
-                </div>
-                <div className="flex items-center pt-2 justify-center space-x-2">
-                  <p>
-                    <Fdbs rating={feedback.rating} />{' '}
-                  </p>
-                  <p className="font-mono text-gray-600">{feedback.rating}</p>
+                  <div className="flex justify-between items-center text-end">
+                    <span className="text-sm  text-red-400">{feedback.test}</span>
+                    <div className="flex items-center pt-2 justify-center space-x-2">
+                      <p className="text-white">
+                        <Fdbs rating={feedback.rating} />{' '}
+                      </p>
+                      <p className="font-mono text-white">{feedback.rating}</p>
+                    </div>
+                    <div>
+                      <h2 className="!text-2xl font-semibold text-white ">
+                        {feedback.name}
+                      </h2>
+                    </div>
+                  </div>
                 </div>
               </li>
             </ul>

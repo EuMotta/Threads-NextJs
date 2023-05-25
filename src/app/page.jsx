@@ -7,7 +7,7 @@ import '../styles/Home.css';
 
 export default function Home() {
   return (
-    <main className="bg-gray-900">
+    <main className="bg-home">
       <Hero />
     </main>
   );

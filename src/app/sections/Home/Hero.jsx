@@ -16,7 +16,7 @@ const Hero = () => (
       className="grid md:grid-cols-8 w-full"
     >
       <div className="home_image">
-        <motion.div variants={fadeIn('down', 'tween', 0, 1)}>
+        <motion.div variants={fadeIn('down', 'tween', 1, 3)}>
           <Image
             src={HomeImage}
             width={750}
@@ -25,10 +25,10 @@ const Hero = () => (
           />
         </motion.div>
       </div>
-      <motion.div variants={fadeIn('up', 'tween', 0, 1)} className="home_text">
-        <h1 className="text-white">ThreadWorld</h1>
-        <h3 className="text-white">Project</h3>
-        <p className="text-white">Projeto de Threads desenvolvido em Next.js</p>
+      <motion.div variants={fadeIn('up', 'tween', 1, 3)} className="home_text">
+        <h1>ThreadWorld</h1>
+        <h3>Project</h3>
+        <p>Projeto de Threads desenvolvido em Next.js</p>
         <div className="home_buttons">
           <Link href="/HowToUse" className="button_howtouse">
             Como usar?

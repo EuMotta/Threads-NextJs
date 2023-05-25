@@ -10,8 +10,8 @@ const Hero = () => (
   <div className="container paddings pt-20 mx-auto">
     <div className="flex flex-col my-auto justify-center items-center">
       <div className=" flex flex-col justify-center items-center">
-        <div className="text-center mb-20 text-6xl text-slate-50 font-mono">
-          Simuladores disponíveis
+        <div className="text-center mb-20 text-6xl  font-mono">
+          <h1 className="text-color">Simuladores disponíveis</h1>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-16 md:gap-x-16">
           <Link href="/Horse" className="rounded-xl overflow-hidden ">

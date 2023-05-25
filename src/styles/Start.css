@@ -1,3 +1,6 @@
+.bg-start{
+  background-color: var(--bg-home-start)
+}
 .image-container {
   position: relative;
 }
@@ -14,7 +17,9 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-
+.text-color {
+  color: var(--text-home-start);
+}
 .image-text {
   position: absolute;
   top: 50%;

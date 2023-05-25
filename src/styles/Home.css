@@ -1,3 +1,10 @@
+.bg-home{
+  background: url(../images/home.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--bg-home-start)
+}
 .home_section{
   @apply h-screen container mx-auto flex justify-center items-center;
 }
@@ -9,21 +16,39 @@
 .home_image .home_image_image {
   @apply rounded-xl shadow-3xl shadow-slate-400;
 }
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-50px);
+  }
+  75% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
 .home_text{
   @apply col-span-3 flex flex-wrap flex-col justify-center items-center  text-white p-8 rounded-xl;
+  animation: mover 40s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .home_text h1 {
   @apply lg:text-7xl font-bold mb-2 md:!text-6xl;
+  color: var(--text-home-start);
 }
 
 .home_text h3 {
   @apply lg:text-4xl font-semibold mb-4;
+  color: var(--text-home-start);
 }
 
 .home_text p {
   @apply text-center text-xl mb-4;
+  color: var(--text-home-start);
 }
 
 .home_buttons{
