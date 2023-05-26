@@ -6,7 +6,9 @@ import { FcUp } from 'react-icons/fc';
 import { useState, useEffect, useRef } from 'react';
 import { IoIosMoon, IoIosSunny } from 'react-icons/io';
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import { navbarlinks } from './constants';
+import { fadeIn, staggerContainer } from '../utils/motion';
 
 const Navbar = () => {
   const homeRef = useRef(null);
@@ -82,7 +84,13 @@ const Navbar = () => {
   return (
     <header ref={homeRef} className="fixed w-full">
       <nav ref={navRef} className="bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.25 }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        >
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0 hover:cursor-pointer">
@@ -99,12 +107,30 @@ const Navbar = () => {
                 <div className="ml-10 flex  items-baseline space-x-4">
                   {navbarlinks.main.map((item) => (
                     <Link href={item.href} key={item.name}>
-                      <span className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                      <motion.div
+                        whileHover={{
+                          scale: [0.9, 1.1, 0.9, 1],
+                          rotate: [0, -3, 3, 0],
+                          borderRadius: ['6%', '6%', '6%', '6%'],
+                        }}
+                        whileTap={{ scale: 0.8 }}
+                        variants={fadeIn('down', 'tween', 0.25, item.time)}
+                        className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                      >
                         {item.name}
-                      </span>
+                      </motion.div>
                     </Link>
                   ))}
-                  <div className="relative">
+                  <motion.div
+                    whileHover={{
+                      scale: [0.95, 1.05, 0.95, 1],
+                      rotate: [0, -3, 3, 0],
+                      borderRadius: ['6%', '6%', '6%', '6%'],
+                    }}
+                    whileTap={{ scale: 0.96 }}
+                    variants={fadeIn('down', 'tween', 0.25, 1.25)}
+                    className="relative"
+                  >
                     <button
                       type="button"
                       onClick={handleDropdown}
@@ -130,13 +156,22 @@ const Navbar = () => {
                         </div>
                       </div>
                     )}
-                  </div>
+                  </motion.div>
                 </div>
               </div>
             </div>
-            <div className="flex justify-center items-center">
+            <motion.div
+              variants={fadeIn('down', 'tween', 0.25, 1.25)}
+              className="flex justify-center items-center"
+            >
               <h4 className="text-white">Tema: </h4>
-              <button
+              <motion.button
+                whileHover={{
+                  scale: [0.95, 1.05, 0.95, 1],
+                  rotate: [0, -3, 3, 0],
+                  borderRadius: ['6%', '6%', '6%', '6%'],
+                }}
+                whileTap={{ scale: 0.5 }}
                 type="button"
                 onClick={() => {
                   handleChange();
@@ -147,10 +182,10 @@ const Navbar = () => {
                 <span className=" text-slate-50 text-4xl">
                   {icon === 'sun' ? <IoIosSunny /> : <IoIosMoon />}
                 </span>
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
         <button
           type="button"
           ref={rocketRef}

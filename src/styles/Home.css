@@ -6,11 +6,11 @@
   background-color: var(--bg-home-start)
 }
 .home_section{
-  @apply h-screen container mx-auto flex justify-center items-center;
+  @apply lg:h-screen  container mx-auto flex justify-center items-center;
 }
 
 .home_image { 
-  @apply col-span-5 flex flex-wrap justify-center items-center ;
+  @apply col-span-5 w-96 md:w-full flex flex-wrap justify-center items-center ;
 }
 
 .home_image .home_image_image {

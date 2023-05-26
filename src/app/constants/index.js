@@ -155,18 +155,22 @@ export const navbarlinks = {
     {
       name: 'Inicio',
       href: '/',
+      time: 0.25,
     },
     {
       name: 'Como usar',
       href: '/HowToUse',
+      time: 0.50,
     },
     {
       name: 'Simular',
       href: '/Start',
+      time: 0.75,
     },
     {
       name: 'Threads',
       href: '/Threads',
+      time: 1,
     },
   ],
   dropdown: [
