@@ -1,4 +1,7 @@
 /* eslint-disable react/jsx-no-bind */
+
+'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -10,6 +13,7 @@ const Definition = () => {
   function ImpedirArrastar(event) {
     event.preventDefault();
   }
+
   return (
     <section className="container mx-auto yPaddings">
       <div>

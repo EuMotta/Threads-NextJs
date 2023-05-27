@@ -172,6 +172,10 @@ export const navbarlinks = {
       href: '/Threads',
       time: 1,
     },
+    {
+      name: 'Processo',
+      href: '/Process',
+    },
   ],
   dropdown: [
     {
