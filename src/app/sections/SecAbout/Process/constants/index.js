@@ -57,7 +57,7 @@ export const process = {
   ],
   identification: [
     {
-      subtitle: 'Estados de um processo',
+      subtitle: 'Identificação de um processo',
       description: (
         <>
           <p>
@@ -119,6 +119,40 @@ export const process = {
             identificação do processo pai. Essa tabela permite ao sistema
             operacional rastrear e gerenciar todos os processos em execução no
             sistema.
+          </p>
+        </>
+      ),
+      time: 1.5,
+    },
+  ],
+  relation: [
+    {
+      subtitle: 'Um processo, vários threads',
+      description: (
+        <>
+          <p>
+            &nbsp;&nbsp; A relação entre um processo e um thread é de
+            um-para-muitos. Um processo pode ter vários threads em execução
+            simultaneamente. Esses threads compartilham o mesmo contexto de
+            execução, como espaço de endereçamento e arquivos abertos, mas têm
+            sua própria pilha de execução e estado de registro. Isso significa
+            que cada thread possui um conjunto independente de registradores de
+            CPU, contador de programa e pilha de execução.
+          </p>
+          <p>
+            &nbsp;&nbsp;Os threads de um processo compartilham os recursos do
+            processo e podem se comunicar entre si de maneira mais eficiente do
+            que processos separados, pois não precisam recorrer a mecanismos de
+            comunicação interprocesso (IPC) para trocar informações. Essa
+            comunicação entre threads pode ser feita diretamente por meio de
+            variáveis compartilhadas ou outros mecanismos de sincronização,
+            tornando a comunicação entre threads mais rápida e eficiente.
+          </p>
+          <p>
+            &nbsp;&nbsp;A quantidade de threads que vai executar um processo vai
+            depender da necessidade do sistema operacional em executar aquele
+            processo, dependendo da sua prioridade e de seu tamanho, pode exigir
+            mais ou menos threads.
           </p>
         </>
       ),

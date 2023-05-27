@@ -55,6 +55,7 @@ const Navbar = () => {
       root.style.setProperty('--card-3-color', '#dde9ff');
       root.style.setProperty('--bg-home-start', '#0F172A');
       root.style.setProperty('--text-home-start', 'aliceblue');
+      root.style.setProperty('--bg-color-process', '#8a8b8b40');
     } else {
       root.style.setProperty('--text-h1-color', 'aliceblue');
       root.style.setProperty('--text-h2-color', 'aliceblue');
@@ -68,6 +69,7 @@ const Navbar = () => {
       root.style.setProperty('--card-3-color', '#6b80a5');
       root.style.setProperty('--bg-home-start', 'aliceblue');
       root.style.setProperty('--text-home-start', '#0F172A');
+      root.style.setProperty('--bg-color-process', '#32768bd8');
     }
   };
 

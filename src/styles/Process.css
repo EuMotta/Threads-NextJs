@@ -3,3 +3,24 @@
     background-position: center;
     background-size: cover;
 }
+.bg-process{
+    background-image: url(../images/Process/Separation.svg);
+    background-position: center;
+    background-size: cover;
+}
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 5px 10px 0 rgba(54, 54, 54, 0.705);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(1px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    @apply rounded-xl;
+}
+.glassmorphism-2{
+    background: var(--bg-color-process);
+    box-shadow: 0 1px 0px 0 rgba(54, 54, 54, 0.705);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(1px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    @apply rounded-xl;
+}

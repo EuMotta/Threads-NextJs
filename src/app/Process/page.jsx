@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Hero, Definition, Creation, Identification, ProcessState } from '../sections/SecAbout/Process';
+import { Hero, Definition, Creation, Identification, ProcessState, Separation, Relation } from '../sections/SecAbout/Process';
 
 export default function page() {
   return (
@@ -11,6 +11,8 @@ export default function page() {
       <Creation />
       <Identification />
       <ProcessState />
+      <Separation />
+      <Relation />
     </main>
   );
 }

@@ -15,7 +15,7 @@ const ProcessState = () => {
         <div className="mb-10">
           <h1 className="text-center">Estado</h1>
         </div>
-        <div className="grid grid-cols-2 gap-10">
+        <div>
           <div>
             <h4 className="font-bold mb-5">Estados de um processo</h4>
             <p className="!text-xl">
@@ -67,8 +67,8 @@ const ProcessState = () => {
             >
               <Image
                 src={Process3}
-                width={750}
-                height={750}
+                width={950}
+                height={950}
                 unoptimized
                 onDragStart={ImpedirArrastar}
                 alt="threadss"
