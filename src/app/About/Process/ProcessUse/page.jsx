@@ -1,14 +1,13 @@
 'use client';
 
 import React from 'react';
-import { Hero, Threads, TypeThreads } from '../sections/Threads';
+import { ProcessUse, Hero } from '../../../sections/SecAbout/Process/ProcessUse';
 
 export default function page() {
   return (
     <main>
       <Hero />
-      <Threads />
-      <TypeThreads />
+      <ProcessUse />
     </main>
   );
 }

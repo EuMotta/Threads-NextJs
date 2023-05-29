@@ -1,13 +1,12 @@
-'use client';
-
 import React from 'react';
-import { CallCenter, Hero } from '../sections/CallCenter';
+import { CarRace, Explication, Hero } from '../../sections/CarRace';
 
 export default function page() {
   return (
     <main>
       <Hero />
-      <CallCenter />
+      <CarRace />
+      <Explication />
     </main>
   );
 }

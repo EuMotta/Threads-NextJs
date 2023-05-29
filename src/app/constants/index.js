@@ -167,15 +167,7 @@ export const navbarlinks = {
       href: '/Start',
       time: 0.75,
     },
-    {
-      name: 'Threads',
-      href: '/Threads',
-      time: 1,
-    },
-    {
-      name: 'Processo',
-      href: '/Process',
-    },
+
   ],
   dropdown: [
     {
@@ -184,7 +176,20 @@ export const navbarlinks = {
     },
     {
       name: 'Desenvolvedor',
-      href: '/Me',
+      href: '/About/Me',
+    },
+    {
+      name: 'Threads',
+      href: '/About/Threads',
+      time: 1,
+    },
+    {
+      name: 'Processo',
+      href: '/About/Process',
+    },
+    {
+      name: 'Renderizador',
+      href: '/About/Process/ProcessUse',
     },
   ],
 };

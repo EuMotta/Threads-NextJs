@@ -14,7 +14,7 @@ const Hero = () => (
           <h1 className="text-color">Simuladores disponíveis</h1>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-16 md:gap-x-16">
-          <Link href="/Horse" className="rounded-xl overflow-hidden ">
+          <Link href="/Start/Horse" className="rounded-xl overflow-hidden ">
             <div className="image-container duration-300 hover:scale-105">
               <Image
                 src={Horse}
@@ -25,7 +25,7 @@ const Hero = () => (
               <div className="image-text">Corrida de cavalos</div>
             </div>
           </Link>
-          <Link href="/CallCenter" className="rounded-xl overflow-hidden ">
+          <Link href="/Start/CallCenter" className="rounded-xl overflow-hidden ">
             <div className="image-container duration-300 hover:scale-105">
               <Image
                 src={CallCenter}
@@ -36,7 +36,7 @@ const Hero = () => (
               <div className="image-text">Call Center</div>
             </div>
           </Link>
-          <Link href="/Barbearia" className="rounded-xl overflow-hidden ">
+          <Link href="/Start/Barbearia" className="rounded-xl overflow-hidden ">
             <div className="image-container duration-300 hover:scale-105">
               <Image
                 src={Barbearia}
@@ -51,7 +51,7 @@ const Hero = () => (
             </div>
           </Link>
           <Link
-            href="/CarRace"
+            href="/Start/CarRace"
             className="rounded-xl overflow-hidden "
           >
             <div className="image-container duration-300 hover:scale-105">
