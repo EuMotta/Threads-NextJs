@@ -60,7 +60,7 @@ const Barber = () => {
   return (
     <section className="container mx-auto">
       <div className="text-center">
-        {developingList.Barber.map((barber) => (
+        {developingList.CarRace.map((barber) => (
           <div key={barber.title}>
             <TypingText
               title={barber.title}

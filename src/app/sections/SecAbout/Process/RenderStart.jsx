@@ -16,7 +16,7 @@ const RenderStart = () => (
     >
       <div className="bg-process rounded-xl">
         <div className=" h-52  glassmorphism p-10 ">
-          <Link href="/Process/ProcessUse">
+          <Link href="About/Process/ProcessUse">
             <div className="flex flex-col glassmorphism-2 justify-center items-center">
               <h1 className=" !text-7xl ">Renderizador</h1>
               <div>

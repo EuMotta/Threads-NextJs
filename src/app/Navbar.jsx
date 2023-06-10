@@ -125,11 +125,11 @@ const Navbar = () => {
                   ))}
                   <motion.div
                     whileHover={{
-                      scale: [0.95, 1.05, 0.95, 1],
-                      rotate: [0, -3, 3, 0],
+                      scale: [0.98, 1.02, 0.98, 1],
+                      rotate: [0, -1, 1, 0],
                       borderRadius: ['6%', '6%', '6%', '6%'],
                     }}
-                    whileTap={{ scale: 0.96 }}
+                    whileTap={{ scale: 0.98 }}
                     variants={fadeIn('down', 'tween', 0.25, 1.25)}
                     className="relative"
                   >
@@ -149,7 +149,7 @@ const Navbar = () => {
                       <div className="absolute z-40 right-0 mt-2 w-48 bg-white rounded-md shadow-lg">
                         <div className="py-1">
                           {navbarlinks.dropdown.map((item) => (
-                            <Link href={item.href} key={item.name}>
+                            <Link href={item.href} key={item.name} onClick={handleDropdown}>
                               <span className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
                                 {item.name}
                               </span>

@@ -33,26 +33,45 @@ const ProcessUse = () => {
             title="Process3D"
             src="https://my.spline.design/nancylookingaround-ff5e070f7fb5fbad40adbb696c2f3ed3/"
             width="100%"
-            height={600}
-            className="shadow-lg shadow-slate-500 rounded-xl"
-          />
-        </div>
-        <div className="my-10 text-center">
-          <h2>Outro exemplo de renderização 3D:</h2>
-          <p className="text-center">
-            Outro exemplo poderia ser a carteira de entrada da FATEC
-            Guaratinguetá, onde também consome recursos do processador,
-            obviamente consome menos que o rosto acima.
-          </p>
-        </div>
-        <div>
-          <iframe
-            title="Process3D"
-            src="https://my.spline.design/digitalpass-6d6d2fb8f63fe774f50d254f55d769e2/"
-            width="100%"
             height={800}
             className="shadow-lg shadow-slate-500 rounded-xl"
           />
+        </div>
+        <div className="mt-40">
+          <div className="my-10 text-center">
+            <h2>Outro exemplo de renderização 3D:</h2>
+            <p className="text-center">
+              Outro exemplo poderia ser a carteira de entrada da FATEC
+              Guaratinguetá, onde também consome recursos do processador,
+              obviamente consome menos que o rosto acima.
+            </p>
+          </div>
+          <div>
+            <iframe
+              title="Process3D"
+              src="https://my.spline.design/digitalpass-6d6d2fb8f63fe774f50d254f55d769e2/"
+              width="100%"
+              height={800}
+              className="shadow-lg shadow-slate-500 rounded-xl"
+            />
+          </div>
+        </div>
+        <div className="mt-40">
+          <div className="my-10 text-center">
+            <h2>Outro exemplo de renderização 3D:</h2>
+            <p className="text-center">
+              Abaixo um exemplo de renderização de um dispositivo móvel em 3d.
+            </p>
+          </div>
+          <div>
+            <iframe
+              title="Process3D"
+              src="https://my.spline.design/artisticmockup-8bd0d2e7e880a1972cedc21f65cb6715/"
+              width="100%"
+              height={800}
+              className="shadow-lg shadow-slate-500 rounded-xl"
+            />
+          </div>
         </div>
       </motion.div>
       <div className="container mx-auto yPaddings">
