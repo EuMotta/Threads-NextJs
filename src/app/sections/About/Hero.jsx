@@ -33,8 +33,8 @@ const Hero = () => (
         >
           <Image
             src={aboutPageSvg}
-            width={400}
-            height={400}
+            width={600}
+            height={600}
             unoptimized
             onDragStart={ImpedirArrastar}
             alt="Hero"

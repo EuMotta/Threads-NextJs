@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Separator = () => (
-  <section className="bg_separator">
+  <section className="">
     <div className="h-60 container mx-auto flex justify-center items-center">
       <div
         href="/Start"

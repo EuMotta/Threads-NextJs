@@ -60,8 +60,8 @@ const Packages = () => (
           >
             <Image
               src={LibrarySvg1}
-              width={400}
-              height={400}
+              width={500}
+              height={500}
               unoptimized
               alt="Librarys"
               onDragStart={ImpedirArrastar}
@@ -85,8 +85,8 @@ const Packages = () => (
             <Image
               className="pointer-events-none"
               src={LibrarySvg2}
-              width={400}
-              height={400}
+              width={500}
+              height={500}
               unoptimized
               alt="Librarys"
               onDragStart={ImpedirArrastar}

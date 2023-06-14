@@ -55,8 +55,8 @@ const Developing = () => (
           >
             <Image
               src={LibrarySvg1}
-              width={400}
-              height={400}
+              width={600}
+              height={600}
               unoptimized
               alt="Librarys"
               onDragStart={ImpedirArrastar}
