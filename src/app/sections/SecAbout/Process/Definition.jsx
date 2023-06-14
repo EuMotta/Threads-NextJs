@@ -32,7 +32,7 @@ const Definition = () => {
           <div className="col-span-1 flex flex-col justify-center items-center">
             <motion.div
               variants={fadeIn('down', 'tween', 0, 1)}
-              className=""
+              className="card_1"
               drag
               dragConstraints={{
                 top: -0.2,

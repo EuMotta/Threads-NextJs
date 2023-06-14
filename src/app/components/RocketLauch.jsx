@@ -181,6 +181,10 @@ const RocketLaunch2 = () => {
             setGameOver(true);
             return maxDirection;
           }
+          if (newDirection <= -maxDirection) {
+            clearInterval(interval);
+            setGameOver(true);
+          }
           return newDirection;
         });
       } else {

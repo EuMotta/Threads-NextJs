@@ -56,10 +56,9 @@ const TypeThreads = () => (
             </div>
           </div>
         </div>
-        <div className="col-span-1 card_1 ">
+        <div className="">
           <motion.div
             variants={fadeIn('down', 'tween', 0, 1)}
-            className="flex justify-center items-center"
             drag
             dragConstraints={{
               top: -0.2,
@@ -67,23 +66,29 @@ const TypeThreads = () => (
               right: 0.2,
               bottom: 0.2,
             }}
+            className="col-span-1 card_1 "
           >
-            <Image
-              src={KernelSpace}
-              width={450}
-              height={450}
-              unoptimized
-              alt="threadss"
-              onDragStart={ImpedirArrastar}
-            />
+            <motion.div className="flex justify-center items-center">
+              <Image
+                src={KernelSpace}
+                width={450}
+                height={450}
+                unoptimized
+                alt="threadss"
+                onDragStart={ImpedirArrastar}
+              />
+            </motion.div>
           </motion.div>
+          <p className="text-center">
+            Threads Hibridos desenvolvido no LucidChart
+          </p>
         </div>
       </div>
       <div className="grid lg:grid-cols-2">
-        <div className="col-span-1 card_1 ">
+        <div className="">
           <motion.div
             variants={fadeIn('down', 'tween', 0, 1)}
-            className="flex justify-center items-center"
+            className="col-span-1 card_1 "
             drag
             dragConstraints={{
               top: -0.2,
@@ -92,15 +97,20 @@ const TypeThreads = () => (
               bottom: 0.2,
             }}
           >
-            <Image
-              src={Hibrid}
-              width={550}
-              height={550}
-              unoptimized
-              alt="threadss"
-              onDragStart={ImpedirArrastar}
-            />
+            <motion.div className="flex justify-center items-center">
+              <Image
+                src={Hibrid}
+                width={550}
+                height={550}
+                unoptimized
+                alt="threadss"
+                onDragStart={ImpedirArrastar}
+              />
+            </motion.div>
           </motion.div>
+          <p className="text-center">
+            Threads Hibridos desenvolvido no LucidChart
+          </p>
         </div>
         <div className="col-span-1">
           <div className="px-5">
